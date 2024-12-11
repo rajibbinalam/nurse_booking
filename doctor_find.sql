@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2024 at 03:09 PM
+-- Generation Time: Dec 11, 2024 at 09:17 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 7.4.7
 
@@ -81,45 +81,6 @@ CREATE TABLE `appointment_medicines` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `appointment_medicines`
---
-
-INSERT INTO `appointment_medicines` (`id`, `appointment_id`, `medicines`, `created_at`, `updated_at`) VALUES
-(1, 55, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"09:00\"}],\"dosage\":\"500\",\"type\":\"Tablet\"}]}', '2023-12-27 00:00:40', '2023-12-27 00:00:40'),
-(52, 28, '{\"medicine\":[{\"medicine_name\":\"Calcium Chloride\",\"type\":\"Tablet\",\"dosage\":\"10\",\"repeat_days\":\"2\",\"time\":[{\"t_time\":\"16:29\"},{\"t_time\":\"17:29\"}]}]}', '2024-02-02 05:29:30', '2024-02-02 05:29:30'),
-(53, 279, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"18:00\"},{\"t_time\":\"21:00\"}],\"dosage\":\"500\",\"type\":\"Tablet\"}]}', '2024-02-02 06:49:43', '2024-02-02 06:49:43'),
-(54, 279, '{\"medicine\":[]}', '2024-02-02 06:50:33', '2024-02-02 06:50:33'),
-(55, 288, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"12:42\"}],\"dosage\":\"500\",\"type\":\"Tablet\"},{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"19:42\"}],\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-02-06 10:45:24', '2024-02-06 10:45:24'),
-(56, 293, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"18:52\"}],\"dosage\":\"500\",\"type\":\"Tablet\"}]}', '2024-02-08 06:52:06', '2024-02-08 06:52:06'),
-(57, 293, '{\"medicine\":[]}', '2024-02-08 06:53:24', '2024-02-08 06:53:24'),
-(58, 293, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"13:00\"},{\"t_time\":\"16:00\"}],\"dosage\":\"500\",\"type\":\"Tablet\"},{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"20:00\"},{\"t_time\":\"22:00\"}],\"dosage\":\"100\",\"type\":\"Injection\"},{\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"17:00\"},{\"t_time\":\"20:00\"}],\"dosage\":\"300\",\"type\":\"injection\"},{\"medicine_name\":\"Betamethasone\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"21:00\"},{\"t_time\":\"22:00\"}],\"dosage\":\"500\",\"type\":\"tablet\"}]}', '2024-02-08 06:55:24', '2024-02-08 06:55:24'),
-(59, 293, '{\"medicine\":[{\"time\":[{\"t_time\":\"13:00\"},{\"t_time\":\"16:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"dosage\":\"500\",\"type\":\"Tablet\"},{\"time\":[{\"t_time\":\"20:00\"},{\"t_time\":\"22:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"dosage\":\"100\",\"type\":\"Injection\"},{\"time\":[{\"t_time\":\"17:00\"},{\"t_time\":\"20:00\"}],\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"dosage\":\"300\",\"type\":\"injection\"}]}', '2024-02-08 06:58:18', '2024-02-08 06:58:18'),
-(60, 293, '{\"medicine\":[{\"time\":[{\"t_time\":\"13:00\"},{\"t_time\":\"16:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"dosage\":\"500\",\"type\":\"Tablet\"},{\"time\":[{\"t_time\":\"20:00\"},{\"t_time\":\"22:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-02-08 06:58:21', '2024-02-08 06:58:21'),
-(61, 293, '{\"medicine\":[{\"time\":[{\"t_time\":\"20:00\"},{\"t_time\":\"22:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-02-08 06:58:25', '2024-02-08 06:58:25'),
-(62, 293, '{\"medicine\":[{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"08:00\"}],\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-02-08 22:33:30', '2024-02-08 22:33:30'),
-(63, 293, '{\"medicine\":[{\"time\":[{\"t_time\":\"08:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"dosage\":\"100\",\"type\":\"Injection\"},{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"06:00\"}],\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-02-08 22:34:05', '2024-02-08 22:34:05'),
-(64, 293, '{\"medicine\":[]}', '2024-02-08 22:34:41', '2024-02-08 22:34:41'),
-(65, 293, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"09:00\"},{\"t_time\":\"15:00\"}],\"dosage\":\"500\",\"type\":\"Tablet\"},{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"15:00\"},{\"t_time\":\"21:00\"}],\"dosage\":\"100\",\"type\":\"Tablet\"}]}', '2024-02-08 22:35:39', '2024-02-08 22:35:39'),
-(66, 309, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"00:00\"}],\"dosage\":\"500\",\"type\":\"Tablet\"}]}', '2024-02-28 22:40:28', '2024-02-28 22:40:28'),
-(67, 311, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"day_text_9\",\"time\":[{\"t_time\":\"12:00\"}],\"dosage\":\"500\",\"type\":\"Tablet\"}]}', '2024-03-04 05:59:15', '2024-03-04 05:59:15'),
-(68, 311, '{\"medicine\":[]}', '2024-03-04 22:19:36', '2024-03-04 22:19:36'),
-(69, 311, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"10:00\"}],\"dosage\":\"500\",\"type\":\"Tablet\"},{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"00:00\"}],\"dosage\":\"100\",\"type\":\"Tablet\"}]}', '2024-03-04 22:20:28', '2024-03-04 22:20:28'),
-(70, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"10:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"dosage\":\"500\",\"type\":\"Tablet\"}]}', '2024-03-04 22:20:37', '2024-03-04 22:20:37'),
-(71, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"10:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"3\",\"dosage\":\"500\",\"type\":\"Tablet\"},{\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"08:00\"},{\"t_time\":\"23:00\"}],\"dosage\":\"300\",\"type\":\"injection\"},{\"medicine_name\":\"Betamethasone\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"07:00\"},{\"t_time\":\"06:00\"}],\"dosage\":\"500\",\"type\":\"tablet\"}]}', '2024-03-04 22:23:11', '2024-03-04 22:23:11'),
-(72, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"08:00\"},{\"t_time\":\"23:00\"}],\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"dosage\":\"300\",\"type\":\"injection\"}]}', '2024-03-04 22:25:50', '2024-03-04 22:25:50'),
-(73, 311, '{\"medicine\":[]}', '2024-03-04 22:26:03', '2024-03-04 22:26:03'),
-(74, 311, '{\"medicine\":[{\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"1\",\"time\":[{\"t_time\":\"13:00\"}],\"dosage\":\"500\",\"type\":\"Tablet\"},{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"2\",\"time\":[{\"t_time\":\"14:00\"}],\"dosage\":\"100\",\"type\":\"Injection\"},{\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"time\":[{\"t_time\":\"15:00\"}],\"dosage\":\"300\",\"type\":\"injection\"},{\"medicine_name\":\"Betamethasone\",\"repeat_days\":\"4\",\"time\":[{\"t_time\":\"16:00\"}],\"dosage\":\"500\",\"type\":\"tablet\"},{\"medicine_name\":\"Calcium Chloride\",\"repeat_days\":\"5\",\"time\":[{\"t_time\":\"17:00\"}],\"dosage\":\"50\",\"type\":\"in\"},{\"medicine_name\":\"Calcium Folinate\",\"repeat_days\":\"6\",\"time\":[{\"t_time\":\"18:00\"}],\"dosage\":\"60\",\"type\":\"tablet\"},{\"medicine_name\":\"Diltiazem HCl\",\"repeat_days\":\"7\",\"time\":[{\"t_time\":\"07:00\"}],\"dosage\":\"20\",\"type\":\"tablet\"}]}', '2024-03-04 22:27:36', '2024-03-04 22:27:36'),
-(75, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"13:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"1\",\"dosage\":\"500\",\"type\":\"Tablet\"},{\"time\":[{\"t_time\":\"14:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"2\",\"dosage\":\"100\",\"type\":\"Injection\"},{\"time\":[{\"t_time\":\"15:00\"}],\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"dosage\":\"300\",\"type\":\"injection\"},{\"time\":[{\"t_time\":\"16:00\"}],\"medicine_name\":\"Betamethasone\",\"repeat_days\":\"4\",\"dosage\":\"500\",\"type\":\"tablet\"},{\"time\":[{\"t_time\":\"17:00\"}],\"medicine_name\":\"Calcium Chloride\",\"repeat_days\":\"5\",\"dosage\":\"50\",\"type\":\"in\"},{\"time\":[{\"t_time\":\"18:00\"}],\"medicine_name\":\"Calcium Folinate\",\"repeat_days\":\"6\",\"dosage\":\"60\",\"type\":\"tablet\"}]}', '2024-03-04 22:32:42', '2024-03-04 22:32:42'),
-(76, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"13:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"1\",\"dosage\":\"500\",\"type\":\"Tablet\"},{\"time\":[{\"t_time\":\"14:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"2\",\"dosage\":\"100\",\"type\":\"Injection\"},{\"time\":[{\"t_time\":\"15:00\"}],\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"dosage\":\"300\",\"type\":\"injection\"},{\"time\":[{\"t_time\":\"16:00\"}],\"medicine_name\":\"Betamethasone\",\"repeat_days\":\"4\",\"dosage\":\"500\",\"type\":\"tablet\"},{\"time\":[{\"t_time\":\"18:00\"}],\"medicine_name\":\"Calcium Folinate\",\"repeat_days\":\"6\",\"dosage\":\"60\",\"type\":\"tablet\"}]}', '2024-03-04 22:32:44', '2024-03-04 22:32:44'),
-(77, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"13:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"1\",\"dosage\":\"500\",\"type\":\"Tablet\"},{\"time\":[{\"t_time\":\"14:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"2\",\"dosage\":\"100\",\"type\":\"Injection\"},{\"time\":[{\"t_time\":\"15:00\"}],\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"dosage\":\"300\",\"type\":\"injection\"},{\"time\":[{\"t_time\":\"18:00\"}],\"medicine_name\":\"Calcium Folinate\",\"repeat_days\":\"6\",\"dosage\":\"60\",\"type\":\"tablet\"}]}', '2024-03-04 22:32:47', '2024-03-04 22:32:47'),
-(78, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"13:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"1\",\"dosage\":\"500\",\"type\":\"Tablet\"},{\"time\":[{\"t_time\":\"14:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"2\",\"dosage\":\"100\",\"type\":\"Injection\"},{\"time\":[{\"t_time\":\"15:00\"}],\"medicine_name\":\"Benzhexol HCl\",\"repeat_days\":\"3\",\"dosage\":\"300\",\"type\":\"injection\"}]}', '2024-03-04 22:32:49', '2024-03-04 22:32:49'),
-(79, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"13:00\"}],\"medicine_name\":\"Acetazolamide\",\"repeat_days\":\"1\",\"dosage\":\"500\",\"type\":\"Tablet\"},{\"time\":[{\"t_time\":\"14:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"2\",\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-03-04 22:32:51', '2024-03-04 22:32:51'),
-(80, 311, '{\"medicine\":[{\"time\":[{\"t_time\":\"14:00\"}],\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"2\",\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-03-04 22:32:54', '2024-03-04 22:32:54'),
-(81, 311, '{\"medicine\":[{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"4\",\"time\":[{\"t_time\":\"14:00\"}],\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-03-04 22:33:00', '2024-03-04 22:33:00'),
-(82, 311, '{\"medicine\":[]}', '2024-03-04 22:33:05', '2024-03-04 22:33:05'),
-(83, 315, '{\"medicine\":[{\"medicine_name\":\"Adrenaline\",\"repeat_days\":\"10\",\"time\":[{\"t_time\":\"18:00\"},{\"t_time\":\"18:25\"}],\"dosage\":\"100\",\"type\":\"Injection\"}]}', '2024-03-05 04:44:59', '2024-03-05 04:44:59');
 
 -- --------------------------------------------------------
 
@@ -199,35 +160,7 @@ CREATE TABLE `book_appointment` (
 --
 
 INSERT INTO `book_appointment` (`id`, `doctor_id`, `user_id`, `slot_id`, `slot_name`, `date`, `phone`, `user_description`, `status`, `created_at`, `updated_at`, `notify`, `payment_mode`, `transaction_id`, `consultation_fees`, `prescription_file`, `is_completed`) VALUES
-(12, 23, 7, 5289, '12:15 PM', '2021-05-20', '01000702833', 'abdominal pain all along my lower stomach.abdominal pain all along my lower stomach.', 4, '2021-05-20 10:37:25', '2024-03-08 04:43:50', '0', NULL, NULL, NULL, NULL, 1),
-(13, 20, 8, 5280, '10:00 AM', '2021-05-20', '9961015671', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 4, '2021-05-20 16:13:05', '2021-05-20 16:13:05', '1', NULL, NULL, NULL, NULL, 1),
-(16, 5, 7, 1985, '09:30 PM', '2021-05-23', '0561972774', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 4, '2021-05-23 15:52:10', '2021-05-23 15:52:10', '1', NULL, NULL, NULL, NULL, 1),
-(17, 4, 8, 1804, '09:15 AM', '2021-05-23', '0561972774', 'abdominal pain all along my lower stomach.abdominal pain all along my lower stomach.', 4, '2021-05-23 16:26:49', '2021-05-23 16:26:49', '1', NULL, NULL, NULL, NULL, 1),
-(21, 16, 7, 5299, '09:00 AM', '2021-05-28', '9849138006', 'abdominal pain all along my lower stomach.abdominal pain all along my lower stomach.', 4, '2021-05-28 12:51:50', '2021-05-28 12:51:50', '1', NULL, NULL, NULL, NULL, 1),
-(24, 10, 8, 4891, '10:30 AM', '2021-06-07', '89269169374', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 4, '2021-06-04 07:13:29', '2021-06-04 07:13:29', '1', NULL, NULL, NULL, NULL, 1),
-(28, 1, 8, 1550, '09:00 AM', '2021-06-09', '980-8720213', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 4, '2021-06-09 09:54:21', '2024-02-28 10:13:28', '0', NULL, NULL, NULL, NULL, 1),
-(34, 7, 7, 2149, '09:15 AM', '2021-06-28', '0661514632', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 4, '2021-06-28 10:50:51', '2024-01-03 05:16:51', '0', NULL, NULL, NULL, NULL, 1),
-(37, 3, 8, 1597, '09:15 AM', '2021-07-09', '9856586955', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 4, '2021-07-09 16:24:19', '2021-07-25 06:52:12', '0', NULL, NULL, NULL, NULL, 1),
-(42, 23, 8, 4604, '08:00 PM', '2021-08-03', '9866589695', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 4, '2021-08-01 13:41:24', '2024-03-08 04:43:50', '0', NULL, NULL, NULL, NULL, 1),
-(50, 19, 7, 4053, '08:30 PM', '2021-08-14', '50688845946', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 4, '2021-08-13 03:58:35', '2023-06-30 15:24:52', '0', NULL, NULL, NULL, NULL, 1),
-(53, 20, 8, 4150, '09:15 AM', '08/19/2021', '5865986596', 'A toothache that\'s so bad and whatever pain killers I use nothing is helping', 6, '2021-08-19 11:16:06', '2023-07-25 09:34:26', '1', 'Stripe', 'ch_3NXhdNCx9OJxsUSh0tTX1SkL', '250', NULL, 1),
-(54, 15, 8, 5295, '08:30 PM', '2022-01-06', '8200438788', 'do not have a great day and I will check with you and your family and', 1, '2022-01-06 11:07:24', '2022-01-06 11:07:24', '1', 'COD', NULL, '250', NULL, 1),
-(55, 13, 7, 5298, '10:00 PM', '2022-01-06', '8200438788', 'do not have a great day and I will check with you and your family and', 1, '2022-01-06 11:09:21', '2022-01-06 11:09:21', '1', 'COD', NULL, '250', NULL, 1),
-(280, 20, 24, 1303, '06:00 PM', '2024-02-03', '7717657871', 'ااا', 1, '2024-02-02 21:00:35', '2024-02-13 09:23:19', '1', 'Stripe', 'ch_3OjICwCx9OJxsUSh0yEciW5x', '250', NULL, 1),
-(304, 20, 159, 1215, '08:00 PM', '2024-02-13', '1111112222', 'test', 1, '2024-02-13 09:27:54', '2024-02-13 09:27:54', '1', '', NULL, '250', NULL, 0),
-(305, 20, 159, 1215, '08:00 PM', '2024-02-13', '1111112222', 'test', 4, '2024-02-13 09:57:25', '2024-02-13 10:40:52', '1', 'COD', NULL, '250', NULL, 1),
-(306, 1, 159, 2008246, '12:45 PM', '2024-02-16', '1111112222', 'aa', 1, '2024-02-16 11:45:21', '2024-11-29 04:57:10', '0', 'Paystack', '4ue9xxdq3l', '100', NULL, 0),
-(308, 20, 163, 1305, '07:00 PM', '2024-02-24', '2381032561', 'abx', 1, '2024-02-24 10:18:54', '2024-02-24 10:18:54', '1', 'COD', NULL, '250', NULL, 1),
-(316, 23, 1, 1764, '06:30 PM', '2024-03-08', '1232362363', 'hii', 1, '2024-03-08 04:39:37', '2024-03-08 04:56:56', '0', 'COD', NULL, '250', NULL, 1),
-(322, 55, 1, 3069564, '11:15 AM', '2024-03-08', '1232362363', 'hi', 1, '2024-03-08 05:51:35', '2024-03-08 05:51:35', '1', 'Razorpay', 'pay_Njkg42bT75N4iw', '20', NULL, 1),
-(323, 22, 1, 1602, '06:00 PM', '2024-03-08', '1232362363', 'hii', 1, '2024-03-08 05:54:17', '2024-03-08 05:54:17', '1', 'Paystack', '9qgw5diw72', '250', NULL, 0),
-(324, 55, 1, 3069565, '11:30 AM', '2024-03-08', '1232362363', 'hiiiiii', 1, '2024-03-08 06:06:42', '2024-03-08 07:22:30', '1', 'Braintree', 'rd3f8wth', '20', NULL, 1),
-(325, 19, 1, 1126, '09:30 PM', '2024-03-08', '1232362363', 'hii', 1, '2024-03-08 06:12:19', '2024-03-08 06:12:19', '1', 'Paytm', NULL, '250', NULL, 0),
-(334, 6, 1, 3072505, '10:00 AM', '2024-04-25', '1232362363', 'ji', 1, '2024-04-25 09:06:54', '2024-04-25 09:06:54', '1', 'rave', 'flw_1714036013662a1d2d1ce37', '250', NULL, 0),
-(335, 1, 1, 3072995, '09:00 AM', '2024-11-29', '12234456789', 'Testr', 3, '2024-11-29 05:17:40', '2024-11-29 06:01:24', '0', 'COD', NULL, '100', NULL, 1),
-(336, 14, 1, 3071610, '10:00 AM', '2024-11-29', '211234456', 'Tesat', 1, '2024-11-29 05:22:24', '2024-11-29 05:22:24', '1', 'COD', NULL, '250', NULL, 1),
-(337, 1, 1, 3072996, '09:30 AM', '2024-11-30', '12435', 'fgdfgfd', 1, '2024-11-29 16:32:02', '2024-11-29 16:32:02', '1', 'COD', NULL, '100', NULL, 1),
-(338, 1, 1, 3073034, '10:30 AM', '2024-12-01', '1235465', '2464564', 1, '2024-12-01 13:06:26', '2024-12-01 13:06:26', '1', 'Paytm', NULL, '100', NULL, 0);
+(1, 154, 1, 3073692, '09:00 AM', '2024-12-16', '13253465657', 'dfdgdfgdf', 3, '2024-12-11 18:06:42', '2024-12-11 18:23:19', '0', 'COD', NULL, '250', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -267,43 +200,6 @@ CREATE TABLE `complete_payment` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `translation_id` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `complete_payment`
---
-
-INSERT INTO `complete_payment` (`id`, `doctor_id`, `amount`, `date`, `created_at`, `updated_at`, `translation_id`) VALUES
-(2, 12, '250', '2022-02-15 11:06:11', '2022-01-09 11:06:11', '2022-01-09 11:06:11', '64764674648'),
-(3, 4, '4', '2022-06-15 05:53:27', '2022-05-28 05:53:27', '2022-05-28 05:53:27', '1312'),
-(4, 16, '25214', '2022-09-15 12:53:24', '2022-08-24 12:53:24', '2022-08-24 12:53:24', '79098090'),
-(5, 4, '140', '2022-09-15 06:46:26', '2022-08-26 06:46:26', '2022-08-26 06:46:26', '122'),
-(6, 13, '110', '2022-09-15 13:48:01', '2022-08-27 13:48:01', '2022-08-27 13:48:01', '123'),
-(7, 12, '2500', '2023-04-15 21:20:11', '2023-03-25 21:20:11', '2023-03-25 21:20:11', '12233321'),
-(8, 17, '2500', '2023-04-15 21:20:12', '2023-03-25 21:20:12', '2023-03-25 21:20:12', '56546546'),
-(9, 13, '100', '2023-04-15 21:20:17', '2023-03-25 21:20:17', '2023-03-25 21:20:17', '86587658'),
-(10, 7, '20', '2023-04-15 21:20:21', '2023-03-25 21:20:21', '2023-03-25 21:20:21', '85686585'),
-(11, 21, '500', '2023-04-15 21:20:25', '2023-03-25 21:20:25', '2023-03-25 21:20:25', '85685685'),
-(12, 3, '2000', '2023-04-15 21:20:53', '2023-03-25 21:20:53', '2023-03-25 21:20:53', '123332'),
-(13, 4, '2250', '2023-05-15 10:36:01', '2023-04-01 10:36:01', '2023-04-01 10:36:01', '6767876689'),
-(16, 16, '30', '2023-05-15 18:15:16', '2023-04-06 18:15:16', '2023-04-06 18:15:16', '82737'),
-(18, 19, '100', '2023-05-15 01:08:45', '2023-04-08 01:08:45', '2023-04-08 01:08:45', '123'),
-(20, 7, '750', '2023-05-15 17:08:37', '2023-04-18 17:08:37', '2023-04-18 17:08:37', 'detye467e56'),
-(21, 4, '250', '2023-05-15 11:07:11', '2023-04-19 11:07:11', '2023-04-19 11:07:11', 'rtyuyioi065789'),
-(22, 8, '250', '2023-05-15 14:52:31', '2023-04-19 14:52:31', '2023-04-19 14:52:31', 'jkslnj,879'),
-(23, 3, '2000', '2023-05-15 20:03:53', '2023-04-19 20:03:53', '2023-04-19 20:03:53', '7890'),
-(24, 26, '250', '2023-05-15 20:03:59', '2023-04-19 20:03:59', '2023-04-19 20:03:59', '7890'),
-(25, 12, '250', '2023-05-15 14:23:46', '2023-04-20 14:23:46', '2023-04-20 14:23:46', '123'),
-(26, 19, '3253', '2023-06-15 13:31:28', '2023-05-08 13:31:28', '2023-05-08 13:31:28', '959+845'),
-(29, 25, '1051', '2024-02-15 19:21:26', '2024-01-01 13:51:26', '2024-01-01 13:51:26', '986765432'),
-(32, 25, '150', '2024-02-15 21:14:56', '2024-01-02 15:44:56', '2024-01-02 15:44:56', '00'),
-(33, 55, '100', '2024-02-15 13:37:31', '2024-01-03 08:07:31', '2024-01-03 08:07:31', '25'),
-(34, 23, '1683', '2024-02-15 15:51:42', '2024-01-04 10:21:42', '2024-01-04 10:21:42', '35235'),
-(35, 12, '15', '2024-02-15 15:51:50', '2024-01-04 10:21:50', '2024-01-04 10:21:50', '3235235'),
-(37, 25, '1050', '2024-03-15 03:11:10', '2024-02-04 21:41:10', '2024-02-04 21:41:10', '0'),
-(38, 25, '1050', '2024-03-15 03:11:10', '2024-02-04 21:41:10', '2024-02-04 21:41:10', '0'),
-(39, 55, '100', '2024-03-15 18:37:03', '2024-02-05 13:07:03', '2024-02-05 13:07:03', '032515'),
-(40, 19, '250', '2024-03-15 15:33:15', '2024-02-06 10:03:15', '2024-02-06 10:03:15', '3000'),
-(41, 23, '500', '2024-03-15 13:21:15', '2024-02-07 07:51:15', '2024-02-07 07:51:15', 'llll');
 
 -- --------------------------------------------------------
 
@@ -361,6 +257,7 @@ CREATE TABLE `doctors` (
   `connectycube_password` varchar(1000) DEFAULT NULL,
   `unique_id` varchar(100) DEFAULT NULL,
   `gender` int(11) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL,
   `institution_name` varchar(100) DEFAULT NULL,
   `birth_name` varchar(100) DEFAULT NULL,
@@ -370,36 +267,18 @@ CREATE TABLE `doctors` (
   `bank_name` varchar(255) DEFAULT NULL,
   `ifsc_code` varchar(255) DEFAULT NULL,
   `account_no` varchar(255) DEFAULT NULL,
-  `account_holder_name` varchar(255) DEFAULT NULL
+  `account_holder_name` varchar(255) DEFAULT NULL,
+  `document` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `doctors`
 --
 
-INSERT INTO `doctors` (`id`, `name`, `email`, `aboutus`, `working_time`, `address`, `lat`, `lon`, `phoneno`, `services`, `healthcare`, `image`, `department_id`, `password`, `created_at`, `updated_at`, `is_approve`, `consultation_fees`, `login_id`, `connectycube_user_id`, `connectycube_password`, `unique_id`, `gender`, `title`, `institution_name`, `birth_name`, `spouse_name`, `state`, `city`, `bank_name`, `ifsc_code`, `account_no`, `account_holder_name`) VALUES
-(1, 'Dr. Mahajan', 'doc@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '9:00 AM to 6:00 PM', '', '40.71397887526981', '-73.99348443482666', '+919878767899', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1732859520.jpg', 4, '123456', '2023-08-01 05:14:47', '2024-11-29 06:12:24', '1', '100', '+9198787678991244197430#2', '9547765', 'Mahajan@123', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'Dr Giorgos', 'Edward@gmail.com', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', '9:00 AM to 6:00 PM', '1325 Park Ave, New York, NY 10029, USA', '40.78934826286402', '-73.95060850714115', '87542695836', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', '6.jpg', 7, '123456', '2023-08-01 05:16:23', '2024-03-13 06:57:45', '1', '250', '875426958361503938006#2', '9547769', 'Edward@123', NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'Dr. Cate Blanchett', 'Cate@gmail.com', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', '9:00 AM to 6:00 PM', '19/F 222 Broadway, New York, NY 10038, USA', '40.71027049252458', '-74.00781815980224', '985232102', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', '7.jpg', 5, '123456', '2023-08-01 05:16:45', '2024-03-13 07:03:05', '1', '250', '985232102568750815#2', '9547770', 'Cate@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'Dr. Leroy Anderson', 'Leroy@gmail.com', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', '9:00 AM To 9:00 PM', 'Madison St/St James Pl, New York, NY 10038, USA', '40.71186447182015', '-73.99940675233154', '74200120202', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', 'Dr. Agnes Ayres is a Maxillofacial Surgeon in New York, NY. Dr. Ayres has more experience with Congenital Cardiac Disorders and Cardiac Care than other specialists in his area. He is affiliated with medical facilities such as Mount Sinai Morningside and Roosevelt Hospital. He is accepting new patients. Be sure to call ahead with Dr. Pinney to book an appointment.', '8.jpg', 12, '123456', '2023-08-01 05:17:11', '2024-03-13 07:02:45', '1', '250', '742001202021068262660#2', '9547771', 'Leroy@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 'Dr Poll Woker', 'Poll@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '9:00 AM To 9:00 PM', '455 Water St, New York, NY 10002, USA', '40.709912655193264', '-73.99545854066162', '43443566576', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '10.jpg', 2, '123456', '2023-08-01 05:17:56', '2024-03-13 07:02:16', '1', '250', '43443566576331594843#2', '	 9547774', 'Poll@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 'Dr Juan Konare', 'juankonare@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '8:30 AM to 5:30 PM', '390 Pearl St, New York, NY 10038, USA', '40.71082351007226', '-73.9999217364624', '253625326', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '12.jpg', 7, '123456', '2023-08-01 05:19:02', '2024-03-13 07:01:52', '1', '250', '2536253261119767861#2', '9547777', 'Konare@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 'Dr Andrew Simons', 'Simonse@gmil.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '10:0 AM to 8:00 PM', '281 11th Ave, New York, NY 10001, USA', '40.711343992980424', '-73.98623174165044', '230203203', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '15.jpg', 6, '123456', '2023-08-01 05:19:26', '2023-08-01 05:19:26', '1', '250', '230203203210372398#2', '9547778', 'Simonse@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, 'Dr Catholina Marin', 'Catholina@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '9:00 AM to 6:00 PM', '70 Broad St, New York, NY 10004, USA', '40.7524492855458', '-74.00511449311523', '023560593', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '14.jpg', 8, '123456', '2023-08-01 05:19:51', '2023-08-01 05:19:51', '1', '250', '0235605931952839955#2', '9547781', 'Catholina@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 'Dr Joseph Martina', 'martina@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '8:00 AM to 6:00 PM', '200 Murray Street, New York, NY 10282, USA', '40.704707531153424', '-74.0118092868164', '2012568563', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '17.jpg', 9, '123456', '2023-08-01 05:20:27', '2023-08-01 05:20:27', '1', '250', '2012568563610972372#2', '9547784', 'Martina@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 'Dr Amily Smith', 'mark_smith@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '8:30 AM to 7:00 PM', '36 E 10th St, New York, NY 10003, USA', '40.71459691898053', '-74.0143842074707', '3202023001', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '16.jpg', 5, '123456', '2023-08-01 05:20:53', '2023-08-01 05:20:53', '1', '250', '320202300165740232#2', '9547785', 'Smith@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 'Dr Charles', 'chrles@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '9:00 AM to 6:00 PM', '267 Broadway, New York, NY 10007, USA', '40.71417404758779', '-74.00674527619628', '3269869415', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1680252600.jpg', 1, '123456', '2023-08-01 05:21:15', '2024-03-13 06:57:34', '1', '250', '32698694151873884053#2', '9547786', 'Charles@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 'Dr James Paul', 'jin_paul@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '9:00 AM to 6:00 PM', '6 Bowery, New York, NY 10013, USA', '40.71430416214852', '-73.99760430787353', '3521786546', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1680252405.jpg', 2, '123456', '2023-08-01 05:21:45', '2024-03-13 07:00:46', '1', '250', '3521786546#1', '11933985', 'Paul@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(16, 'Dr Ethan Noah', 'anthony@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '10:00 AM to 7:00 PM', '150 Park Row, New York, NY 10007, USA', '40.71277530000001', '-74.00142377351074', '8586595659', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1680252650.jpg', 10, '123456', '2023-08-01 05:22:09', '2024-03-13 07:00:19', '1', '250', '85865956591254638871#2', '11716744', 'Noah@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 'Dr Michel Jonson', 'michel@gmail.com', 'Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi.', '8:00 AM to 6:00 PM', '1177B Broadway, New York, NY 10001, USA', '40.745069114054516', '-73.9889354083374', '9685236233', 'Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi.', 'Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi.', '1680252314.jpg', 11, '123456', '2023-08-01 05:22:36', '2024-03-13 07:00:05', '1', '250', '9685236233686158200#2', '11716752', 'Jonson@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 'Dr Mark Tescrothic', 'mark_tescrothic@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '9:00 AM to 6:00 PM', '83 Columbia St, New York, NY 10002, USA', '40.71902064329553', '-73.98060983155517', '8523265362', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1680252383.jpg', 3, '123456', '2023-08-01 05:23:29', '2024-03-13 06:59:57', '1', '250', '8523265362#1', '11931617', '12345678', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 'Dr Jin Paul', 'jin_paul12@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '8:00 AM to 6:00 PM', '21 St James Pl, New York, NY 10038, USA', '40.711213872634794', '-74.00017922852783', '98562353263', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1680252707.jpg', 8, '123456', '2023-08-01 05:23:54', '2024-03-13 06:59:40', '1', '250', '98562353263885760867#2', '11716760', 'Paul@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 'Dr Anthony gonzalise', 'anthony12@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '8:00 AM to 6:00 PM', '61 Reade St, New York, NY 10007, USA', '40.714857146194994', '-74.00661653016357', '14258569532', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1680252726.jpg', 9, '123456', '2023-08-01 05:24:20', '2024-03-13 06:59:17', '1', '250', '14258569532#1', '11931621', '12345678', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 'Dr Jacson Desauza', 'Jacson@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '8:00 AM to 6:00 PM', '100-120 Park Row, New York, NY 10007, USA', '40.71264518245144', '-74.00232499573974', '84751425152', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1680252761.jpg', 10, '123456', '2023-08-01 05:24:44', '2024-03-13 06:58:58', '1', '250', '84751425152624297461#2', '11716765', 'Jacson@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 'Dr Mark Smith', 'mark_smith12@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '8:00 AM to 6:00 PM', '445 Pearl St, New York, NY 10005, USA', '40.71248253515815', '-74.0013808581665', '8568569862', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1680252794.jpg', 4, '123456', '2023-08-01 06:21:01', '2024-03-13 06:58:32', '1', '250', '8568569862#1', '11931615', 'Smith@123', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 'Mohamed Junaid', 'alrihlashop@gmail.com', 'the same person who is the same person who is the same person who is the same person who is the same person who is', '8:00 AM to 6:00 PM', '572 8th Ave, New York, NY 10018, USA', '40.754931896136895', '-73.99144184019774', '01066565688', 'the same person who is the same person who is the same person who is the same person who is the same person who is the same person', 'the same person who is the same person who is the same person who is the same person who is the same person who is', '1709896271.jpg', 6, '123456', '2023-08-01 12:40:59', '2024-03-13 06:58:21', '1', '150', '01066565688#1', '11931609', '12345678', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(55, 'Lee Hyori', 'hyori@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '8:00 AM to 6:00 PM', '1042 10th Ave, New York, NY 10001, USA', '40.75172693695099', '-74.00081827298584', '0357881488', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1703331158.jpg', 12, '123456', '2023-12-23 11:28:38', '2024-03-13 06:58:09', '1', '20', '03578814887861067269#2', '11716777', '12345678', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(152, 'John due', 'johndue@gmail.com', 'Hello sir I am in the hi a good day to all women and children and children and children and children and children and children and children are you doing and your family and children are you doing and your family and', 'Full time', 'Dhaka', '90', '21', '1111122223', 'Hello world and your life is not available on the way you can get the way you are not interested to 6 and your life and your life is not a problem in this world', 'Hello world of a very good morning I have to 6 a very good morning sir you doing today hope to see the hi res sir please send the way to all of a very good morning I have a good morning', '1733057984.jpg', 5, '12345678', '2024-04-25 09:40:06', '2024-12-01 12:59:44', '1', '250', '1111122223688137421#2', '12123321', '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Hello canera bank', 'ABC13245', '123123123123', 'jOHN DUE');
+INSERT INTO `doctors` (`id`, `name`, `email`, `aboutus`, `working_time`, `address`, `lat`, `lon`, `phoneno`, `services`, `healthcare`, `image`, `department_id`, `password`, `created_at`, `updated_at`, `is_approve`, `consultation_fees`, `login_id`, `connectycube_user_id`, `connectycube_password`, `unique_id`, `gender`, `age`, `title`, `institution_name`, `birth_name`, `spouse_name`, `state`, `city`, `bank_name`, `ifsc_code`, `account_no`, `account_holder_name`, `document`) VALUES
+(1, 'Dr. Mahajan', 'nurse@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', NULL, '', '40.71397887526981', '-73.99348443482666', '+919878767899', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1732859520.jpg', 15, '123456', '2023-08-01 05:14:47', '2024-12-11 16:54:46', '1', '500', '+9198787678991244197430#2', '9547765', 'Mahajan@123', NULL, 1, 29, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(153, 'Test1', 'test1.@gmail.com', NULL, NULL, NULL, NULL, NULL, '092845769', NULL, NULL, NULL, NULL, '123456', '2024-12-11 17:44:58', '2024-12-11 17:44:58', '0', '250', '0928457691156425402#2', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(154, 'Samira Khan', 'samira@gmail.com', 'Test', NULL, '', '40.74125420000001', '-73.9853311', '12347987654', 'Test', 'terrt', '1733939299.png', 15, '123456', '2024-12-11 17:45:48', '2024-12-11 18:48:23', '1', '250', '12347987654548344660#2', NULL, '123456', NULL, 2, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1733942903.pdf');
 
 -- --------------------------------------------------------
 
@@ -422,37 +301,8 @@ CREATE TABLE `doctor_hoildays` (
 --
 
 INSERT INTO `doctor_hoildays` (`id`, `doctor_id`, `start_date`, `end_date`, `description`, `created_at`, `updated_at`) VALUES
-(2, 11, '2023-06-25', '2023-06-25', 'patient visit on another state, from Wednesday I will continue here', '2022-01-06 11:42:14', '2023-06-07 09:49:31'),
-(4, 4, '2022-02-05', '2022-02-05', 'I take only 1 leave on 1st Saturday of the month', '2022-01-06 11:44:19', '2022-01-06 11:44:19'),
-(5, 5, '2022-01-10', '2022-01-10', 'Bsuy', '2022-01-09 11:41:57', '2022-01-09 11:41:57'),
-(6, 6, '2022-01-12', '2022-01-12', 'marriage', '2022-01-10 04:19:58', '2022-01-10 04:19:58'),
-(8, 7, '2022-05-05', '2022-05-05', 'busy', '2022-05-04 20:25:41', '2022-05-04 20:25:41'),
-(9, 8, '2022-05-14', '2022-05-14', 'holiday', '2022-05-07 05:30:22', '2022-05-07 05:30:22'),
-(10, 19, '2022-06-26', '2022-06-30', 'public holiday on ambedkar jayanti', '2022-06-24 09:17:44', '2022-06-24 09:17:44'),
-(12, 14, '2022-07-23', '2022-07-24', 'Saturday and Sunday', '2022-07-22 01:01:19', '2022-07-22 01:01:19'),
-(13, 15, '2022-09-19', '2022-09-19', 'OFF Day', '2022-09-01 12:50:06', '2022-09-01 12:50:06'),
-(14, 16, '2022-09-09', '2022-09-10', 'birthday', '2022-09-06 05:16:58', '2022-09-06 05:16:58'),
-(15, 17, '2022-09-08', '2022-09-09', 'holi', '2022-09-06 05:51:27', '2022-09-06 05:51:27'),
-(16, 18, '2022-09-09', '2022-09-10', 'Saturday', '2022-09-06 10:34:17', '2022-09-06 10:34:17'),
-(17, 19, '2022-09-08', '2022-09-08', 'sunday', '2022-09-07 14:53:02', '2022-09-07 14:53:02'),
-(18, 20, '2022-09-22', '2022-09-24', 'Personal', '2022-09-16 17:58:07', '2022-09-16 17:58:07'),
-(19, 21, '2022-10-25', '2022-10-25', 'Diwali', '2022-09-25 05:12:15', '2022-09-25 05:12:15'),
-(20, 55, '2024-01-02', '2024-01-04', 'پشوو', '2023-04-24 12:52:47', '2023-12-29 10:07:01'),
-(26, 27, '2023-06-11', '2023-06-11', 'Sunday is weekend', '2023-06-08 09:55:47', '2023-06-08 09:55:47'),
-(29, 54, '2023-06-13', '2023-06-13', 'holiday', '2023-06-11 16:21:19', '2023-06-11 16:21:19'),
-(40, 3, '2023-07-14', '2023-07-14', 'Holiday', '2023-07-14 11:11:26', '2023-07-14 11:11:26'),
-(41, 3, '2023-07-27', '2023-07-28', 'Holiday', '2023-07-14 11:11:37', '2023-07-14 11:11:37'),
-(44, 28, '2023-07-28', '2023-07-28', 'xchh', '2023-07-27 07:28:21', '2023-07-27 07:28:21'),
-(45, 30, '2023-08-24', '2023-08-24', 'juilkjj', '2023-07-29 22:43:22', '2023-07-29 22:43:22'),
-(46, 31, '2023-07-31', '2023-07-31', 'test', '2023-07-29 23:36:57', '2023-07-29 23:36:57'),
-(47, 31, '2023-08-01', '2023-08-02', 'test', '2023-07-31 02:13:22', '2023-07-31 02:13:22'),
-(48, 36, '2023-09-05', '2023-09-07', 'bussy', '2023-07-31 09:13:48', '2023-09-01 00:06:23'),
-(49, 55, '2023-12-26', '2023-12-26', 'y', '2023-12-25 08:19:40', '2023-12-25 08:19:40'),
-(58, 16, '2024-01-18', '2024-01-24', 'test', '2024-01-08 18:21:19', '2024-01-08 18:21:19'),
-(61, 105, '2024-02-06', '2024-02-09', 'I have to play with my kids', '2024-02-06 09:12:10', '2024-02-06 09:12:10'),
-(75, 147, '2024-03-09', '2024-03-09', '4242 4', '2024-03-08 10:55:05', '2024-03-08 10:55:05'),
-(80, 148, '2024-03-28', '2024-03-28', 'hello', '2024-03-09 07:07:00', '2024-03-09 07:07:00'),
-(82, 1, '2024-12-30', '2024-12-31', 'Test', '2024-11-29 04:59:05', '2024-11-29 04:59:05');
+(82, 1, '2024-12-30', '2024-12-31', 'Test', '2024-11-29 04:59:05', '2024-11-29 04:59:05'),
+(83, 1, '2025-01-20', '2025-01-21', 'Testing', '2024-12-11 16:42:19', '2024-12-11 16:42:19');
 
 -- --------------------------------------------------------
 
@@ -476,417 +326,19 @@ CREATE TABLE `doctor_schedule` (
 --
 
 INSERT INTO `doctor_schedule` (`id`, `doctor_id`, `day_id`, `start_time`, `end_time`, `duration`, `created_at`, `updated_at`) VALUES
-(127, 17, 0, '09:00', '12:30', '15', '2020-11-07 10:07:48', '2020-11-07 10:07:48'),
-(128, 17, 0, '18:00', '22:30', '30', '2020-11-07 10:07:49', '2020-11-07 10:07:49'),
-(129, 17, 1, '09:00', '12:30', '15', '2020-11-07 10:07:49', '2020-11-07 10:07:49'),
-(130, 17, 1, '18:00', '22:30', '30', '2020-11-07 10:07:49', '2020-11-07 10:07:49'),
-(131, 17, 2, '09:00', '12:30', '15', '2020-11-07 10:07:49', '2020-11-07 10:07:49'),
-(132, 17, 2, '18:00', '22:30', '30', '2020-11-07 10:07:50', '2020-11-07 10:07:50'),
-(133, 17, 3, '09:00', '12:30', '15', '2020-11-07 10:07:50', '2020-11-07 10:07:50'),
-(134, 17, 3, '18:00', '22:30', '30', '2020-11-07 10:07:50', '2020-11-07 10:07:50'),
-(135, 17, 4, '09:00', '12:30', '15', '2020-11-07 10:07:50', '2020-11-07 10:07:50'),
-(136, 17, 4, '18:00', '22:30', '30', '2020-11-07 10:07:50', '2020-11-07 10:07:50'),
-(137, 17, 5, '09:00', '12:30', '15', '2020-11-07 10:07:50', '2020-11-07 10:07:50'),
-(138, 17, 5, '18:00', '22:30', '30', '2020-11-07 10:07:51', '2020-11-07 10:07:51'),
-(139, 17, 6, '09:00', '12:30', '15', '2020-11-07 10:07:51', '2020-11-07 10:07:51'),
-(140, 17, 6, '18:00', '22:30', '30', '2020-11-07 10:07:52', '2020-11-07 10:07:52'),
-(141, 18, 0, '09:00', '12:30', '15', '2020-11-07 10:07:52', '2020-11-07 10:07:52'),
-(142, 18, 0, '18:00', '22:30', '30', '2020-11-07 10:07:52', '2020-11-07 10:07:52'),
-(143, 18, 1, '09:00', '12:30', '15', '2020-11-07 10:07:52', '2020-11-07 10:07:52'),
-(144, 18, 1, '18:00', '22:30', '30', '2020-11-07 10:07:53', '2020-11-07 10:07:53'),
-(145, 18, 2, '09:00', '12:30', '15', '2020-11-07 10:07:53', '2020-11-07 10:07:53'),
-(146, 18, 2, '18:00', '22:30', '30', '2020-11-07 10:07:54', '2020-11-07 10:07:54'),
-(147, 18, 3, '09:00', '12:30', '15', '2020-11-07 10:07:54', '2020-11-07 10:07:54'),
-(148, 18, 3, '18:00', '22:30', '30', '2020-11-07 10:07:54', '2020-11-07 10:07:54'),
-(149, 18, 4, '09:00', '12:30', '15', '2020-11-07 10:07:54', '2020-11-07 10:07:54'),
-(150, 18, 4, '18:00', '22:30', '30', '2020-11-07 10:07:55', '2020-11-07 10:07:55'),
-(151, 18, 5, '09:00', '12:30', '15', '2020-11-07 10:07:55', '2020-11-07 10:07:55'),
-(152, 18, 5, '18:00', '22:30', '30', '2020-11-07 10:07:55', '2020-11-07 10:07:55'),
-(153, 18, 6, '09:00', '12:30', '15', '2020-11-07 10:07:55', '2020-11-07 10:07:55'),
-(154, 18, 6, '18:00', '22:30', '30', '2020-11-07 10:07:56', '2020-11-07 10:07:56'),
-(169, 20, 0, '09:00', '12:30', '15', '2020-11-07 10:08:00', '2020-11-07 10:08:00'),
-(170, 20, 0, '18:00', '22:30', '30', '2020-11-07 10:08:00', '2020-11-07 10:08:00'),
-(171, 20, 1, '09:00', '12:30', '15', '2020-11-07 10:08:00', '2020-11-07 10:08:00'),
-(172, 20, 1, '18:00', '22:30', '30', '2020-11-07 10:08:01', '2020-11-07 10:08:01'),
-(173, 20, 2, '09:00', '12:30', '15', '2020-11-07 10:08:01', '2020-11-07 10:08:01'),
-(174, 20, 2, '18:00', '22:30', '30', '2020-11-07 10:08:01', '2020-11-07 10:08:01'),
-(175, 20, 3, '09:00', '12:30', '15', '2020-11-07 10:08:02', '2020-11-07 10:08:02'),
-(176, 20, 3, '18:00', '22:30', '30', '2020-11-07 10:08:02', '2020-11-07 10:08:02'),
-(177, 20, 4, '09:00', '12:30', '15', '2020-11-07 10:08:02', '2020-11-07 10:08:02'),
-(178, 20, 4, '18:00', '22:30', '30', '2020-11-07 10:08:02', '2020-11-07 10:08:02'),
-(179, 20, 5, '09:00', '12:30', '15', '2020-11-07 10:08:03', '2020-11-07 10:08:03'),
-(180, 20, 5, '18:00', '22:30', '30', '2020-11-07 10:08:03', '2020-11-07 10:08:03'),
-(181, 20, 6, '09:00', '12:30', '15', '2020-11-07 10:08:03', '2020-11-07 10:08:03'),
-(182, 20, 6, '18:00', '22:30', '30', '2020-11-07 10:08:03', '2020-11-07 10:08:03'),
-(183, 21, 0, '09:00', '12:30', '15', '2020-11-07 10:08:04', '2020-11-07 10:08:04'),
-(184, 21, 0, '18:00', '22:30', '30', '2020-11-07 10:08:04', '2020-11-07 10:08:04'),
-(185, 21, 1, '09:00', '12:30', '15', '2020-11-07 10:08:04', '2020-11-07 10:08:04'),
-(186, 21, 1, '18:00', '22:30', '30', '2020-11-07 10:08:05', '2020-11-07 10:08:05'),
-(187, 21, 2, '09:00', '12:30', '15', '2020-11-07 10:08:05', '2020-11-07 10:08:05'),
-(188, 21, 2, '18:00', '22:30', '30', '2020-11-07 10:08:06', '2020-11-07 10:08:06'),
-(189, 21, 3, '09:00', '12:30', '15', '2020-11-07 10:08:06', '2020-11-07 10:08:06'),
-(190, 21, 3, '18:00', '22:30', '30', '2020-11-07 10:08:06', '2020-11-07 10:08:06'),
-(191, 21, 4, '09:00', '12:30', '15', '2020-11-07 10:08:06', '2020-11-07 10:08:06'),
-(192, 21, 4, '18:00', '22:30', '30', '2020-11-07 10:08:06', '2020-11-07 10:08:06'),
-(193, 21, 5, '09:00', '12:30', '15', '2020-11-07 10:08:07', '2020-11-07 10:08:07'),
-(194, 21, 5, '18:00', '22:30', '30', '2020-11-07 10:08:07', '2020-11-07 10:08:07'),
-(195, 21, 6, '09:00', '12:30', '15', '2020-11-07 10:08:08', '2020-11-07 10:08:08'),
-(196, 21, 6, '18:00', '22:30', '30', '2020-11-07 10:08:08', '2020-11-07 10:08:08'),
-(197, 22, 0, '09:00', '12:30', '15', '2020-11-07 10:08:08', '2020-11-07 10:08:08'),
-(198, 22, 0, '18:00', '22:30', '30', '2020-11-07 10:08:09', '2020-11-07 10:08:09'),
-(199, 22, 1, '09:00', '12:30', '15', '2020-11-07 10:08:09', '2020-11-07 10:08:09'),
-(200, 22, 1, '18:00', '22:30', '30', '2020-11-07 10:08:10', '2020-11-07 10:08:10'),
-(201, 22, 2, '09:00', '12:30', '15', '2020-11-07 10:08:10', '2020-11-07 10:08:10'),
-(202, 22, 2, '18:00', '22:30', '30', '2020-11-07 10:08:10', '2020-11-07 10:08:10'),
-(203, 22, 3, '09:00', '12:30', '15', '2020-11-07 10:08:10', '2020-11-07 10:08:10'),
-(204, 22, 3, '18:00', '22:30', '30', '2020-11-07 10:08:10', '2020-11-07 10:08:10'),
-(205, 22, 4, '09:00', '12:30', '15', '2020-11-07 10:08:11', '2020-11-07 10:08:11'),
-(206, 22, 4, '18:00', '22:30', '30', '2020-11-07 10:08:11', '2020-11-07 10:08:11'),
-(207, 22, 5, '09:00', '12:30', '15', '2020-11-07 10:08:11', '2020-11-07 10:08:11'),
-(208, 22, 5, '18:00', '22:30', '30', '2020-11-07 10:08:11', '2020-11-07 10:08:11'),
-(209, 22, 6, '09:00', '12:30', '15', '2020-11-07 10:08:11', '2020-11-07 10:08:11'),
-(210, 22, 6, '18:00', '22:30', '30', '2020-11-07 10:08:11', '2020-11-07 10:08:11'),
-(211, 23, 0, '09:00', '12:30', '15', '2020-11-07 10:08:12', '2020-11-07 10:08:12'),
-(212, 23, 0, '18:00', '22:30', '30', '2020-11-07 10:08:12', '2020-11-07 10:08:12'),
-(213, 23, 1, '09:00', '12:30', '15', '2020-11-07 10:08:12', '2020-11-07 10:08:12'),
-(214, 23, 1, '18:00', '22:30', '30', '2020-11-07 10:08:13', '2020-11-07 10:08:13'),
-(215, 23, 2, '09:00', '12:30', '15', '2020-11-07 10:08:13', '2020-11-07 10:08:13'),
-(216, 23, 2, '18:00', '22:30', '30', '2020-11-07 10:08:13', '2020-11-07 10:08:13'),
-(217, 23, 3, '09:00', '12:30', '15', '2020-11-07 10:08:13', '2020-11-07 10:08:13'),
-(218, 23, 3, '18:00', '22:30', '30', '2020-11-07 10:08:13', '2020-11-07 10:08:13'),
-(219, 23, 4, '09:00', '12:30', '15', '2020-11-07 10:08:14', '2020-11-07 10:08:14'),
-(220, 23, 4, '18:00', '22:30', '30', '2020-11-07 10:08:14', '2020-11-07 10:08:14'),
-(221, 23, 5, '09:00', '12:30', '15', '2020-11-07 10:08:14', '2020-11-07 10:08:14'),
-(222, 23, 5, '18:00', '22:30', '30', '2020-11-07 10:08:14', '2020-11-07 10:08:14'),
-(223, 23, 6, '09:00', '12:30', '15', '2020-11-07 10:08:14', '2020-11-07 10:08:14'),
-(224, 23, 6, '18:00', '22:30', '30', '2020-11-07 10:08:15', '2020-11-07 10:08:15'),
-(225, 24, 0, '09:00', '12:30', '15', '2020-11-07 10:08:15', '2020-11-07 10:08:15'),
-(226, 24, 0, '18:00', '22:30', '30', '2020-11-07 10:08:15', '2020-11-07 10:08:15'),
-(227, 24, 1, '09:00', '12:30', '15', '2020-11-07 10:08:15', '2020-11-07 10:08:15'),
-(228, 24, 1, '18:00', '22:30', '30', '2020-11-07 10:08:16', '2020-11-07 10:08:16'),
-(229, 24, 2, '09:00', '12:30', '15', '2020-11-07 10:08:16', '2020-11-07 10:08:16'),
-(230, 24, 2, '18:00', '22:30', '30', '2020-11-07 10:08:17', '2020-11-07 10:08:17'),
-(231, 24, 3, '09:00', '12:30', '15', '2020-11-07 10:08:17', '2020-11-07 10:08:17'),
-(232, 24, 3, '18:00', '22:30', '30', '2020-11-07 10:08:17', '2020-11-07 10:08:17'),
-(233, 24, 4, '09:00', '12:30', '15', '2020-11-07 10:08:17', '2020-11-07 10:08:17'),
-(234, 24, 4, '18:00', '22:30', '30', '2020-11-07 10:08:18', '2020-11-07 10:08:18'),
-(235, 24, 5, '09:00', '12:30', '15', '2020-11-07 10:08:18', '2020-11-07 10:08:18'),
-(236, 24, 5, '18:00', '22:30', '30', '2020-11-07 10:08:18', '2020-11-07 10:08:18'),
-(237, 24, 6, '09:00', '12:30', '15', '2020-11-07 10:08:18', '2020-11-07 10:08:18'),
-(238, 24, 6, '18:00', '22:30', '30', '2020-11-07 10:08:19', '2020-11-07 10:08:19'),
-(253, 26, 0, '09:00', '12:30', '15', '2020-11-07 10:08:22', '2020-11-07 10:08:22'),
-(254, 26, 0, '18:00', '22:30', '30', '2020-11-07 10:08:22', '2020-11-07 10:08:22'),
-(255, 26, 1, '09:00', '12:30', '15', '2020-11-07 10:08:23', '2020-11-07 10:08:23'),
-(256, 26, 1, '18:00', '22:30', '30', '2020-11-07 10:08:23', '2020-11-07 10:08:23'),
-(257, 26, 2, '09:00', '12:30', '15', '2020-11-07 10:08:24', '2020-11-07 10:08:24'),
-(258, 26, 2, '18:00', '22:30', '30', '2020-11-07 10:08:24', '2020-11-07 10:08:24'),
-(259, 26, 3, '09:00', '12:30', '15', '2020-11-07 10:08:24', '2020-11-07 10:08:24'),
-(260, 26, 3, '18:00', '22:30', '30', '2020-11-07 10:08:24', '2020-11-07 10:08:24'),
-(261, 26, 4, '09:00', '12:30', '15', '2020-11-07 10:08:25', '2020-11-07 10:08:25'),
-(262, 26, 4, '18:00', '22:30', '30', '2020-11-07 10:08:25', '2020-11-07 10:08:25'),
-(263, 26, 5, '09:00', '12:30', '15', '2020-11-07 10:08:25', '2020-11-07 10:08:25'),
-(264, 26, 5, '18:00', '22:30', '30', '2020-11-07 10:08:26', '2020-11-07 10:08:26'),
-(265, 26, 6, '09:00', '12:30', '15', '2020-11-07 10:08:26', '2020-11-07 10:08:26'),
-(266, 26, 6, '18:00', '22:30', '30', '2020-11-07 10:08:26', '2020-11-07 10:08:26'),
-(309, 29, 0, '09:00', '22:00', '60', '2023-04-18 14:23:02', '2023-04-18 14:23:02'),
-(409, 32, 0, '18:23', '18:23', '60', '2023-05-31 12:54:10', '2023-05-31 12:54:10'),
-(410, 32, 2, '18:24', '23:24', '60', '2023-05-31 12:54:10', '2023-05-31 12:54:10'),
-(412, 37, 0, '19:00', '21:00', '15', '2023-06-05 11:04:42', '2023-06-05 11:04:42'),
-(413, 37, 1, '19:00', '21:00', '15', '2023-06-05 11:04:42', '2023-06-05 11:04:42'),
-(414, 38, 1, '20:00', '21:00', '15', '2023-06-06 05:45:25', '2023-06-06 05:45:25'),
-(416, 41, 0, '09:35', '21:35', '60', '2023-06-06 17:35:37', '2023-06-06 17:35:37'),
-(431, 11, 0, '09:00', '12:30', '15', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(432, 11, 0, '18:00', '23:30', '30', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(433, 11, 1, '09:00', '13:30', '15', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(434, 11, 1, '18:00', '23:30', '30', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(435, 11, 2, '09:00', '13:30', '15', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(436, 11, 2, '18:00', '23:30', '30', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(437, 11, 3, '09:00', '13:30', '15', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(438, 11, 3, '18:00', '23:30', '30', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(439, 11, 4, '09:00', '13:30', '15', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(440, 11, 4, '18:00', '22:30', '30', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(441, 11, 5, '09:00', '12:30', '15', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(442, 11, 5, '18:00', '23:30', '30', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(443, 11, 6, '09:00', '12:30', '15', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(444, 11, 6, '18:00', '22:30', '30', '2023-06-07 04:26:54', '2023-06-07 04:26:54'),
-(445, 42, 2, '19:00', '21:00', '15', '2023-06-07 06:05:24', '2023-06-07 06:05:24'),
-(541, 49, 0, '15:38', '16:30', '60', '2023-06-09 07:38:35', '2023-06-09 07:38:35'),
-(638, 3, 0, '01:00', '15:00', '45', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(639, 3, 0, '05:38', '12:38', '30', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(640, 3, 1, '01:00', '17:00', '60', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(641, 3, 1, '07:00', '12:00', '30', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(642, 3, 1, '07:14', '19:14', '60', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(643, 3, 2, '01:00', '12:00', '30', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(644, 3, 3, '01:00', '12:00', '30', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(645, 3, 4, '01:00', '12:00', '30', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(646, 3, 5, '01:00', '12:00', '30', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(647, 3, 6, '01:00', '12:00', '30', '2023-07-03 20:14:55', '2023-07-03 20:14:55'),
-(680, 30, 1, 'x', 'x', '15', '2023-07-29 22:43:01', '2023-07-29 22:43:01'),
-(681, 31, 0, '00:28', '14:29', '45', '2023-07-31 02:29:16', '2023-07-31 02:29:16'),
-(683, 34, 0, '08:00', '20:00', '30', '2023-07-31 07:22:47', '2023-07-31 07:22:47'),
-(684, 34, 6, '08:00', '20:00', '30', '2023-07-31 07:22:47', '2023-07-31 07:22:47'),
-(705, 27, 0, '09:00', '12:30', '30', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(706, 27, 0, '18:00', '22:30', '45', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(707, 27, 1, '09:00', '12:30', '15', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(708, 27, 1, '18:00', '22:30', '30', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(709, 27, 2, '09:00', '12:30', '15', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(710, 27, 2, '18:00', '22:30', '30', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(711, 27, 3, '09:00', '12:30', '15', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(712, 27, 3, '18:00', '22:30', '30', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(713, 27, 4, '09:00', '12:30', '15', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(714, 27, 4, '18:00', '22:30', '30', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(715, 27, 5, '09:00', '12:30', '15', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(716, 27, 5, '18:00', '22:30', '30', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(717, 27, 6, '08:00', '12:00', '30', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(718, 27, 6, '18:00', '22:30', '30', '2023-08-26 13:51:58', '2023-08-26 13:51:58'),
-(719, 28, 0, '15:49', '22:49', '45', '2023-08-27 16:49:46', '2023-08-27 16:49:46'),
-(1372, 36, 0, '12:00', '19:00', '30', '2023-09-01 00:06:00', '2023-09-01 00:06:00'),
-(1373, 36, 1, '12:00', '16:00', '30', '2023-09-01 00:06:00', '2023-09-01 00:06:00'),
-(1694, 39, 0, '17:15', '23:29', '15', '2023-09-03 14:15:43', '2023-09-03 14:15:43'),
-(1695, 39, 1, '20:00', '22:00', '15', '2023-09-03 14:15:43', '2023-09-03 14:15:43'),
-(1696, 47, 0, '18:50', '19:50', '15', '2023-09-05 17:51:06', '2023-09-05 17:51:06'),
-(1697, 47, 0, 'x', 'x', '15', '2023-09-05 17:51:06', '2023-09-05 17:51:06'),
-(1715, 50, 0, '12:00', '18:00', '30', '2023-09-06 07:07:40', '2023-09-06 07:07:40'),
-(1716, 50, 0, '18:00', '21:00', '30', '2023-09-06 07:07:40', '2023-09-06 07:07:40'),
-(1717, 50, 1, '12:00', '18:00', '30', '2023-09-06 07:07:40', '2023-09-06 07:07:40'),
-(1718, 50, 1, '21:00', '23:00', '30', '2023-09-06 07:07:40', '2023-09-06 07:07:40'),
-(1719, 50, 2, '12:00', '17:00', '30', '2023-09-06 07:07:40', '2023-09-06 07:07:40'),
-(1720, 50, 2, '21:00', '23:00', '30', '2023-09-06 07:07:40', '2023-09-06 07:07:40'),
-(1750, 54, 0, '09:20', '21:20', '15', '2023-12-23 10:30:38', '2023-12-23 10:30:38'),
-(1751, 54, 1, '06:00', '09:00', '30', '2023-12-23 10:30:38', '2023-12-23 10:30:38'),
-(1752, 54, 2, '00:30', '18:00', '60', '2023-12-23 10:30:38', '2023-12-23 10:30:38'),
-(1753, 54, 3, '09:00', '10:00', '15', '2023-12-23 10:30:38', '2023-12-23 10:30:38'),
-(1754, 54, 4, '18:00', '21:00', '30', '2023-12-23 10:30:38', '2023-12-23 10:30:38'),
-(1755, 54, 5, '21:00', '23:00', '45', '2023-12-23 10:30:38', '2023-12-23 10:30:38'),
-(1756, 54, 6, '20:00', '23:00', '30', '2023-12-23 10:30:38', '2023-12-23 10:30:38'),
-(1757, 56, 0, '20:00', '22:00', '15', '2023-12-25 07:07:30', '2023-12-25 07:07:30'),
-(1758, 56, 1, '21:00', '23:00', '15', '2023-12-25 07:07:30', '2023-12-25 07:07:30'),
-(1759, 56, 2, '08:50', '22:07', '30', '2023-12-25 07:07:30', '2023-12-25 07:07:30'),
-(1846, 8, 0, '09:00', '12:30', '15', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1847, 8, 0, '18:00', '22:30', '30', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1848, 8, 1, '09:00', '12:30', '15', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1849, 8, 1, '18:00', '22:30', '30', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1850, 8, 2, '09:00', '12:30', '15', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1851, 8, 2, '18:00', '22:30', '30', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1852, 8, 3, '09:00', '12:30', '15', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1853, 8, 3, '18:00', '22:30', '15', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1854, 8, 4, '09:00', '12:30', '30', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1855, 8, 4, '18:00', '22:30', '30', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1856, 8, 5, '09:00', '12:30', '15', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1857, 8, 5, '18:00', '22:30', '30', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(1858, 8, 6, '09:00', '12:30', '15', '2024-01-04 07:07:29', '2024-01-04 07:07:29'),
-(2036, 55, 0, '09:00', '12:00', '30', '2024-03-13 05:06:39', '2024-03-13 05:06:39'),
-(2037, 55, 0, '17:00', '22:00', '30', '2024-03-13 05:06:39', '2024-03-13 05:06:39'),
-(2038, 55, 1, '09:00', '12:00', '30', '2024-03-13 05:06:39', '2024-03-13 05:06:39'),
-(2039, 55, 1, '17:00', '22:00', '30', '2024-03-13 05:06:40', '2024-03-13 05:06:40'),
-(2040, 55, 2, '09:00', '12:00', '30', '2024-03-13 05:06:41', '2024-03-13 05:06:41'),
-(2041, 55, 2, '17:00', '22:00', '30', '2024-03-13 05:06:41', '2024-03-13 05:06:41'),
-(2042, 55, 3, '09:00', '12:00', '30', '2024-03-13 05:06:41', '2024-03-13 05:06:41'),
-(2043, 55, 3, '17:00', '22:00', '30', '2024-03-13 05:06:41', '2024-03-13 05:06:41'),
-(2044, 55, 4, '09:00', '12:00', '30', '2024-03-13 05:06:41', '2024-03-13 05:06:41'),
-(2045, 55, 4, '17:00', '22:00', '30', '2024-03-13 05:06:41', '2024-03-13 05:06:41'),
-(2046, 55, 5, '09:00', '12:00', '30', '2024-03-13 05:06:42', '2024-03-13 05:06:42'),
-(2047, 55, 5, '17:00', '22:00', '30', '2024-03-13 05:06:42', '2024-03-13 05:06:42'),
-(2048, 55, 6, '09:00', '12:00', '30', '2024-03-13 05:06:42', '2024-03-13 05:06:42'),
-(2049, 55, 6, '17:00', '22:00', '30', '2024-03-13 05:06:42', '2024-03-13 05:06:42'),
-(2074, 25, 0, '09:00', '12:30', '30', '2024-03-13 05:12:17', '2024-03-13 05:12:17'),
-(2075, 25, 0, '17:00', '22:30', '30', '2024-03-13 05:12:17', '2024-03-13 05:12:17'),
-(2076, 25, 1, '09:00', '12:30', '30', '2024-03-13 05:12:17', '2024-03-13 05:12:17'),
-(2077, 25, 1, '17:00', '22:30', '30', '2024-03-13 05:12:17', '2024-03-13 05:12:17'),
-(2078, 25, 2, '09:00', '12:30', '30', '2024-03-13 05:12:18', '2024-03-13 05:12:18'),
-(2079, 25, 2, '17:00', '22:30', '30', '2024-03-13 05:12:18', '2024-03-13 05:12:18'),
-(2080, 25, 3, '09:00', '12:30', '30', '2024-03-13 05:12:18', '2024-03-13 05:12:18'),
-(2081, 25, 3, '18:00', '22:30', '30', '2024-03-13 05:12:19', '2024-03-13 05:12:19'),
-(2082, 25, 4, '09:00', '12:30', '30', '2024-03-13 05:12:19', '2024-03-13 05:12:19'),
-(2083, 25, 4, '18:00', '22:30', '30', '2024-03-13 05:12:20', '2024-03-13 05:12:20'),
-(2084, 25, 5, '09:00', '12:30', '30', '2024-03-13 05:12:20', '2024-03-13 05:12:20'),
-(2085, 25, 5, '18:00', '22:30', '30', '2024-03-13 05:12:20', '2024-03-13 05:12:20'),
-(2086, 25, 6, '09:00', '12:30', '30', '2024-03-13 05:12:20', '2024-03-13 05:12:20'),
-(2087, 25, 6, '18:00', '22:30', '30', '2024-03-13 05:12:20', '2024-03-13 05:12:20'),
-(2088, 19, 0, '09:00', '12:30', '15', '2024-03-13 05:16:55', '2024-03-13 05:16:55'),
-(2089, 19, 0, '18:00', '22:30', '30', '2024-03-13 05:16:56', '2024-03-13 05:16:56'),
-(2090, 19, 1, '09:00', '12:30', '15', '2024-03-13 05:16:56', '2024-03-13 05:16:56'),
-(2091, 19, 1, '18:00', '22:30', '30', '2024-03-13 05:16:56', '2024-03-13 05:16:56'),
-(2092, 19, 2, '09:00', '12:30', '15', '2024-03-13 05:16:57', '2024-03-13 05:16:57'),
-(2093, 19, 2, '18:00', '22:30', '30', '2024-03-13 05:16:57', '2024-03-13 05:16:57'),
-(2094, 19, 3, '09:00', '12:30', '15', '2024-03-13 05:16:57', '2024-03-13 05:16:57'),
-(2095, 19, 3, '18:00', '22:30', '30', '2024-03-13 05:16:57', '2024-03-13 05:16:57'),
-(2096, 19, 4, '09:00', '12:30', '15', '2024-03-13 05:16:57', '2024-03-13 05:16:57'),
-(2097, 19, 4, '18:00', '22:30', '30', '2024-03-13 05:16:58', '2024-03-13 05:16:58'),
-(2098, 19, 5, '09:00', '12:30', '15', '2024-03-13 05:16:59', '2024-03-13 05:16:59'),
-(2099, 19, 5, '18:00', '22:30', '30', '2024-03-13 05:16:59', '2024-03-13 05:16:59'),
-(2100, 19, 6, '09:00', '12:30', '15', '2024-03-13 05:17:00', '2024-03-13 05:17:00'),
-(2101, 19, 6, '18:00', '22:30', '30', '2024-03-13 05:17:00', '2024-03-13 05:17:00'),
-(2102, 16, 0, '09:00', '12:30', '15', '2024-03-13 05:19:35', '2024-03-13 05:19:35'),
-(2103, 16, 0, '18:00', '22:30', '30', '2024-03-13 05:19:36', '2024-03-13 05:19:36'),
-(2104, 16, 1, '09:00', '12:30', '15', '2024-03-13 05:19:37', '2024-03-13 05:19:37'),
-(2105, 16, 1, '18:00', '22:30', '30', '2024-03-13 05:19:38', '2024-03-13 05:19:38'),
-(2106, 16, 2, '09:00', '12:30', '15', '2024-03-13 05:19:38', '2024-03-13 05:19:38'),
-(2107, 16, 2, '18:00', '22:30', '30', '2024-03-13 05:19:39', '2024-03-13 05:19:39'),
-(2108, 16, 3, '09:00', '12:30', '15', '2024-03-13 05:19:39', '2024-03-13 05:19:39'),
-(2109, 16, 3, '18:00', '22:30', '30', '2024-03-13 05:19:40', '2024-03-13 05:19:40'),
-(2110, 16, 4, '09:00', '12:30', '15', '2024-03-13 05:19:40', '2024-03-13 05:19:40'),
-(2111, 16, 4, '18:00', '22:30', '30', '2024-03-13 05:19:40', '2024-03-13 05:19:40'),
-(2112, 16, 5, '09:00', '12:30', '15', '2024-03-13 05:19:41', '2024-03-13 05:19:41'),
-(2113, 16, 5, '18:00', '22:30', '30', '2024-03-13 05:19:42', '2024-03-13 05:19:42'),
-(2114, 16, 6, '09:00', '12:30', '15', '2024-03-13 05:19:42', '2024-03-13 05:19:42'),
-(2115, 16, 6, '18:00', '22:30', '30', '2024-03-13 05:19:42', '2024-03-13 05:19:42'),
-(2116, 15, 0, '09:00', '12:30', '15', '2024-03-13 05:26:09', '2024-03-13 05:26:09'),
-(2117, 15, 0, '18:00', '22:30', '30', '2024-03-13 05:26:09', '2024-03-13 05:26:09'),
-(2118, 15, 1, '09:00', '12:30', '15', '2024-03-13 05:26:09', '2024-03-13 05:26:09'),
-(2119, 15, 1, '18:00', '22:30', '30', '2024-03-13 05:26:10', '2024-03-13 05:26:10'),
-(2120, 15, 2, '09:00', '12:30', '15', '2024-03-13 05:26:10', '2024-03-13 05:26:10'),
-(2121, 15, 2, '18:00', '22:30', '30', '2024-03-13 05:26:10', '2024-03-13 05:26:10'),
-(2122, 15, 3, '09:00', '12:30', '15', '2024-03-13 05:26:10', '2024-03-13 05:26:10'),
-(2123, 15, 3, '18:00', '22:30', '30', '2024-03-13 05:26:10', '2024-03-13 05:26:10'),
-(2124, 15, 4, '09:00', '12:30', '15', '2024-03-13 05:26:11', '2024-03-13 05:26:11'),
-(2125, 15, 4, '18:00', '22:30', '30', '2024-03-13 05:26:11', '2024-03-13 05:26:11'),
-(2126, 15, 5, '09:00', '12:30', '15', '2024-03-13 05:26:11', '2024-03-13 05:26:11'),
-(2127, 15, 5, '18:00', '22:30', '30', '2024-03-13 05:26:11', '2024-03-13 05:26:11'),
-(2128, 15, 6, '09:00', '12:30', '15', '2024-03-13 05:26:11', '2024-03-13 05:26:11'),
-(2129, 15, 6, '18:00', '22:30', '30', '2024-03-13 05:26:12', '2024-03-13 05:26:12'),
-(2130, 14, 0, '09:00', '12:30', '30', '2024-03-13 05:28:14', '2024-03-13 05:28:14'),
-(2131, 14, 0, '18:00', '22:30', '30', '2024-03-13 05:28:14', '2024-03-13 05:28:14'),
-(2132, 14, 1, '09:00', '12:30', '30', '2024-03-13 05:28:14', '2024-03-13 05:28:14'),
-(2133, 14, 1, '18:00', '22:30', '30', '2024-03-13 05:28:14', '2024-03-13 05:28:14'),
-(2134, 14, 2, '09:00', '12:30', '30', '2024-03-13 05:28:14', '2024-03-13 05:28:14'),
-(2135, 14, 2, '18:00', '22:30', '30', '2024-03-13 05:28:15', '2024-03-13 05:28:15'),
-(2136, 14, 3, '09:00', '12:30', '30', '2024-03-13 05:28:15', '2024-03-13 05:28:15'),
-(2137, 14, 3, '18:00', '22:30', '30', '2024-03-13 05:28:15', '2024-03-13 05:28:15'),
-(2138, 14, 4, '09:00', '12:30', '30', '2024-03-13 05:28:15', '2024-03-13 05:28:15'),
-(2139, 14, 4, '18:00', '22:30', '30', '2024-03-13 05:28:15', '2024-03-13 05:28:15'),
-(2140, 14, 5, '09:00', '12:30', '30', '2024-03-13 05:28:15', '2024-03-13 05:28:15'),
-(2141, 14, 5, '18:00', '22:30', '30', '2024-03-13 05:28:15', '2024-03-13 05:28:15'),
-(2142, 14, 6, '09:00', '12:30', '30', '2024-03-13 05:28:15', '2024-03-13 05:28:15'),
-(2143, 14, 6, '18:00', '22:30', '30', '2024-03-13 05:28:16', '2024-03-13 05:28:16'),
-(2144, 13, 0, '09:00', '12:30', '15', '2024-03-13 05:30:46', '2024-03-13 05:30:46'),
-(2145, 13, 0, '18:00', '22:30', '30', '2024-03-13 05:30:47', '2024-03-13 05:30:47'),
-(2146, 13, 1, '09:00', '12:30', '15', '2024-03-13 05:30:47', '2024-03-13 05:30:47'),
-(2147, 13, 1, '18:00', '22:30', '30', '2024-03-13 05:30:47', '2024-03-13 05:30:47'),
-(2148, 13, 2, '09:00', '12:30', '15', '2024-03-13 05:30:48', '2024-03-13 05:30:48'),
-(2149, 13, 2, '18:00', '22:30', '30', '2024-03-13 05:30:48', '2024-03-13 05:30:48'),
-(2150, 13, 3, '09:00', '12:30', '15', '2024-03-13 05:30:48', '2024-03-13 05:30:48'),
-(2151, 13, 3, '18:00', '22:30', '30', '2024-03-13 05:30:49', '2024-03-13 05:30:49'),
-(2152, 13, 4, '09:00', '12:30', '15', '2024-03-13 05:30:49', '2024-03-13 05:30:49'),
-(2153, 13, 4, '18:00', '22:30', '30', '2024-03-13 05:30:50', '2024-03-13 05:30:50'),
-(2154, 13, 5, '09:00', '12:30', '15', '2024-03-13 05:30:50', '2024-03-13 05:30:50'),
-(2155, 13, 5, '18:00', '22:30', '30', '2024-03-13 05:30:50', '2024-03-13 05:30:50'),
-(2156, 13, 6, '09:00', '12:30', '15', '2024-03-13 05:30:51', '2024-03-13 05:30:51'),
-(2157, 13, 6, '18:00', '22:30', '30', '2024-03-13 05:30:51', '2024-03-13 05:30:51'),
-(2158, 12, 0, '09:00', '12:30', '15', '2024-03-13 05:32:57', '2024-03-13 05:32:57'),
-(2159, 12, 0, '18:00', '22:30', '30', '2024-03-13 05:32:58', '2024-03-13 05:32:58'),
-(2160, 12, 1, '09:00', '12:30', '15', '2024-03-13 05:32:58', '2024-03-13 05:32:58'),
-(2161, 12, 1, '18:00', '22:30', '30', '2024-03-13 05:32:58', '2024-03-13 05:32:58'),
-(2162, 12, 2, '09:00', '12:30', '15', '2024-03-13 05:32:58', '2024-03-13 05:32:58'),
-(2163, 12, 2, '18:00', '22:30', '30', '2024-03-13 05:32:58', '2024-03-13 05:32:58'),
-(2164, 12, 3, '09:00', '12:30', '15', '2024-03-13 05:32:58', '2024-03-13 05:32:58'),
-(2165, 12, 3, '18:00', '22:30', '30', '2024-03-13 05:32:59', '2024-03-13 05:32:59'),
-(2166, 12, 4, '09:00', '12:30', '15', '2024-03-13 05:33:00', '2024-03-13 05:33:00'),
-(2167, 12, 4, '18:00', '22:30', '30', '2024-03-13 05:33:00', '2024-03-13 05:33:00'),
-(2168, 12, 5, '09:00', '12:30', '15', '2024-03-13 05:33:01', '2024-03-13 05:33:01'),
-(2169, 12, 5, '18:00', '22:30', '30', '2024-03-13 05:33:01', '2024-03-13 05:33:01'),
-(2170, 12, 6, '09:00', '12:30', '15', '2024-03-13 05:33:01', '2024-03-13 05:33:01'),
-(2171, 12, 6, '18:00', '22:30', '30', '2024-03-13 05:33:01', '2024-03-13 05:33:01'),
-(2172, 10, 0, '09:00', '13:00', '30', '2024-03-13 05:41:06', '2024-03-13 05:41:06'),
-(2173, 10, 0, '18:00', '22:00', '30', '2024-03-13 05:41:06', '2024-03-13 05:41:06'),
-(2174, 10, 1, '09:00', '13:00', '30', '2024-03-13 05:41:06', '2024-03-13 05:41:06'),
-(2175, 10, 1, '18:00', '22:00', '30', '2024-03-13 05:41:06', '2024-03-13 05:41:06'),
-(2176, 10, 2, '09:00', '13:00', '30', '2024-03-13 05:41:06', '2024-03-13 05:41:06'),
-(2177, 10, 2, '18:00', '22:00', '30', '2024-03-13 05:41:06', '2024-03-13 05:41:06'),
-(2178, 10, 3, '10:00', '13:00', '30', '2024-03-13 05:41:06', '2024-03-13 05:41:06'),
-(2179, 10, 3, '18:00', '22:00', '30', '2024-03-13 05:41:06', '2024-03-13 05:41:06'),
-(2180, 10, 4, '10:00', '13:00', '30', '2024-03-13 05:41:07', '2024-03-13 05:41:07'),
-(2181, 10, 4, '18:00', '22:00', '30', '2024-03-13 05:41:07', '2024-03-13 05:41:07'),
-(2182, 10, 5, '10:00', '13:00', '30', '2024-03-13 05:41:07', '2024-03-13 05:41:07'),
-(2183, 10, 5, '18:00', '22:00', '30', '2024-03-13 05:41:07', '2024-03-13 05:41:07'),
-(2184, 10, 6, '10:00', '13:00', '30', '2024-03-13 05:41:07', '2024-03-13 05:41:07'),
-(2185, 10, 6, '18:00', '22:00', '30', '2024-03-13 05:41:07', '2024-03-13 05:41:07'),
-(2186, 9, 0, '09:30', '13:30', '30', '2024-03-13 05:50:24', '2024-03-13 05:50:24'),
-(2187, 9, 0, '17:30', '22:30', '30', '2024-03-13 05:50:24', '2024-03-13 05:50:24'),
-(2188, 9, 1, '09:30', '13:30', '30', '2024-03-13 05:50:25', '2024-03-13 05:50:25'),
-(2189, 9, 1, '17:30', '22:30', '30', '2024-03-13 05:50:25', '2024-03-13 05:50:25'),
-(2190, 9, 2, '09:30', '13:30', '30', '2024-03-13 05:50:25', '2024-03-13 05:50:25'),
-(2191, 9, 2, '17:30', '22:30', '30', '2024-03-13 05:50:25', '2024-03-13 05:50:25'),
-(2192, 9, 3, '09:30', '13:30', '30', '2024-03-13 05:50:25', '2024-03-13 05:50:25'),
-(2193, 9, 3, '17:30', '22:30', '30', '2024-03-13 05:50:25', '2024-03-13 05:50:25'),
-(2194, 9, 4, '09:30', '13:30', '30', '2024-03-13 05:50:26', '2024-03-13 05:50:26'),
-(2195, 9, 4, '17:30', '22:30', '30', '2024-03-13 05:50:26', '2024-03-13 05:50:26'),
-(2196, 9, 5, '09:30', '13:30', '30', '2024-03-13 05:50:27', '2024-03-13 05:50:27'),
-(2197, 9, 5, '17:30', '22:30', '30', '2024-03-13 05:50:27', '2024-03-13 05:50:27'),
-(2198, 9, 6, '09:30', '13:30', '30', '2024-03-13 05:50:27', '2024-03-13 05:50:27'),
-(2199, 9, 6, '17:30', '22:30', '30', '2024-03-13 05:50:27', '2024-03-13 05:50:27'),
-(2214, 7, 0, '09:00', '13:00', '30', '2024-03-13 06:02:25', '2024-03-13 06:02:25'),
-(2215, 7, 0, '18:00', '22:00', '30', '2024-03-13 06:02:25', '2024-03-13 06:02:25'),
-(2216, 7, 1, '09:00', '13:00', '30', '2024-03-13 06:02:25', '2024-03-13 06:02:25'),
-(2217, 7, 1, '18:00', '22:00', '30', '2024-03-13 06:02:25', '2024-03-13 06:02:25'),
-(2218, 7, 2, '09:00', '13:00', '30', '2024-03-13 06:02:25', '2024-03-13 06:02:25'),
-(2219, 7, 2, '18:00', '22:00', '30', '2024-03-13 06:02:25', '2024-03-13 06:02:25'),
-(2220, 7, 3, '09:00', '13:00', '30', '2024-03-13 06:02:25', '2024-03-13 06:02:25'),
-(2221, 7, 3, '18:00', '22:00', '30', '2024-03-13 06:02:25', '2024-03-13 06:02:25'),
-(2222, 7, 4, '09:00', '13:00', '30', '2024-03-13 06:02:26', '2024-03-13 06:02:26'),
-(2223, 7, 4, '18:00', '22:00', '30', '2024-03-13 06:02:26', '2024-03-13 06:02:26'),
-(2224, 7, 5, '09:00', '13:00', '30', '2024-03-13 06:02:26', '2024-03-13 06:02:26'),
-(2225, 7, 5, '18:00', '22:00', '30', '2024-03-13 06:02:26', '2024-03-13 06:02:26'),
-(2226, 7, 6, '09:00', '13:00', '30', '2024-03-13 06:02:26', '2024-03-13 06:02:26'),
-(2227, 7, 6, '18:00', '22:00', '30', '2024-03-13 06:02:27', '2024-03-13 06:02:27'),
-(2228, 6, 0, '09:00', '12:30', '15', '2024-03-13 06:04:10', '2024-03-13 06:04:10'),
-(2229, 6, 0, '18:00', '22:30', '30', '2024-03-13 06:04:10', '2024-03-13 06:04:10'),
-(2230, 6, 1, '09:00', '12:30', '15', '2024-03-13 06:04:10', '2024-03-13 06:04:10'),
-(2231, 6, 1, '18:00', '22:30', '30', '2024-03-13 06:04:11', '2024-03-13 06:04:11'),
-(2232, 6, 2, '09:00', '12:30', '15', '2024-03-13 06:04:11', '2024-03-13 06:04:11'),
-(2233, 6, 2, '18:00', '22:30', '30', '2024-03-13 06:04:12', '2024-03-13 06:04:12'),
-(2234, 6, 3, '09:00', '12:30', '15', '2024-03-13 06:04:12', '2024-03-13 06:04:12'),
-(2235, 6, 3, '18:00', '22:30', '30', '2024-03-13 06:04:12', '2024-03-13 06:04:12'),
-(2236, 6, 4, '09:00', '12:30', '15', '2024-03-13 06:04:12', '2024-03-13 06:04:12'),
-(2237, 6, 4, '18:00', '22:30', '30', '2024-03-13 06:04:12', '2024-03-13 06:04:12'),
-(2238, 6, 5, '09:00', '12:30', '15', '2024-03-13 06:04:12', '2024-03-13 06:04:12'),
-(2239, 6, 5, '18:00', '22:30', '30', '2024-03-13 06:04:12', '2024-03-13 06:04:12'),
-(2240, 6, 6, '09:00', '12:30', '15', '2024-03-13 06:04:12', '2024-03-13 06:04:12'),
-(2241, 6, 6, '18:00', '22:30', '30', '2024-03-13 06:04:13', '2024-03-13 06:04:13'),
-(2242, 5, 0, '09:00', '12:30', '15', '2024-03-13 06:06:36', '2024-03-13 06:06:36'),
-(2243, 5, 0, '18:00', '22:30', '30', '2024-03-13 06:06:36', '2024-03-13 06:06:36'),
-(2244, 5, 1, '09:00', '12:30', '15', '2024-03-13 06:06:37', '2024-03-13 06:06:37'),
-(2245, 5, 1, '18:00', '22:30', '30', '2024-03-13 06:06:37', '2024-03-13 06:06:37'),
-(2246, 5, 2, '09:00', '12:30', '15', '2024-03-13 06:06:37', '2024-03-13 06:06:37'),
-(2247, 5, 2, '18:00', '22:30', '30', '2024-03-13 06:06:37', '2024-03-13 06:06:37'),
-(2248, 5, 3, '09:00', '12:30', '15', '2024-03-13 06:06:37', '2024-03-13 06:06:37'),
-(2249, 5, 3, '18:00', '22:30', '30', '2024-03-13 06:06:38', '2024-03-13 06:06:38'),
-(2250, 5, 4, '09:00', '12:30', '15', '2024-03-13 06:06:38', '2024-03-13 06:06:38'),
-(2251, 5, 4, '18:00', '22:30', '30', '2024-03-13 06:06:38', '2024-03-13 06:06:38'),
-(2252, 5, 5, '09:00', '12:30', '15', '2024-03-13 06:06:38', '2024-03-13 06:06:38'),
-(2253, 5, 5, '18:00', '22:30', '30', '2024-03-13 06:06:38', '2024-03-13 06:06:38'),
-(2254, 5, 6, '09:00', '12:30', '15', '2024-03-13 06:06:38', '2024-03-13 06:06:38'),
-(2255, 5, 6, '18:00', '22:30', '30', '2024-03-13 06:06:39', '2024-03-13 06:06:39'),
-(2256, 4, 0, '09:00', '12:30', '15', '2024-03-13 06:07:53', '2024-03-13 06:07:53'),
-(2257, 4, 0, '18:00', '22:30', '30', '2024-03-13 06:07:53', '2024-03-13 06:07:53'),
-(2258, 4, 1, '09:00', '12:30', '15', '2024-03-13 06:07:54', '2024-03-13 06:07:54'),
-(2259, 4, 1, '18:00', '22:30', '30', '2024-03-13 06:07:54', '2024-03-13 06:07:54'),
-(2260, 4, 2, '09:00', '12:30', '15', '2024-03-13 06:07:54', '2024-03-13 06:07:54'),
-(2261, 4, 2, '18:00', '22:30', '30', '2024-03-13 06:07:55', '2024-03-13 06:07:55'),
-(2262, 4, 3, '09:00', '12:30', '15', '2024-03-13 06:07:55', '2024-03-13 06:07:55'),
-(2263, 4, 3, '18:00', '22:30', '30', '2024-03-13 06:07:55', '2024-03-13 06:07:55'),
-(2264, 4, 4, '09:00', '12:30', '15', '2024-03-13 06:07:55', '2024-03-13 06:07:55'),
-(2265, 4, 4, '18:00', '22:30', '30', '2024-03-13 06:07:56', '2024-03-13 06:07:56'),
-(2266, 4, 5, '09:00', '12:30', '15', '2024-03-13 06:07:56', '2024-03-13 06:07:56'),
-(2267, 4, 5, '18:00', '22:30', '30', '2024-03-13 06:07:56', '2024-03-13 06:07:56'),
-(2268, 4, 6, '09:00', '12:30', '15', '2024-03-13 06:07:56', '2024-03-13 06:07:56'),
-(2269, 4, 6, '18:00', '22:30', '30', '2024-03-13 06:07:56', '2024-03-13 06:07:56'),
-(2270, 1, 0, '09:00', '14:00', '30', '2024-03-13 06:17:15', '2024-03-13 06:17:15'),
-(2271, 1, 0, '17:00', '22:00', '30', '2024-03-13 06:17:15', '2024-03-13 06:17:15'),
-(2272, 1, 1, '09:00', '14:00', '30', '2024-03-13 06:17:15', '2024-03-13 06:17:15'),
-(2273, 1, 1, '17:00', '22:00', '30', '2024-03-13 06:17:16', '2024-03-13 06:17:16'),
-(2274, 1, 2, '09:00', '14:00', '30', '2024-03-13 06:17:16', '2024-03-13 06:17:16'),
-(2275, 1, 2, '17:00', '22:00', '30', '2024-03-13 06:17:16', '2024-03-13 06:17:16'),
-(2276, 1, 3, '09:00', '14:00', '30', '2024-03-13 06:17:16', '2024-03-13 06:17:16'),
-(2277, 1, 3, '17:00', '22:00', '30', '2024-03-13 06:17:16', '2024-03-13 06:17:16'),
-(2278, 1, 4, '09:00', '14:00', '30', '2024-03-13 06:17:17', '2024-03-13 06:17:17'),
-(2279, 1, 4, '17:00', '22:00', '30', '2024-03-13 06:17:17', '2024-03-13 06:17:17'),
-(2280, 1, 5, '10:00', '14:00', '30', '2024-03-13 06:17:18', '2024-03-13 06:17:18'),
-(2281, 1, 5, '17:00', '22:00', '30', '2024-03-13 06:17:18', '2024-03-13 06:17:18'),
-(2282, 1, 6, '10:00', '14:00', '30', '2024-03-13 06:17:18', '2024-03-13 06:17:18'),
-(2283, 1, 6, '17:00', '22:00', '30', '2024-03-13 06:17:18', '2024-03-13 06:17:18'),
-(2286, 152, 3, '09:00', '13:00', '15', '2024-04-25 09:42:31', '2024-04-25 09:42:31'),
-(2287, 152, 4, '15:00', '19:00', '30', '2024-04-25 09:42:31', '2024-04-25 09:42:31');
+(2340, 1, 0, '09:00', '14:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2341, 1, 0, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2342, 1, 1, '09:00', '10:00', '60', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2343, 1, 2, '09:00', '14:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2344, 1, 2, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2345, 1, 3, '09:00', '14:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2346, 1, 3, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2347, 1, 5, '10:00', '14:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2348, 1, 5, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2349, 1, 6, '10:00', '14:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2350, 1, 6, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
+(2353, 154, 0, '09:00', '10:50', '60', '2024-12-11 17:57:53', '2024-12-11 17:57:53'),
+(2354, 154, 0, '14:01', '17:01', '60', '2024-12-11 17:57:53', '2024-12-11 17:57:53');
 
 -- --------------------------------------------------------
 
@@ -907,20 +359,8 @@ CREATE TABLE `favorite_doctors` (
 --
 
 INSERT INTO `favorite_doctors` (`id`, `user_id`, `doctor_id`, `created_at`, `updated_at`) VALUES
-(1, 3, 7, '2020-11-03 06:15:28', '2020-11-03 06:15:28'),
-(2, 3, 8, '2020-11-03 06:53:51', '2020-11-03 06:53:51'),
-(3, 4, 15, '2020-12-23 04:04:48', '2020-12-23 04:04:48'),
-(4, 4, 3, '2020-12-23 04:07:45', '2020-12-23 04:07:45'),
-(5, 4, 6, '2020-12-23 04:07:49', '2020-12-23 04:07:49'),
-(6, 4, 5, '2020-12-23 04:07:51', '2020-12-23 04:07:51'),
-(7, 4, 7, '2020-12-23 04:07:53', '2020-12-23 04:07:53'),
-(8, 4, 8, '2020-12-23 04:07:54', '2020-12-23 04:07:54'),
-(9, 4, 10, '2020-12-23 04:07:56', '2020-12-23 04:07:56'),
-(10, 4, 1, '2020-12-23 04:08:12', '2020-12-23 04:08:12'),
-(11, 4, 4, '2020-12-23 04:08:20', '2020-12-23 04:08:20'),
-(49, 1, 1, '2024-11-29 05:16:38', '2024-11-29 05:16:38'),
-(51, 1, 6, '2024-11-29 05:16:41', '2024-11-29 05:16:41'),
-(52, 1, 4, '2024-11-29 05:16:51', '2024-11-29 05:16:51');
+(53, 1, 1, '2024-12-11 16:11:47', '2024-12-11 16:11:47'),
+(54, 1, 154, '2024-12-11 18:06:12', '2024-12-11 18:06:12');
 
 -- --------------------------------------------------------
 
@@ -1106,6 +546,8 @@ CREATE TABLE `patient` (
   `password` varchar(250) DEFAULT NULL,
   `phone` varchar(250) DEFAULT NULL,
   `gender` varchar(255) DEFAULT NULL,
+  `age` int(11) NOT NULL,
+  `address` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `is_deleted` enum('0','1') NOT NULL DEFAULT '0',
@@ -1118,34 +560,8 @@ CREATE TABLE `patient` (
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`id`, `login_type`, `profile_pic`, `name`, `email`, `password`, `phone`, `gender`, `created_at`, `updated_at`, `is_deleted`, `connectycube_user_id`, `login_id`, `connectycube_password`) VALUES
-(1, 1, '1732859082.jpg', 'Johh Due', 'patient@gmail.com', '123456', '0506527568', 'male', '2023-04-07 03:12:28', '2024-11-29 00:15:23', '0', '11994074', '0506527568#1', '12345678'),
-(2, 1, NULL, 'Mantsali Senoko', 'Mantsalisenoko@emails.com', 'password', '1234567890', NULL, '2023-04-07 19:25:05', '2023-04-07 19:25:05', '0', '7599895', '123456789023224700#1', 'password'),
-(5, 2, NULL, 'HR Code Infosys', 'codeinfosys.hr@gmail.com', '7774@123', '1234587225', NULL, '2023-07-27 01:06:04', '2023-07-27 01:06:04', '0', '9349213', '1234587225834397384#1', '7774@123'),
-(7, 1, NULL, 'ashish', 'ashishagarwal5111@gmail.com', 'Ashu@12', '3231232322', NULL, '2023-07-27 06:11:27', '2023-07-27 06:11:27', '0', '9372195', '32312323221728528963#1', 'Ashu@12'),
-(8, 1, NULL, 'Najm Aldekhel', 'dl3ksa.com@gmail.com', '3611@123', '0508961210', NULL, '2023-07-28 01:06:04', '2024-03-11 05:05:16', '0', '9401208', '0508961210550578151#1', '3611@123'),
-(11, 2, NULL, 'F b', 'fazilou45@gmail.com', '4108@123', '0541575272', NULL, '2023-07-29 05:13:50', '2023-07-29 05:13:50', '0', '9439146', '05415752721347164922#1', '4108@123'),
-(12, 2, NULL, 'Digital Contact', 'skooldev@gmail.com', '9066@123', '33695123403', NULL, '2023-07-29 11:17:36', '2023-07-29 11:17:36', '0', '9452791', '33695123403509254419#1', '9066@123'),
-(13, 2, NULL, 'Salah Moh8خ', 'iyadrawane2017@gmail.com', '0804@123', '1234567890', NULL, '2023-07-29 11:36:51', '2023-07-29 11:36:51', '0', '9452850', '12345678901034049879#1', '0804@123'),
-(14, 2, NULL, 'Allemmni', 'harizipity@gmail.com', 'a23031988', '5043250453', NULL, '2023-07-29 13:42:43', '2023-07-29 13:43:07', '0', '9466612', '5043250453908435076#1', '1088@123'),
-(15, 2, NULL, 'Alessandro Di Marzo', 'jvmale@gmail.com', '1546@123', '393938796795', NULL, '2023-07-29 20:37:34', '2023-07-29 20:37:34', '0', '9473564', '3939387967951076612507#1', '1546@123'),
-(16, 1, NULL, 'Главная', 'kimportads@gmail.com', '123321asddsa', '+77471909679', NULL, '2023-07-29 23:15:48', '2023-07-29 23:15:48', '0', '9473934', '+77471909679834808091#1', '123321asddsa'),
-(17, 1, NULL, 'Paul', 'developerharon@gmail.com', 'Gazaslim5?', '0743558631', NULL, '2023-07-29 23:32:42', '2023-07-29 23:32:42', '0', '9473984', '0743558631658673099#1', 'Gazaslim5?'),
-(18, 1, NULL, 'new', 'new@gmail.com', 'New7826%', '0300000000', NULL, '2023-07-30 15:23:13', '2023-07-30 15:23:13', '0', '9523123', '03000000001966305356#1', 'New7826%'),
-(19, 1, NULL, 'Ali', 'suluuma@gmail.com', 'Doc12345', '+25377371709', NULL, '2023-07-30 19:59:27', '2023-07-30 19:59:27', '0', '9523582', '+253773717091674656262#1', 'Doc12345'),
-(20, 1, NULL, 'Hanaa', 'Hanaa@ehtiwa.com', '234567', '0549786546', NULL, '2023-07-30 21:08:56', '2023-07-30 21:25:44', '0', '9523935', '0549786546881623078#1', '123456'),
-(21, 1, NULL, 'Rakesh Das', 'dasmonojr@gmail.com', 'monoj123', '7003835426', NULL, '2023-07-31 00:31:37', '2023-07-31 00:31:37', '0', '9524422', '70038354262140171166#1', 'monoj123'),
-(23, 1, NULL, 'blabla', 'blabla@gmail.com', '123456', '07121212121', NULL, '2023-07-31 09:08:24', '2023-07-31 09:08:24', '0', '9543173', '07121212121103571182#1', '123456'),
-(24, 1, NULL, 'محمد', 'md5857940@gmail.com', '666666', '07717657871', NULL, '2023-07-31 13:52:35', '2023-07-31 13:52:35', '0', '9547330', '07717657871846124336#1', '666666'),
-(25, 2, NULL, 'Cristian Navarro', 'zonasur2011@gmail.com', '5718@123', '6768786787', NULL, '2023-07-31 23:55:24', '2023-07-31 23:55:24', '0', '9547698', '67687867871820488383#1	', '5718@123'),
-(26, 2, NULL, 'Rahul Balhara', 'rahulbalhararkb@gmail.com', '4869@123', '1523623636', NULL, '2023-08-01 00:05:04', '2023-08-01 00:05:04', '0', '9547674', '1523623636490882811#1', '4869@123'),
-(156, 1, '1707713781.jpg', 'John due', 'john.due@gmail.com', '123456', '1122112212', NULL, '2024-02-11 23:15:03', '2024-02-11 23:26:21', '0', '11764607', '11221122121896864783#1', '123456'),
-(157, 2, NULL, 'Gorasiya Kantaben', 'freaktemplate@gmail.com', '6938@123', '6644041139', NULL, '2024-02-11 23:33:22', '2024-02-11 23:33:22', '0', '11764669', '1841006081#1', '6938@123'),
-(158, 1, '1707714479.jpg', 'James Smith', 'smith.james@gmail.com', '123456', '0315412345', NULL, '2024-02-11 23:37:20', '2024-02-11 23:37:59', '0', '11764681', '03154123451803851063#1', '123456'),
-(160, 1, '', 'viral', 'redixbit.viral@gmail.com', '123', '0315412345', NULL, '2024-02-11 23:37:20', '2024-03-08 00:56:49', '0', NULL, NULL, NULL),
-(162, 1, NULL, 'a', '12@gmail.com', '123456', '1212233445', NULL, '2024-02-19 06:24:57', '2024-02-19 06:24:57', '0', '11802410', '12122334451754600564#1', '123456'),
-(163, 1, NULL, 'Chirag Golakiya', 'chirag.redixbit@gmail.com', '3303@123', '238103256', NULL, '2024-02-24 04:45:54', '2024-03-08 00:39:06', '0', '11827951', '314052071#1', '3303@123'),
-(170, 1, NULL, 'Ahmad Faheem', 'mfa237@gmail.com', '123456', '03016336233', NULL, '2024-04-25 04:03:20', '2024-04-25 04:03:20', '0', '12123304', '030163362331656752892#1', '123456');
+INSERT INTO `patient` (`id`, `login_type`, `profile_pic`, `name`, `email`, `password`, `phone`, `gender`, `age`, `address`, `created_at`, `updated_at`, `is_deleted`, `connectycube_user_id`, `login_id`, `connectycube_password`) VALUES
+(1, 1, '1732859082.jpg', 'Johh Due', 'patient@gmail.com', '123456', '0506527568', 'female', 26, 'Muhammodpur, dhaka', '2023-04-07 03:12:28', '2024-12-11 12:15:36', '0', '11994074', '0506527568#1', '12345678');
 
 -- --------------------------------------------------------
 
@@ -5284,7 +4700,8 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (4135, 1, 'i4wUHSpyyMlq4KNqUeZvH7Rdt09el3FJ', '2024-11-28 23:18:36', '2024-11-28 23:18:36'),
 (4136, 1, 'rzmYWPvlsKjkLzzoy1yVFoEXkxryGLg1', '2024-11-29 10:24:26', '2024-11-29 10:24:26'),
 (4137, 1, 'gvxR9Uk0RUffUKoVNVe4gchydGxyhCwi', '2024-12-01 06:29:48', '2024-12-01 06:29:48'),
-(4138, 1, 'DfC9o8OOm4jLVVLMKRywmxxE3752iQCf', '2024-12-01 07:10:46', '2024-12-01 07:10:46');
+(4138, 1, 'DfC9o8OOm4jLVVLMKRywmxxE3752iQCf', '2024-12-01 07:10:46', '2024-12-01 07:10:46'),
+(4139, 1, 'E4I0p6qaBFf0oAiYSwp2O9bFtlDm5h7r', '2024-12-11 09:57:33', '2024-12-11 09:57:33');
 
 -- --------------------------------------------------------
 
@@ -5323,26 +4740,8 @@ CREATE TABLE `reportspam` (
 
 INSERT INTO `reportspam` (`id`, `user_id`, `title`, `description`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Doctors not treating well', 'test', '2022-09-30 09:43:04', '2022-09-30 09:43:04'),
-(4, 12, 'Doctor accepted appointment but when i visit assistant diagnosing patinets,', 'hvuv', '2022-09-30 11:10:05', '2022-09-30 11:10:05'),
-(7, 6, 'Doctors not treating well,', 'uvib', '2022-09-30 11:45:48', '2022-09-30 11:45:48'),
-(9, 5, 'Doctor not taking appointments on time,', 'hm and I', '2022-10-01 06:51:56', '2022-10-01 06:51:56'),
-(10, 7, 'Address details are incorrect,', 'ht7u', '2022-10-01 06:52:09', '2022-10-01 06:52:09'),
-(15, 28, 'Doctor is spam and details are incorrect,', 'hello sir I am in the', '2023-07-29 05:31:58', '2023-07-29 05:31:58'),
-(16, 38, 'Doctor not taking appointments on time,', '12', '2023-07-31 02:57:52', '2023-07-31 02:57:52'),
-(17, 29, 'Doctors not treating well,', '123', '2023-08-29 16:53:58', '2023-08-29 16:53:58'),
-(19, 63, 'Doctor not taking appointments on time,', 'jdj', '2023-12-23 02:09:20', '2023-12-23 02:09:20'),
-(20, 65, 'Doctor not taking appointments on time,', 'to connect with you first then we', '2023-12-23 04:49:42', '2023-12-23 04:49:42'),
-(21, 64, 'Bác sĩ không điều trị tốt,', 'Bác sĩ hoàn thành chưa mong đợi', '2023-12-24 20:38:00', '2023-12-24 20:38:00'),
-(22, 2, 'El doctor es spam y los detalles son incorrectos,', 'sasas', '2024-01-16 15:04:44', '2024-01-16 15:04:44'),
-(23, 122, 'Doctor not taking appointments on time,', 'feegc', '2024-01-16 17:24:33', '2024-01-16 17:24:33'),
-(24, 132, 'Doctor accepted appointment but when i visit assistant diagnosing patinets,', 'ok', '2024-02-02 21:01:12', '2024-02-02 21:01:12'),
-(25, 105, 'Doctor accepted appointment but when i visit assistant diagnosing patinets,', 'test', '2024-02-04 05:54:01', '2024-02-04 05:54:01'),
-(26, 159, 'Doctor not taking appointments on time,Doctor is spam and details are incorrect', 'te', '2024-02-14 01:49:01', '2024-02-14 01:49:01'),
-(27, 159, 'Doctor not taking appointments on time,Doctor is spam and details are incorrect', 'test', '2024-02-14 01:49:42', '2024-02-14 01:49:42'),
-(28, 159, 'Doctor accepted appointment but when i visit assistant diagnosing patients', 'aa', '2024-02-14 03:01:37', '2024-02-14 03:01:37'),
 (29, 1, 'a', 'a', '2024-02-14 03:04:57', '2024-02-14 03:04:57'),
-(30, 1, 'a', '21', '2024-02-14 03:05:06', '2024-02-14 03:05:06'),
-(31, 164, 'Doctor not taking appointments on time,Doctor is spam and details are incorrect', '12', '2024-03-04 23:34:36', '2024-03-04 23:34:36');
+(30, 1, 'a', '21', '2024-02-14 03:05:06', '2024-02-14 03:05:06');
 
 -- --------------------------------------------------------
 
@@ -5364,82 +4763,7 @@ CREATE TABLE `resetpassword` (
 --
 
 INSERT INTO `resetpassword` (`id`, `user_id`, `code`, `created_at`, `updated_at`, `type`) VALUES
-(1, 335, '687166', '2022-04-29 04:35:54', '2022-04-29 04:35:54', 1),
-(2, 335, '603875', '2022-04-29 04:42:47', '2022-04-29 04:42:47', 1),
-(3, 246, '740184', '2022-06-10 01:23:10', '2022-06-10 01:23:10', 2),
-(4, 249, '354854', '2022-06-24 09:15:02', '2022-06-24 09:15:02', 2),
-(5, 278, '833296', '2022-09-01 12:53:37', '2022-09-01 12:53:37', 2),
-(6, 282, '628078', '2022-09-22 13:06:31', '2022-09-22 13:06:31', 2),
-(7, 531, '940438', '2022-09-29 09:45:52', '2022-09-29 09:45:52', 1),
-(8, 572, '808494', '2022-09-30 09:32:45', '2022-09-30 09:32:45', 1),
-(9, 572, '656953', '2022-09-30 09:33:46', '2022-09-30 09:33:46', 1),
-(10, 308, '756307', '2022-09-30 09:51:34', '2022-09-30 09:51:34', 2),
-(11, 404, '776372', '2022-09-30 09:57:00', '2022-09-30 09:57:00', 1),
-(12, 404, '424006', '2022-09-30 09:57:53', '2022-09-30 09:57:53', 1),
-(13, 404, '320542', '2022-09-30 09:58:13', '2022-09-30 09:58:13', 1),
-(14, 404, '599185', '2022-09-30 09:58:53', '2022-09-30 09:58:53', 1),
-(15, 312, '605470', '2022-09-30 10:48:29', '2022-09-30 10:48:29', 2),
-(16, 312, '640982', '2022-09-30 10:50:02', '2022-09-30 10:50:02', 2),
-(17, 404, '526249', '2022-09-30 10:51:24', '2022-09-30 10:51:24', 1),
-(18, 645, '230793', '2023-04-03 14:47:38', '2023-04-03 14:47:38', 1),
-(19, 648, '986566', '2023-04-04 08:48:39', '2023-04-04 08:48:39', 1),
-(20, 648, '320975', '2023-04-04 08:49:15', '2023-04-04 08:49:15', 1),
-(21, 128, '541148', '2023-05-12 06:02:14', '2023-05-12 06:02:14', 1),
-(22, 1, '924257', '2023-05-18 14:12:12', '2023-05-18 14:12:12', 1),
-(23, 75, '283295', '2023-06-17 03:04:31', '2023-06-17 03:04:31', 1),
-(24, 84, '515564', '2023-07-03 11:57:14', '2023-07-03 11:57:14', 2),
-(25, 109, '248295', '2023-07-14 19:58:53', '2023-07-14 19:58:53', 2),
-(26, 37, '129870', '2023-07-31 01:43:17', '2023-07-31 01:43:17', 1),
-(27, 37, '199608', '2023-07-31 01:46:50', '2023-07-31 01:46:50', 1),
-(28, 20, '548595', '2023-08-01 02:00:02', '2023-08-01 02:00:02', 1),
-(29, 33, '137951', '2023-08-31 12:42:20', '2023-08-31 12:42:20', 1),
-(30, 33, '874980', '2023-08-31 12:44:06', '2023-08-31 12:44:06', 1),
-(31, 51, '591030', '2023-09-06 05:17:30', '2023-09-06 05:17:30', 2),
-(32, 51, '918376', '2023-09-06 05:17:48', '2023-09-06 05:17:48', 2),
-(33, 79, '865322', '2024-01-08 06:49:21', '2024-01-08 06:49:21', 2),
-(34, 159, '786818', '2024-02-15 06:29:09', '2024-02-15 06:29:09', 1),
-(35, 159, '179136', '2024-02-15 06:29:20', '2024-02-15 06:29:20', 1),
-(36, 159, '214366', '2024-02-15 06:29:59', '2024-02-15 06:29:59', 1),
-(37, 159, '114025', '2024-02-15 06:31:24', '2024-02-15 06:31:24', 1),
-(38, 159, '424172', '2024-02-15 06:32:48', '2024-02-15 06:32:48', 1),
-(39, 159, '977593', '2024-02-15 06:34:20', '2024-02-15 06:34:20', 1),
-(40, 159, '988889', '2024-02-15 06:38:57', '2024-02-15 06:38:57', 1),
-(41, 159, '507627', '2024-02-15 06:40:49', '2024-02-15 06:40:49', 1),
-(42, 159, '324814', '2024-02-15 06:41:12', '2024-02-15 06:41:12', 1),
-(43, 159, '524348', '2024-02-15 06:43:15', '2024-02-15 06:43:15', 1),
-(44, 159, '729241', '2024-02-15 06:43:23', '2024-02-15 06:43:23', 1),
-(45, 159, '601822', '2024-02-15 06:44:00', '2024-02-15 06:44:00', 1),
-(46, 159, '126726', '2024-02-15 06:44:19', '2024-02-15 06:44:19', 1),
-(47, 159, '300095', '2024-02-15 06:44:34', '2024-02-15 06:44:34', 1),
-(48, 159, '428609', '2024-02-15 06:46:01', '2024-02-15 06:46:01', 1),
-(49, 159, '741623', '2024-02-15 06:46:22', '2024-02-15 06:46:22', 1),
-(50, 159, '126054', '2024-02-15 06:47:11', '2024-02-15 06:47:11', 1),
-(51, 159, '200926', '2024-02-15 06:49:16', '2024-02-15 06:49:16', 1),
-(52, 159, '739588', '2024-02-15 06:52:35', '2024-02-15 06:52:35', 1),
-(73, 161, '466445', '2024-02-19 04:49:09', '2024-02-19 04:49:09', 1),
-(74, 161, '351112', '2024-02-19 04:52:13', '2024-02-19 04:52:13', 1),
-(75, 161, '636355', '2024-02-19 04:52:20', '2024-02-19 04:52:20', 1),
-(76, 161, '568630', '2024-02-19 04:55:47', '2024-02-19 04:55:47', 1),
-(82, 161, '110610', '2024-02-22 00:02:31', '2024-02-22 00:02:31', 1),
-(83, 161, '619705', '2024-02-22 00:06:11', '2024-02-22 00:06:11', 1),
-(84, 161, '893875', '2024-02-22 00:07:15', '2024-02-22 00:07:15', 1),
-(87, 161, '952489', '2024-02-22 01:20:52', '2024-02-22 01:20:52', 1),
-(88, 161, '594144', '2024-02-22 01:22:00', '2024-02-22 01:22:00', 1),
-(89, 161, '826752', '2024-02-22 01:23:38', '2024-02-22 01:23:38', 1),
-(90, 161, '775749', '2024-02-22 01:26:37', '2024-02-22 01:26:37', 1),
-(91, 161, '792111', '2024-02-22 04:01:20', '2024-02-22 04:01:20', 1),
-(92, 161, '131069', '2024-02-22 04:09:28', '2024-02-22 04:09:28', 1),
-(93, 161, '601935', '2024-02-22 04:10:03', '2024-02-22 04:10:03', 1),
-(94, 18, '540717', '2024-02-22 04:15:09', '2024-02-22 04:15:09', 1),
-(95, 161, '688164', '2024-02-22 04:40:46', '2024-02-22 04:40:46', 1),
-(97, 161, '970752', '2024-02-22 04:54:40', '2024-02-22 04:54:40', 1),
-(98, 161, '590388', '2024-02-22 23:19:48', '2024-02-22 23:19:48', 1),
-(123, 163, '775970', '2024-03-08 00:39:37', '2024-03-08 00:39:37', 1),
-(124, 165, '219862', '2024-03-08 00:43:36', '2024-03-08 00:43:36', 1),
-(127, 163, '546328', '2024-03-08 00:52:38', '2024-03-08 00:52:38', 1),
-(129, 5, '165402', '2024-03-08 01:07:44', '2024-03-08 01:07:44', 1),
-(130, 5, '284916', '2024-03-08 01:09:17', '2024-03-08 01:09:17', 1),
-(131, 5, '798161', '2024-03-08 01:11:47', '2024-03-08 01:11:47', 1);
+(22, 1, '924257', '2023-05-18 14:12:12', '2023-05-18 14:12:12', 1);
 
 -- --------------------------------------------------------
 
@@ -5462,36 +4786,8 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `user_id`, `rating`, `doc_id`, `description`, `created_at`, `updated_at`) VALUES
-(1, 156, '4', 20, 'It took me a while to find a doctor that made me feel comfortable and welcome! Dr. as well as staff are awesome, they listen and give the best advice.', '2024-02-11 23:16:40', '2024-02-11 23:16:40'),
-(2, 157, '4', 25, 'Each time we have met, he has provided thorough examinations and has shown genuine concern. I\'ve had nothing but great encounters with him.', '2024-02-11 23:17:02', '2024-02-11 23:17:02'),
-(3, 158, '3', 9, 'He has been really professional and has shown true commitment to solve my health issues. We are still addressing them, but he has made me feel I\'m in good hands.', '2024-02-11 23:17:22', '2024-02-11 23:17:22'),
-(4, 156, '4', 55, 'I had a great visit and the doctor\'s demeanor has really put me at ease so I highly recommend this doctor', '2024-02-11 23:17:42', '2024-02-11 23:17:42'),
-(5, 157, '5', 23, 'Great medical office, wonderful and warm experience from start to finish. Appreciate Dr. taking time to go over the diagnosis clearly and treatment options. Was referred over by my general doctor and can see why. Highly recommended.', '2024-02-11 23:18:02', '2024-02-11 23:18:02'),
-(6, 158, '4', 21, 'Wonderful experience with Dr K and the staff for saving our life We write this note from the bottom of our hearts thanking with all our best wishes', '2024-02-11 23:18:21', '2024-02-11 23:18:21'),
-(7, 156, '5', 14, 'Great medical office, wonderful and warm experience from start to finish. Appreciate Dr. taking time to go over the diagnosis clearly and treatment options. Was referred over by my general doctor and can see why. Highly recommended.', '2024-02-11 23:18:39', '2024-02-11 23:18:39'),
-(8, 157, '5', 15, 'I have wonderful experience .He is a wonderful dietitian and the staff are always helpful and kind, taking time to go over the diagnosis clearly and treat.', '2024-02-11 23:18:59', '2024-02-11 23:18:59'),
-(9, 158, '5', 5, 'It took me a while to find a doctor that made me feel comfortable and welcome! Dr. as well as staff are awesome, they listen and give the best advice.', '2024-02-11 23:19:36', '2024-02-11 23:19:36'),
-(10, 156, '4', 16, 'I had put on lot of weight and had saggy skin started disliking to see myself, after doing lipo and tummy tuck I hve got very good results and inch loss.i feel good about myself now.thanks a ton Dr.', '2024-02-11 23:19:59', '2024-02-11 23:19:59'),
-(11, 157, '5', 16, 'Each time we have met, he has provided thorough examinations and has shown genuine concern. I\'ve had nothing but great encounters with him.', '2024-02-11 23:20:10', '2024-02-11 23:20:10'),
-(12, 158, '4', 22, 'I visited Dr for concern of my severe hair fall sinse a long time, after the consultation and explaination and details given by him I was very satisfied.', '2024-02-11 23:20:51', '2024-02-11 23:20:51'),
-(13, 156, '5', 22, 'Great medical office, wonderful and warm experience from start to finish. Appreciate Dr. taking time to go over the diagnosis clearly and treatment options. Was referred over by my general doctor and can see why. Highly recommended.', '2024-02-11 23:21:01', '2024-02-11 23:21:01'),
-(14, 157, '5', 17, 'He is an excellent colorectal surgeon as far as I know! He has great knowledge and experience. More than that he is a good human that he cares for each patient very personally. Thank You, doctor!', '2024-02-11 23:21:31', '2024-02-11 23:21:31'),
-(15, 158, '5', 11, 'I was not able to go outside due to the Covid situation so I did an online consultation via phone only for my health problems. They sent me medicines within 2 days and it cured me in a very short period of timeI came to get a smile makeover done for myself. Treatment was completely painless and took just 5 days.My smile.has changed completely and so has my life.', '2024-02-11 23:21:47', '2024-02-11 23:21:47'),
-(16, 156, '5', 11, 'I had a great visit and the doctor\'s demeanor has really put me at ease so I highly recommend this doctor', '2024-02-11 23:21:57', '2024-02-11 23:21:57'),
-(17, 157, '5', 19, 'I came to get a smile makeover done for myself. Treatment was completely painless and took just 5 days. My smile.has changed completely and so has my life', '2024-02-11 23:22:16', '2024-02-11 23:22:16'),
-(18, 158, '4', 10, 'I had put on lot of weight and had saggy skin started disliking to see myself, after doing lipo and tummy tuck I hve got very good results and inch loss.i feel good about myself now.thanks a ton Dr.', '2024-02-11 23:22:35', '2024-02-11 23:22:35'),
-(19, 156, '5', 10, 'He has been really professional and has shown true commitment to solve my health issues. We are still addressing them, but he has made me feel I\'m in good hands.', '2024-02-11 23:22:47', '2024-02-11 23:22:47'),
-(20, 157, '4', 13, 'I was not able to go outside due to the Covid situation so I did an online consultation via phone only for my health problems. They sent me medicines within 2 days and it cured me in a very short period of timeI came to get a smile makeover done for myself. Treatment was completely painless and took just 5 days.My smile.has changed completely and so has my life.', '2024-02-11 23:23:04', '2024-02-11 23:23:04'),
-(21, 158, '5', 12, 'Wonderful experience with Dr and the staff for saving our life We write this note from the bottom of our hearts thanking with all our best wishes', '2024-02-11 23:23:34', '2024-02-11 23:23:34'),
-(22, 156, '5', 1, 'He is an excellent colorectal surgeon as far as I know! He has great knowledge and experience. More than that he is a good human that he cares for each patient very personally. Thank You, doctor!', '2024-02-11 23:23:48', '2024-02-11 23:23:48'),
-(23, 157, '4', 1, 'He has been really professional and has shown true commitment to solve my health issues. We are still addressing them, but he has made me feel I\'m in good hands.', '2024-02-11 23:24:02', '2024-02-11 23:24:02'),
-(24, 158, '5', 7, 'I came to get a smile makeover done for myself. Treatment was completely painless and took just 5 days. My smile.has changed completely and so has my life', '2024-02-11 23:24:17', '2024-02-11 23:24:17'),
-(25, 156, '5', 6, 'Great medical office, wonderful and warm experience from start to finish. Appreciate Dr. taking time to go over the diagnosis clearly and treatment options. Was referred over by my general doctor and can see why. Highly recommended.', '2024-02-11 23:44:47', '2024-02-11 23:44:47'),
-(26, 157, '4', 6, 'He has been really professional and has shown true commitment to solve my health issues. We are still addressing them, but he has made me feel I\'m in good hands.', '2024-02-11 23:45:00', '2024-02-11 23:45:00'),
-(27, 158, '5', 6, 'It took me a while to find a doctor that made me feel comfortable and welcome! Dr. as well as staff are awesome, they listen and give the best advice.', '2024-02-11 23:45:10', '2024-02-11 23:45:10'),
-(28, 156, '5', 4, 'I have wonderful experience .He is a wonderful dietitian and the staff are always helpful and kind, taking time to go over the diagnosis clearly and treat.', '2024-02-11 23:45:35', '2024-02-11 23:45:35'),
-(29, 157, '5', 4, 'I visited Dr for concern of my severe hair fall sinse a long time, after the consultation and explaination and details given by him I was very satisfied.', '2024-02-11 23:45:47', '2024-02-11 23:45:47'),
-(30, 158, '4', 4, 'I was not able to go outside due to the Covid situation so I did an online consultation via phone only for my health problems. They sent me medicines within 2 days and it cured me in a very short period of timeI came to get a smile makeover done for myself. Treatment was completely painless and took just 5 days.My smile.has changed completely and so has my life.', '2024-02-11 23:45:56', '2024-02-11 23:45:56');
+(22, 1, '5', 1, 'He is an excellent colorectal surgeon as far as I know! He has great knowledge and experience. More than that he is a good human that he cares for each patient very personally. Thank You, doctor!', '2024-02-11 23:23:48', '2024-02-11 23:23:48'),
+(44, 1, '5', 1, 'Hello', '2024-12-11 10:11:32', '2024-12-11 10:11:32');
 
 -- --------------------------------------------------------
 
@@ -6331,18 +5627,8 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `icon`, `name`, `created_at`, `updated_at`, `is_active`) VALUES
-(1, '1604124491.png', 'Dentist', '2020-09-24 23:15:15', '2020-10-31 00:38:11', '1'),
-(2, '1603707529.png', 'Cardiologist', '2020-09-25 00:25:05', '2020-10-26 04:48:49', '1'),
-(3, '1710310779.png', 'Dermatologist', '2020-10-20 01:18:18', '2024-03-13 00:49:39', '1'),
-(4, '1604124499.png', 'Ayurveda', '2020-10-20 01:18:49', '2020-10-31 00:38:19', '1'),
-(5, '1603707556.png', 'Eye Care', '2020-10-20 01:19:17', '2020-10-26 04:49:16', '1'),
-(6, '1603707598.png', 'Orthopedic', '2020-10-26 04:49:58', '2020-10-26 04:49:58', '1'),
-(7, '1603707615.png', 'Urologist', '2020-10-26 04:50:15', '2020-10-26 04:50:15', '1'),
-(8, '1603707634.png', 'Gynecologist', '2020-10-26 04:50:34', '2020-10-26 04:50:34', '1'),
-(9, '1603707646.png', 'Gastroenterology', '2020-10-26 04:50:46', '2020-10-26 04:50:46', '1'),
-(10, '1606735040.png', 'Homeopathic', '2020-11-30 05:47:20', '2020-11-30 05:47:20', '1'),
-(11, '1606735078.png', 'Pulmonologist', '2020-11-30 05:47:58', '2020-11-30 05:47:58', '1'),
-(12, '1606735097.png', 'Skin care', '2020-11-30 05:48:17', '2023-09-07 23:43:57', '1');
+(15, '1733933632.png', 'Nurse', '2024-12-11 10:13:52', '2024-12-11 10:13:52', '1'),
+(16, '1733933757.webp', 'Child Care', '2024-12-11 10:15:04', '2024-12-11 10:15:57', '1');
 
 -- --------------------------------------------------------
 
@@ -6381,7 +5667,7 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `email`, `address`, `phone`, `created_at`, `updated_at`, `app_url`, `playstore_url`, `doctor_approved`, `is_demo`, `main_banner`, `favicon`, `logo`, `app_banner`, `icon1`, `icon2`, `icon3`, `is_web`, `is_rtl`, `commission`, `currency`, `timezone`, `title`) VALUES
-(1, 'freaktemplate@gmail.com', '202 New Hampshire Avenue, Northwest #100, New York-2573', '+918200438788', '2020-10-06 08:43:37', '2024-12-01 07:24:07', 'https://www.apple.com/in/app-store/', 'https://play.google.com/store', '1', '1', '737400.jpg', '767239.ico', '322229.webp', '620371.png', '299186.png', '398067.png', '483570.png', '3', '0', '20', 'USD - $', '370', 'Appointment Book System');
+(1, 'nurse.info@gmail.com', 'Gulshan 1, Dhaka', '01767740334', '2020-10-06 08:43:37', '2024-12-11 11:25:09', 'https://www.apple.com/in/app-store/', 'https://play.google.com/store', '1', '1', '737400.jpg', '767239.ico', '322229.webp', '620371.png', '299186.png', '398067.png', '483570.png', '3', '0', '20', 'BDT - ৳', '370', 'Appointment Book System');
 
 -- --------------------------------------------------------
 
@@ -6671,7 +5957,8 @@ INSERT INTO `settlement` (`id`, `book_id`, `status`, `payment_date`, `created_at
 (264, 335, 0, '2024-12-15', '2024-11-28 23:17:40', '2024-11-28 23:17:40', 1, '100', NULL),
 (265, 336, 0, '2024-12-15', '2024-11-28 23:22:24', '2024-11-28 23:22:24', 14, '250', NULL),
 (266, 337, 0, '2024-12-15', '2024-11-29 10:32:02', '2024-11-29 10:32:02', 1, '100', NULL),
-(267, 338, 0, '2025-01-15', '2024-12-01 07:06:26', '2024-12-01 07:06:26', 1, '100', NULL);
+(267, 338, 0, '2025-01-15', '2024-12-01 07:06:26', '2024-12-01 07:06:26', 1, '100', NULL),
+(268, 1, 0, '2025-01-15', '2024-12-11 12:06:42', '2024-12-11 12:06:42', 154, '250', NULL);
 
 -- --------------------------------------------------------
 
@@ -11760,142 +11047,6 @@ INSERT INTO `slot_timing` (`id`, `schedule_id`, `slot`, `created_at`, `updated_a
 (3072912, 2269, '09:00 PM', '2024-03-13 00:37:56', '2024-03-13 00:37:56'),
 (3072913, 2269, '09:30 PM', '2024-03-13 00:37:56', '2024-03-13 00:37:56'),
 (3072914, 2269, '10:00 PM', '2024-03-13 00:37:56', '2024-03-13 00:37:56'),
-(3072915, 2270, '09:00 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072916, 2270, '09:30 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072917, 2270, '10:00 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072918, 2270, '10:30 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072919, 2270, '11:00 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072920, 2270, '11:30 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072921, 2270, '12:00 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072922, 2270, '12:30 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072923, 2270, '01:00 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072924, 2270, '01:30 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072925, 2271, '05:00 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072926, 2271, '05:30 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072927, 2271, '06:00 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072928, 2271, '06:30 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072929, 2271, '07:00 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072930, 2271, '07:30 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072931, 2271, '08:00 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072932, 2271, '08:30 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072933, 2271, '09:00 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072934, 2271, '09:30 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072935, 2272, '09:00 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072936, 2272, '09:30 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072937, 2272, '10:00 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072938, 2272, '10:30 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072939, 2272, '11:00 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072940, 2272, '11:30 AM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072941, 2272, '12:00 PM', '2024-03-13 00:47:15', '2024-03-13 00:47:15'),
-(3072942, 2272, '12:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072943, 2272, '01:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072944, 2272, '01:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072945, 2273, '05:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072946, 2273, '05:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072947, 2273, '06:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072948, 2273, '06:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072949, 2273, '07:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072950, 2273, '07:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072951, 2273, '08:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072952, 2273, '08:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072953, 2273, '09:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072954, 2273, '09:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072955, 2274, '09:00 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072956, 2274, '09:30 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072957, 2274, '10:00 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072958, 2274, '10:30 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072959, 2274, '11:00 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072960, 2274, '11:30 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072961, 2274, '12:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072962, 2274, '12:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072963, 2274, '01:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072964, 2274, '01:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072965, 2275, '05:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072966, 2275, '05:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072967, 2275, '06:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072968, 2275, '06:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072969, 2275, '07:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072970, 2275, '07:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072971, 2275, '08:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072972, 2275, '08:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072973, 2275, '09:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072974, 2275, '09:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072975, 2276, '09:00 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072976, 2276, '09:30 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072977, 2276, '10:00 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072978, 2276, '10:30 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072979, 2276, '11:00 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072980, 2276, '11:30 AM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072981, 2276, '12:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072982, 2276, '12:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072983, 2276, '01:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072984, 2276, '01:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072985, 2277, '05:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072986, 2277, '05:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072987, 2277, '06:00 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072988, 2277, '06:30 PM', '2024-03-13 00:47:16', '2024-03-13 00:47:16'),
-(3072989, 2277, '07:00 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072990, 2277, '07:30 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072991, 2277, '08:00 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072992, 2277, '08:30 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072993, 2277, '09:00 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072994, 2277, '09:30 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072995, 2278, '09:00 AM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072996, 2278, '09:30 AM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072997, 2278, '10:00 AM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072998, 2278, '10:30 AM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3072999, 2278, '11:00 AM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073000, 2278, '11:30 AM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073001, 2278, '12:00 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073002, 2278, '12:30 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073003, 2278, '01:00 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073004, 2278, '01:30 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073005, 2279, '05:00 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073006, 2279, '05:30 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073007, 2279, '06:00 PM', '2024-03-13 00:47:17', '2024-03-13 00:47:17'),
-(3073008, 2279, '06:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073009, 2279, '07:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073010, 2279, '07:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073011, 2279, '08:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073012, 2279, '08:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073013, 2279, '09:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073014, 2279, '09:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073015, 2280, '10:00 AM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073016, 2280, '10:30 AM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073017, 2280, '11:00 AM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073018, 2280, '11:30 AM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073019, 2280, '12:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073020, 2280, '12:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073021, 2280, '01:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073022, 2280, '01:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073023, 2281, '05:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073024, 2281, '05:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073025, 2281, '06:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073026, 2281, '06:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073027, 2281, '07:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073028, 2281, '07:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073029, 2281, '08:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073030, 2281, '08:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073031, 2281, '09:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073032, 2281, '09:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073033, 2282, '10:00 AM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073034, 2282, '10:30 AM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073035, 2282, '11:00 AM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073036, 2282, '11:30 AM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073037, 2282, '12:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073038, 2282, '12:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073039, 2282, '01:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073040, 2282, '01:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073041, 2283, '05:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073042, 2283, '05:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073043, 2283, '06:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073044, 2283, '06:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073045, 2283, '07:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073046, 2283, '07:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073047, 2283, '08:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073048, 2283, '08:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073049, 2283, '09:00 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
-(3073050, 2283, '09:30 PM', '2024-03-13 00:47:18', '2024-03-13 00:47:18'),
 (3073079, 2286, '09:00 AM', '2024-04-25 04:12:31', '2024-04-25 04:12:31'),
 (3073080, 2286, '09:15 AM', '2024-04-25 04:12:31', '2024-04-25 04:12:31'),
 (3073081, 2286, '09:30 AM', '2024-04-25 04:12:31', '2024-04-25 04:12:31'),
@@ -11919,7 +11070,109 @@ INSERT INTO `slot_timing` (`id`, `schedule_id`, `slot`, `created_at`, `updated_a
 (3073099, 2287, '05:00 PM', '2024-04-25 04:12:31', '2024-04-25 04:12:31'),
 (3073100, 2287, '05:30 PM', '2024-04-25 04:12:31', '2024-04-25 04:12:31'),
 (3073101, 2287, '06:00 PM', '2024-04-25 04:12:31', '2024-04-25 04:12:31'),
-(3073102, 2287, '06:30 PM', '2024-04-25 04:12:31', '2024-04-25 04:12:31');
+(3073102, 2287, '06:30 PM', '2024-04-25 04:12:31', '2024-04-25 04:12:31'),
+(3073588, 2340, '09:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073589, 2340, '09:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073590, 2340, '10:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073591, 2340, '10:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073592, 2340, '11:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073593, 2340, '11:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073594, 2340, '12:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073595, 2340, '12:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073596, 2340, '01:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073597, 2340, '01:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073598, 2341, '05:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073599, 2341, '05:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073600, 2341, '06:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073601, 2341, '06:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073602, 2341, '07:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073603, 2341, '07:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073604, 2341, '08:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073605, 2341, '08:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073606, 2341, '09:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073607, 2341, '09:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073608, 2342, '09:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073609, 2343, '09:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073610, 2343, '09:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073611, 2343, '10:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073612, 2343, '10:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073613, 2343, '11:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073614, 2343, '11:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073615, 2343, '12:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073616, 2343, '12:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073617, 2343, '01:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073618, 2343, '01:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073619, 2344, '05:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073620, 2344, '05:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073621, 2344, '06:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073622, 2344, '06:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073623, 2344, '07:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073624, 2344, '07:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073625, 2344, '08:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073626, 2344, '08:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073627, 2344, '09:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073628, 2344, '09:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073629, 2345, '09:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073630, 2345, '09:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073631, 2345, '10:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073632, 2345, '10:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073633, 2345, '11:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073634, 2345, '11:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073635, 2345, '12:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073636, 2345, '12:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073637, 2345, '01:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073638, 2345, '01:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073639, 2346, '05:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073640, 2346, '05:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073641, 2346, '06:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073642, 2346, '06:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073643, 2346, '07:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073644, 2346, '07:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073645, 2346, '08:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073646, 2346, '08:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073647, 2346, '09:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073648, 2346, '09:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073649, 2347, '10:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073650, 2347, '10:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073651, 2347, '11:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073652, 2347, '11:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073653, 2347, '12:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073654, 2347, '12:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073655, 2347, '01:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073656, 2347, '01:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073657, 2348, '05:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073658, 2348, '05:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073659, 2348, '06:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073660, 2348, '06:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073661, 2348, '07:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073662, 2348, '07:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073663, 2348, '08:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073664, 2348, '08:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073665, 2348, '09:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073666, 2348, '09:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073667, 2349, '10:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073668, 2349, '10:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073669, 2349, '11:00 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073670, 2349, '11:30 AM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073671, 2349, '12:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073672, 2349, '12:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073673, 2349, '01:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073674, 2349, '01:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073675, 2350, '05:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073676, 2350, '05:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073677, 2350, '06:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073678, 2350, '06:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073679, 2350, '07:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073680, 2350, '07:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073681, 2350, '08:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073682, 2350, '08:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073683, 2350, '09:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073684, 2350, '09:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
+(3073692, 2353, '09:00 AM', '2024-12-11 11:57:53', '2024-12-11 11:57:53'),
+(3073693, 2353, '10:00 AM', '2024-12-11 11:57:53', '2024-12-11 11:57:53'),
+(3073694, 2354, '02:01 PM', '2024-12-11 11:57:53', '2024-12-11 11:57:53'),
+(3073695, 2354, '03:01 PM', '2024-12-11 11:57:53', '2024-12-11 11:57:53'),
+(3073696, 2354, '04:01 PM', '2024-12-11 11:57:53', '2024-12-11 11:57:53');
 
 -- --------------------------------------------------------
 
@@ -12586,7 +11839,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `created_at`, `updated_at`, `phone`, `profile_pic`, `android_key`, `ios_key`) VALUES
-(1, 'admin@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2024-12-01 07:10:46', 'Medico', 'App', '2020-09-29 23:00:13', '2024-12-01 07:10:46', '0123456789', '1694149059.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc'),
+(1, 'admin@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2024-12-11 09:57:33', 'Medico', 'App', '2020-09-29 23:00:13', '2024-12-11 09:57:33', '0123456789', '1694149059.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc'),
 (2, 'owner@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2022-09-28 09:07:18', 'Appoint', 'Booking System', '2020-09-29 23:00:13', '2022-09-28 09:07:18', '0123456789', '1603175222.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc');
 
 --
@@ -12827,7 +12080,7 @@ ALTER TABLE `activations`
 -- AUTO_INCREMENT for table `appointment_medicines`
 --
 ALTER TABLE `appointment_medicines`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ap_imd_uplod`
@@ -12845,7 +12098,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `book_appointment`
 --
 ALTER TABLE `book_appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=339;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `code`
@@ -12857,7 +12110,7 @@ ALTER TABLE `code`
 -- AUTO_INCREMENT for table `complete_payment`
 --
 ALTER TABLE `complete_payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -12869,25 +12122,25 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
 -- AUTO_INCREMENT for table `doctor_hoildays`
 --
 ALTER TABLE `doctor_hoildays`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `doctor_schedule`
 --
 ALTER TABLE `doctor_schedule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2288;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2355;
 
 --
 -- AUTO_INCREMENT for table `favorite_doctors`
 --
 ALTER TABLE `favorite_doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `medicines`
@@ -12929,7 +12182,7 @@ ALTER TABLE `payment_gateway_details`
 -- AUTO_INCREMENT for table `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4139;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4140;
 
 --
 -- AUTO_INCREMENT for table `reminders`
@@ -12953,7 +12206,7 @@ ALTER TABLE `resetpassword`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -12971,7 +12224,7 @@ ALTER TABLE `savetoken`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `setting`
@@ -12983,13 +12236,13 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `settlement`
 --
 ALTER TABLE `settlement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=269;
 
 --
 -- AUTO_INCREMENT for table `slot_timing`
 --
 ALTER TABLE `slot_timing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3073103;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3073697;
 
 --
 -- AUTO_INCREMENT for table `subscriber`

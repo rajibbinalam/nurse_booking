@@ -864,6 +864,8 @@ class UserController extends Controller
            $user->email=$request->get("email");
            $user->phone=$request->get("phone");
            $user->gender=$request->get("gender");
+           $user->age=$request->get("age");
+           $user->address=$request->get("address");
            $user->profile_pic=$img;
            $user->save();
            Session::flash('message',__('message.Profile Update Successfully'));

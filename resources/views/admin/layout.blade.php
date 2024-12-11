@@ -154,7 +154,7 @@
                      <li>
                         <a href="{{url('admin/services')}}" class="waves-effect">
                         <i class="uil-adjust-alt"></i>
-                        <span>{{__("message.Department")}}</span>
+                        <span>{{__("Our Services")}}</span>
                         </a>
                      </li>
                      <li>
@@ -175,7 +175,7 @@
                         <span>{{__("message.complain")}}</span>
                         </a>
                      </li>
-                      <?php if(env('IS_FORNT')=="1")
+                      {{-- <?php if(env('IS_FORNT')=="1")
                      {
                         ?>
                       <li>
@@ -198,7 +198,7 @@
                             <i class="fas fa-pills"></i>
                             <span>{{__("Medicines")}}</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                      <li class="menu-title">{{__("message.Privecy")}}</li>
                      <li>
@@ -239,7 +239,7 @@
                         <span>User </span>
                         </a>
                      </li>
-                     <li>
+                     {{-- <li>
                         <a href="{{route('do_sub_report')}}" class="waves-effect">
                         <i class="uil-invoice"></i>
                         <span>Nurse Subscription </span>
@@ -250,7 +250,7 @@
                         <i class="uil-invoice"></i>
                         <span>Appointment booked </span>
                         </a>
-                     </li>
+                     </li> --}}
 
                      <li class="menu-title">{{__("message.Payment")}}</li>
                      <li>
@@ -262,12 +262,12 @@
                       <?php if(env('IS_FORNT')=="1")
                      {
                         ?>
-                       <li>
+                       {{-- <li>
                         <a href="{{route('Subscription')}}" class="waves-effect">
                         <i class="uil-invoice"></i>
                         <span>{{__("message.Subscription")}}</span>
                         </a>
-                     </li>
+                     </li> --}}
                      <li>
                         <a href="{{url('admin/subscriber_doc')}}" class="waves-effect">
                         <i class="uil-invoice"></i>
@@ -298,12 +298,12 @@
                       <?php if(env('IS_FORNT')=="1")
                      {
                         ?>
-                     <li>
+                     {{-- <li>
                         <a href="{{route('payment-setting')}}" class="waves-effect">
                         <i class="uil-key-skeleton-alt"></i>
                         <span>{{__("message.Payment Gateway")}}</span>
                         </a>
-                     </li>
+                     </li> --}}
                       <?php
                      }?>
 

@@ -52,7 +52,7 @@
                      <div class="pattern-1" style="background-image: url('{{asset('front_pro/assets/images/shape/shape-45.png')}}');"></div>
                      <div class="pattern-2" style="background-image: url('{{asset('front_pro/assets/images/shape/shape-46.png')}}');"></div>
                   </div>
-                  <figure class="icon-box"><img src="{{asset('upload/services').'/'.$d->icon}}"  style="height: 62px;width: 62px;" alt=""></figure>
+                  <figure class="icon-box"><img src="{{asset('upload/services').'/'.$d->icon}}"  style="height: 62px;width: 82px;" alt=""></figure>
                   <h3><a href="{{url('searchdoctor?type=').$d->id}}">{{$d->name}}</a></h3>
                   <div class="link"><a href="{{url('searchdoctor?type=').$d->id}}"><i class="icon-Arrow-Right"></i></a></div>
                   <div class="btn-box"><a href="{{url('searchdoctor?type=').$d->id}}" class="theme-btn-one">{{__('message.View List')}}<i class="icon-Arrow-Right"></i></a></div>

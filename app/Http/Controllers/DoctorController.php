@@ -687,8 +687,9 @@ class DoctorController extends Controller
             $store->password=$request->get("password");
             $store->phoneno=$request->get("phone");
 
+            $user_id = null;
+            $login_field = $request->get("phone").rand()."#2";
             if(env('ConnectyCube')==true){
-                  $login_field = $request->get("phone").rand()."#2";
                   $user_id = $this->signupconnectycude($request->get("name"),$request->get("password"),$request->get("email"),$request->get("phone"),$login_field);
             }
 
@@ -810,7 +811,20 @@ class DoctorController extends Controller
           return redirect()->back();
     }
 
-    public function doctoreditprofile(){
+    public function downloadDoc($file){
+        // $filePath = asset('uploads/doctor_document/').$file;
+        $filePath = public_path('uploads/doctor_document/' . $file);
+
+        // Check if the file exists
+        if (file_exists($filePath)) {
+            // Return the file as a download response
+            return response()->download($filePath);
+        }
+
+        // Return an error response if the file doesn't exist
+        return abort(404, 'File not found!');
+    }
+    public function doctoreditprofile(Request $request){
          if(Session::get("user_id")!=""&&Session::get("role_id")=='2'){
             $setting=Setting::find(1);
             $department=Services::all();
@@ -822,8 +836,8 @@ class DoctorController extends Controller
     }
 
     public function updatedoctorsideprofile(Request $request){
-        // dd($request->all());
           $doctoremail=Doctors::where("email",$request->get("email"))->where("id","!=",Session::get("user_id"))->first();
+
           if($doctoremail){
                  Session::flash('message',__("message.Email Already Existe"));
                  Session::flash('alert-class', 'alert-danger');
@@ -854,6 +868,26 @@ class DoctorController extends Controller
                         }
                   }
              }
+            if ($request->hasFile('document'))
+              {
+                 $file = $request->file('document');
+                 $filename = $file->getClientOriginalName();
+                 $extension = $file->getClientOriginalExtension() ?: 'png';
+                 $folderName = '/upload/doctor_document/';
+                 $picture = time() . '.' . $extension;
+                 $destinationPath = public_path() . $folderName;
+                 $request->file('document')->move($destinationPath, $picture);
+                 $document_url =$picture;
+                  $image_path = public_path() ."/upload/doctor_document/".$rel_url;
+                    if(file_exists($image_path)&&$rel_url!="") {
+                        try {
+                             unlink($image_path);
+                        }
+                        catch(Exception $e) {
+
+                        }
+                  }
+             }
           $store->name=$request->get("name");
           $store->department_id=$request->get("department_id");
           $store->phoneno=$request->get("phoneno");
@@ -864,11 +898,13 @@ class DoctorController extends Controller
           $store->lat=$request->get("lat");
           $store->lon=$request->get("lon");
           $store->gender=$request->get("gender") ?? '';
+          $store->age=$request->get("age") ?? 0;
         //   $store->twitter_url=$request->get("twitter_url") ?? '';
           $store->email=$request->get("email");
           $store->working_time=$request->get("working_time");
           $store->consultation_fees = $request->get("consultation_fees");
           $store->image=$img_url;
+          $store->document=$document_url;
           $store->save();
           Session::flash('message',$msg);
           Session::flash('alert-class', 'alert-success');

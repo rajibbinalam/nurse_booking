@@ -86,8 +86,8 @@
                                     @if(Session::has("user_id"))
                                     <li><a href="{{url('logout')}}">{{__('message.Logout')}}</a></li>
                                     @else
-                                    <li><a href="{{url('patientlogin')}}">{{__('message.Sign in')}}</a></li>
-                                    <li></li>
+                                    {{-- <li><a href="{{url('patientlogin')}}">{{__('message.Sign in')}}</a></li>
+                                    <li></li> --}}
                                     @endif
                                 </ul>
                             </div>
@@ -111,10 +111,10 @@
                                         <ul class="navigation clearfix">
                                             <li class="" id="home"><a href="{{url('/')}}">{{__('message.Home')}}</a></li>
                                             <li class="" id="home"><a href="{{url('aboutus')}}">{{__('message.About Us')}}</a></li>
-                                            <li class="" id="home"><a href="{{url('viewspecialist')}}">{{__('message.Specialist')}}</a></li>
+                                            <li class="" id="home"><a href="{{url('viewspecialist')}}">{{__('Services')}}</a></li>
                                             <li class="" id="home"><a href="{{url('searchdoctor')}}">{{__('message.Doctors')}}</a></li>
                                             <li class="" id="home"><a href="{{url('contactus')}}">{{__('message.Contact Us')}}</a></li>
-                                            <li class="my-account-button" id="home">
+                                            {{-- <li class="my-account-button" id="home">
                                                 @if(empty(Session::get("user_id")))
                                                 <a href="{{url('doctorlogin')}}">{{__('message.Join As Doctor')}}</a>
                                                 @else
@@ -124,20 +124,23 @@
                                                 <a href="{{url('doctorlogin')}}">{{__('message.My Dashboard')}}</a>
                                                 @endif
                                                 @endif
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
                                 </nav>
                             </div>
                             <div class="btn-box">
                                 @if(empty(Session::get("user_id")))
-                                <a href="{{url('doctorlogin')}}" class="theme-btn-one"><i class="icon-image"></i>{{__('message.Join As Doctor')}}</a>
+                                    <a href="{{url('doctorlogin')}}" class="theme-btn-one btn-sm" style="padding: 9px 15px;font-size: 16px;"><i class="icon-image"></i>{{__('message.Join As Doctor')}}</a>
+                                    <a href="{{url('patientlogin')}}" class="theme-btn-two btn-sm" style="padding: 9px 15px;font-size: 16px;"><i class="icon-image"></i>{{__('Join As Patient')}}</a>
                                 @else
-                                @if(Session::get("user_id")!=""&&Session::get("role_id")==1)
-                                <a href="{{url('userdashboard')}}" class="theme-btn-one">{{__('message.My Dashboard')}}</a>
-                                @else
-                                <a href="{{url('doctorlogin')}}" class="theme-btn-one">{{__('message.My Dashboard')}}</a>
-                                @endif
+                                    @if(Session::get("user_id")!=""&&Session::get("role_id")==1)
+                                        <a href="{{url('userdashboard')}}" class="theme-btn-one">{{__('message.My Dashboard')}}</a>
+                                    @elseif(Session::get("user_id")!=""&&Session::get("role_id")==2)
+                                        <a href="{{url('doctordashboard')}}" class="theme-btn-one">{{__('message.My Dashboard')}}</a>
+                                    @else
+                                        <a href="{{url('doctorlogin')}}" class="theme-btn-one">{{__('message.My Dashboard')}}</a>
+                                    @endif
                                 @endif
                             </div>
                         </div>

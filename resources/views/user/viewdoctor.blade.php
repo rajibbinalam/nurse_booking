@@ -134,7 +134,7 @@
                      <ul class="tab-btns tab-buttons clearfix">
                         <li class="tab-btn active-btn" data-tab="#tab-1">{{__('message.About Us')}}</li>
                         <li class="tab-btn" data-tab="#tab-2">{{__('message.Services')}}</li>
-                        <li class="tab-btn" data-tab="#tab-3">{{__('message.Health Care')}}</li>
+                        <li class="tab-btn" data-tab="#tab-3">{{__('Experience')}}</li>
                         <li class="tab-btn" data-tab="#tab-4">{{__('message.Review')}}</li>
                      </ul>
                   </div>
@@ -157,7 +157,7 @@
                      </div>
                      <div class="tab" id="tab-3">
                         <div class="location-box">
-                           <h3>{{__('message.Health Care')}}</h3>
+                           <h3>{{__('Experience')}}</h3>
                            {{$data->healthcare}}
                         </div>
                      </div>
@@ -275,9 +275,7 @@
                                              }
                                        }?>
                                  </ul>
-                                 <h6>{{$dr->patientls->name}}<span>-
-                                    <?php
-                                       ?>{{date("F d, Y",strtotime($dr->created_at))}}</span>
+                                 <h6>{{@$dr->patientls->name}}<span>-{{date("F d, Y",strtotime($dr->created_at))}}</span>
                                  </h6>
                                  <p>{{$dr->description}}</p>
                               </div>
@@ -411,7 +409,7 @@
                            </div>
                            @endif
                            <?php $currency = explode("-", $setting->currency);?>
-                           <p>{{__('message.consultation_fees')}} :  {{$currency[1]}}<span id="consultation_fees">{{$data->consultation_fees}}</span></p>
+                           <p style="font-weight: 700">{{__('message.consultation_fees')}} :  {{$currency[1]}}<span id="consultation_fees">{{$data->consultation_fees}}</span></p>
                            <input type="hidden" name="doctor_id" id="doctor_id" value="{{$data->id}}">
                            <input type="hidden" name="consultation_fees" value="{{$data->consultation_fees}}">
                            <div class="form-group">
@@ -463,13 +461,38 @@
                               <textarea id="message" rows="15"  name="message" placeholder="{{__('message.Enter Your Message')}}"></textarea>
                            </div>
                             <div class="row">
+                                <div class="col-md-12 mb-4">
+                                    <h5>Payment:</h5>
+                                </div>
                                 <div class="col-md-6">
                                    <div class="custom-check-box">
                                       <div class="custom-controls-stacked">
                                          <label class="custom-control material-checkbox">
-                                         <input type="radio" class="material-control-input" name="payment_type" id="payment_type_cod" value="3" checked onchange="changeform(this.value)">
+                                         <input type="radio" class="material-control-input" name="payment_type" id="payment_type_cod" value="3" onchange="changeform(this.value)">
                                          <span class="material-control-indicator"></span>
-                                         <span class="description">COD</span>
+                                         <span class="description">Cash</span>
+                                         </label>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <div class="custom-check-box">
+                                      <div class="custom-controls-stacked">
+                                         <label class="custom-control material-checkbox">
+                                         <input type="radio" class="material-control-input" name="payment_type" id="payment_type_bkash" value="10" onchange="changeform(this.value)">
+                                         <span class="material-control-indicator"></span>
+                                         <span class="description">PayBkash</span>
+                                         </label>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <div class="custom-check-box">
+                                      <div class="custom-controls-stacked">
+                                         <label class="custom-control material-checkbox">
+                                         <input type="radio" class="material-control-input" name="payment_type" id="payment_type_nagad" value="11" onchange="changeform(this.value)">
+                                         <span class="material-control-indicator"></span>
+                                         <span class="description">PayNagad</span>
                                          </label>
                                       </div>
                                    </div>
@@ -766,6 +789,16 @@
 
    function changeform(val){
 
+    let cashPay = $('#payment_type_cod')
+    if(val == 10){
+        alert('Bkash is not integrated now')
+        cashPay.prop('checked', true)
+        return false;
+    }else if(val == 11){
+        alert('Nagad is not integrated now')
+        cashPay.prop('checked', true)
+        return false;
+    }
       var phone_no = $("#phone_no").val();
       var date = $("#date").val();
       var message = $("#message").val();
@@ -883,6 +916,7 @@
         var date = $("#date").val();
         var message = $("#message").val();
         var slot = $('input[name="slot"]:checked').val();
+
         if(phone_no!=""&&date!=""&&message!=""&&slot!=""){
             alert("please choose payment type");
         }

@@ -120,6 +120,9 @@
                                               <li><i class="fas fa-sticky-note"></i>
                                                  {{$am->user_description}}
                                               </li>
+                                              <li><i class="fas fa-sticky-note"></i> Age: {{@$am->patientls->age}} </li>
+                                              <li><i class="fas fa-sticky-note"></i> Gender: {{ucfirst(@$am->patientls->gender)}} </li>
+                                              <li><i class="fas fa-map-marker"></i> Address: {{@$am->patientls->address}} </li>
                                                @if($am->prescription_file!="")
                                              <li><a href="{{asset('upload/prescription').'/'.$am->prescription_file}}" target="_blank" class="btn btn-success" style="color:white">{{__("message.View Prescription")}}</a></li>
                                              @endif

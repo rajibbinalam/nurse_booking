@@ -110,7 +110,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <div class="seldoctor">
-                                            <label>{{__('message.Specialist')}}</label>
+                                            <label>{{__('Services')}}</label>
                                             <select name="department_id" id="department_id">
                                                 <option value="">{{__('message.Select Specialist')}}</option>
                                                 @foreach($department as $dp)
@@ -138,14 +138,18 @@
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6 form-group">
-                                        <label for="consultation_fees">{{__("message.consultation_fees")}}<span class="reqfield">*</span></label>
+                                        <label for="consultation_fees">{{__("Fee")}}<span class="reqfield">*</span></label>
                                         <input type="number" name="consultation_fees" value="{{isset($doctordata->consultation_fees)?$doctordata->consultation_fees:''}}" class="form-control" id="consultation_fees" min="1" step="0.01">
                                     </div>
-
                                     <div class="col-lg-4 col-md-4 col-sm-6 form-group">
+                                        <label for="age">{{__("Age")}}<span class="reqfield">*</span></label>
+                                        <input type="number" name="age" value="{{isset($doctordata->age)?$doctordata->age:''}}" class="form-control" id="age" min="1">
+                                    </div>
+
+                                    {{-- <div class="col-lg-4 col-md-4 col-sm-6 form-group">
                                         <label>{{__('message.Working Time')}}</label>
                                         <input type="text" name="working_time" placeholder="{{__('message.Enter Working Time')}}" id="working_time" value="{{isset($doctordata->working_time)?$doctordata->working_time:''}}">
-                                    </div>
+                                    </div> --}}
                                     {{-- <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <label>{{__('message.Facebook Url')}}</label>
                                         <input type="text" name="facebook_url" id="facebook_url" placeholder="{{__('message.Enter Facebook Url')}}" value="{{isset($doctordata->facebook_url)?$doctordata->facebook_url:''}}">
@@ -164,13 +168,22 @@
                                         <textarea name="services" id="services" placeholder="{{__('message.Enter Description about Services')}}">{{isset($doctordata->services)?$doctordata->services:''}}</textarea>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <label>{{__('message.Health Care')}}</label>
+                                        <label>{{__('Experience')}}</label>
                                         <textarea name="healthcare" id="healthcare" placeholder="{{__('message.Enter Health Care')}}">{{isset($doctordata->healthcare)?$doctordata->healthcare:''}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12 p-0" id="addressorder">
                                     <label>{{__("message.Address")}}<span class="reqfield">*</span></label>
                                     <input type="text" id="us2-address" name="address" placeholder='{{__("message.Search Location")}}' data-parsley-required="true" />
+                                </div>
+                                <div class="col-md-12 p-0 mt-4" id="addressorder">
+                                    <label>{{__("Document: ")}}<span class="reqfield">*</span></label>
+                                    <input type="file" id="us2-address" class="form-control" name="document" />
+                                    @if (!empty($doctordata->document))
+                                        {{-- <img src="{{ asset('upload/doctor_document').'/'.$doctordata->document }}" alt=""> --}}
+                                        {{-- <a href="{{ route('download-doc', $doctordata->document) }}">Download Document</a> --}}
+                                        <a href="{{asset('upload/doctor_document').'/'.$doctordata->document}}" target="_blank">Download Document</a>
+                                    @endif
                                 </div>
                                 <div class="map" id="maporder">
                                     <div class="form-group">

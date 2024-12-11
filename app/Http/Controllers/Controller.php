@@ -22,8 +22,8 @@ class Controller extends BaseController
                               $date_zone=$value;
                       }
                 }
-            date_default_timezone_set($date_zone);   
-            return date('Y-m-d');                    
+            date_default_timezone_set($date_zone);
+            return date('Y-m-d');
      }
       static public function generate_timezone_list(){
           static $regions = array(
@@ -49,7 +49,7 @@ class Controller extends BaseController
                   }
                  asort($timezone_offsets);
                  $timezone_list = array();
-    
+
                  foreach($timezone_offsets as $timezone=>$offset){
                           $offset_prefix = $offset < 0 ? '-' : '+';
                           $offset_formatted = gmdate('H:i', abs($offset));
@@ -69,7 +69,7 @@ class Controller extends BaseController
                  }
               }
        }
-       
+
          public function getsitedatetime(){
             $setting=Setting::find(1);
             $date_zone=array();
@@ -79,8 +79,8 @@ class Controller extends BaseController
                               $date_zone=$value;
                       }
                 }
-            date_default_timezone_set($date_zone);   
-            return date('Y-m-d H:i:s');                    
+            date_default_timezone_set($date_zone);
+            return date('Y-m-d H:i:s');
      }
 public function getsitecurrenttime(){
             $setting=Setting::find(1);
@@ -91,10 +91,10 @@ public function getsitecurrenttime(){
                               $date_zone=$value;
                       }
                 }
-            date_default_timezone_set($date_zone);   
-            return date('H:i');                    
+            date_default_timezone_set($date_zone);
+            return date('H:i');
      }
-     
+
         public function getsitedateall(){
             $setting=Setting::find(1);
             $date_zone=array();
@@ -104,10 +104,10 @@ public function getsitecurrenttime(){
                               $date_zone=$value;
                       }
                 }
-            date_default_timezone_set($date_zone);   
-            return date('Y-m-d h:i:s');                    
+            date_default_timezone_set($date_zone);
+            return date('Y-m-d h:i:s');
      }
-     
+
      public function getsitecurrenttimenew(){
           $setting=Setting::find(1);
             $date_zone=array();
@@ -117,10 +117,10 @@ public function getsitecurrenttime(){
                               $date_zone=$value;
                       }
                 }
-            date_default_timezone_set($date_zone);   
-            return date('H:i A');   
+            date_default_timezone_set($date_zone);
+            return date('H:i A');
      }
-       
+
     public function create_session(){
         $application_id = 7223;
         $auth_key = "9dEWjERBVa5umN6";
@@ -148,23 +148,24 @@ public function getsitecurrenttime(){
         // echo "<pre>";
         // print_r($response);
         // exit();
+        return $response;
         return $response['session']['token'];
     }
-   
+
    public function retrieveall(){
         $token = $this->create_session();
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://api.connectycube.com/users');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-        
+
         curl_setopt($ch, CURLOPT_POSTFIELDS, "per_page=1000");
-        
+
         $headers = array();
         $headers[] = 'Cb-Token: '.$token;
         $headers[] = 'Content-Type: application/x-www-form-urlencoded';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        
+
         $result = curl_exec($ch);
         if (curl_errno($ch)) {
             echo 'Error:' . curl_error($ch);
@@ -173,21 +174,22 @@ public function getsitecurrenttime(){
         $response = json_decode($result,true);
         return $response;
    }
-   
+
    public function signupconnectycude($name,$password,$email,$phone,$name_login){
         $token = $this->create_session();
+        dd($token);
         $ch = curl_init();
        // $name_login = $phone.rand()."#".$type;//trim($name).rand();
         curl_setopt($ch, CURLOPT_URL, 'https://api.connectycube.com/users');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, '{"user": {"login": "'.$name_login.'", "password": "'.$password.'", "email": "'.$email.'", "facebook_id": "", "twitter_id": "", "full_name": "'.$name.'", "phone": "'.$phone.'"}}');
-        
+
         $headers = array();
         $headers[] = 'Content-Type: application/json';
         $headers[] = 'Cb-Token: '.$token;
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        
+
         $result = curl_exec($ch);
         $response = json_decode($result,true);
         // echo "<pre>";
@@ -206,6 +208,6 @@ public function getsitecurrenttime(){
         }else{
            return  '0-'.$response['errors']['base'][0];
         }
-       
+
    }
 }

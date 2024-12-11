@@ -110,6 +110,7 @@ Route::group(['prefix' => '/'], function () {
 	Route::post("updatedoctor",[DoctorController::class,"updatedoctorsideprofile"]);
 	Route::get("doctorreview",[DoctorController::class,"doctorreview"]);
 	Route::get("doctorappointment",[DoctorController::class,"doctorappointment"])->name('doctorappointment');
+	Route::get("download-doc/{file}",[DoctorController::class,"downloadDoc"])->name('download-doc');
 	Route::get("doctortiming",[DoctorController::class,"doctortimingfront"]);
     Route::get("findpossibletime",[DoctorController::class,"findpossibletime"]);
 	Route::get("generateslot",[DoctorController::class,"generateslotfront"]);

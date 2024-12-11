@@ -114,7 +114,7 @@
                               <label>{{__('message.Email')}}</label>
                               <input type="email" name="email" placeholder="{{__('message.Enter Email Address')}}" required="" value="{{isset($userdata->email)?$userdata->email:''}}">
                            </div>
-                           <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                           <div class="col-lg-3 col-md-3 col-sm-6 form-group">
                               <label>{{__('Gender')}}</label>
                               <select name="gender" class="form-control" id="">
                                 <option value="" selected disabled>Choose One</option>
@@ -123,6 +123,14 @@
                                 <option value="other" {{ $userdata->gender == 'other' ? 'selected' : '' }}>Other</option>
                             </select>
                            </div>
+                           <div class="col-lg-3 col-md-3 col-sm-6 form-group">
+                            <label>{{__('Age')}}</label>
+                            <input type="number" name="age" class="form-control" placeholder="{{__('Enter Your Age')}}" required="" value="{{isset($userdata->age)?$userdata->age:''}}">
+                         </div>
+                           <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <label>{{__('Address')}}</label>
+                            <textarea name="address" class="form-control" id="" cols="5" rows="10">{{ isset($userdata->address)?$userdata->address:'' }}</textarea>
+                         </div>
                         </div>
                   </div>
                </div>
