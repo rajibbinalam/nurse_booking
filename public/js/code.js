@@ -450,6 +450,35 @@ function checkduration(day_id, cid) {
     } else {
         var strStartTime = $("#start_time_" + day_id + "_" + cid).val();
         var strEndTime = $("#end_time_" + day_id + "_" + cid).val();
+
+
+        // Function to convert time "HH:mm" to total minutes
+        function timeToMinutes(time) {
+            var parts = time.split(':');
+            var hours = parseInt(parts[0]);
+            var minutes = parseInt(parts[1]);
+            return hours * 60 + minutes;
+        }
+
+        // Convert start and end times to minutes
+        var startTimeInMinutes = timeToMinutes(strStartTime);
+        var endTimeInMinutes = timeToMinutes(strEndTime);
+
+        // Calculate total duration in minutes
+        var totalMinutes = endTimeInMinutes - startTimeInMinutes;
+
+        // Convert total minutes back to hours and minutes
+        var totalHours = Math.floor(totalMinutes / 60);
+        var remainingMinutes = totalMinutes % 60;
+
+        // $(this).closest('.timing-slot-main-box').find('.total_work_tim').html(`Total Duration: ${totalHours} hours and ${remainingMinutes} minutes`)
+        $('#total_work_tim'+day_id).html(`Total Duration: ${totalHours} hours`)
+        $('#duration_'+day_id+'_'+cid).val(totalHours)
+        console.log(`Total Duration: ${totalHours} hours and ${remainingMinutes} minutes`);
+
+        return false
+
+
         var startTime = new Date().setHours(
             GetHours(strStartTime),
             GetMinutes(strStartTime),

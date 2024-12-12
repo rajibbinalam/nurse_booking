@@ -580,10 +580,10 @@
                                     $patient = App\Models\Patient::find(Session::get("user_id"));
                                     $doc_gender = $data->gender == 1 ? 'male' : ($data->gender == 2 ? 'female' : 'other');
                                 @endphp
-                                @if ($patient->gender == $doc_gender)
+                                @if (isset($patient) && $patient->gender == $doc_gender)
                                 <button class="theme-btn-one centred" type="button" id="show_book" onclick="bookshow()" >{{__('message.Book Appointment')}}<i class="icon-Arrow-Right"></i></button>
                                 @else
-                                <span class="badge badge-warning">Please Find a "{{ ucfirst($patient->gender) }}" Doctor</span>
+                                <span class="badge badge-warning">Please Find a "{{ ucfirst(@$patient->gender) }}" Doctor</span>
                                 @endif
                             @else
                                   <button type="button" class="theme-btn-one" onclick="pleaselogin()"  id="show_book">{{__('message.Book Appointment')}}<i class="icon-Arrow-Right"></i></button>

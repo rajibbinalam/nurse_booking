@@ -836,9 +836,14 @@ class DoctorController extends Controller
     }
 
     public function updatedoctorsideprofile(Request $request){
+        // dd($request->all());
           $doctoremail=Doctors::where("email",$request->get("email"))->where("id","!=",Session::get("user_id"))->first();
 
           if($doctoremail){
+          $document_url=$doctoremail->document;
+            $document_url1=$doctoremail->document1;
+            $document_url2=$doctoremail->document2;
+            $document_url3=$doctoremail->document3;
                  Session::flash('message',__("message.Email Already Existe"));
                  Session::flash('alert-class', 'alert-danger');
                  return redirect()->back();
@@ -846,7 +851,16 @@ class DoctorController extends Controller
             $store=Doctors::find(Session::get("user_id"));
             $msg=__("message.Doctor Update Successfully");
             $img_url=$store->image;
+            $document_url=$store->document;
+            $document_url1=$store->document1;
+            $document_url2=$store->document2;
+            $document_url3=$store->document3;
+
             $rel_url=$store->image;
+            $rel_document_url=$store->document;
+            $rel_document_url1=$store->document1;
+            $rel_document_url2=$store->document2;
+            $rel_document_url3=$store->document3;
           }
             if ($request->hasFile('upload_image'))
               {
@@ -874,12 +888,12 @@ class DoctorController extends Controller
                  $filename = $file->getClientOriginalName();
                  $extension = $file->getClientOriginalExtension() ?: 'png';
                  $folderName = '/upload/doctor_document/';
-                 $picture = time() . '.' . $extension;
+                 $picture = time() . 'document.' . $extension;
                  $destinationPath = public_path() . $folderName;
                  $request->file('document')->move($destinationPath, $picture);
                  $document_url =$picture;
-                  $image_path = public_path() ."/upload/doctor_document/".$rel_url;
-                    if(file_exists($image_path)&&$rel_url!="") {
+                  $image_path = public_path() ."/upload/doctor_document/".$rel_document_url;
+                    if(file_exists($image_path)&&$rel_document_url!="") {
                         try {
                              unlink($image_path);
                         }
@@ -888,6 +902,67 @@ class DoctorController extends Controller
                         }
                   }
              }
+            if ($request->hasFile('document1'))
+              {
+                 $file = $request->file('document1');
+                 $filename = $file->getClientOriginalName();
+                 $extension = $file->getClientOriginalExtension() ?: 'png';
+                 $folderName = '/upload/doctor_document/';
+                 $picture1 = time() . 'document1.' . $extension;
+                 $destinationPath = public_path() . $folderName;
+                 $request->file('document1')->move($destinationPath, $picture1);
+                 $document_url1 =$picture1;
+                  $image_path = public_path() ."/upload/doctor_document/".$rel_document_url1;
+                    if(file_exists($image_path)&&$rel_document_url1!="") {
+                        try {
+                             unlink($image_path);
+                        }
+                        catch(Exception $e) {
+
+                        }
+                  }
+             }
+            if ($request->hasFile('document2'))
+              {
+                 $file = $request->file('document2');
+                 $filename = $file->getClientOriginalName();
+                 $extension = $file->getClientOriginalExtension() ?: 'png';
+                 $folderName = '/upload/doctor_document/';
+                 $picture2 = time() . 'document2.' . $extension;
+                 $destinationPath = public_path() . $folderName;
+                 $request->file('document2')->move($destinationPath, $picture2);
+                 $document_url2 =$picture2;
+                  $image_path = public_path() ."/upload/doctor_document/".$rel_document_url2;
+                    if(file_exists($image_path)&&$rel_document_url2!="") {
+                        try {
+                             unlink($image_path);
+                        }
+                        catch(Exception $e) {
+
+                        }
+                  }
+             }
+            if ($request->hasFile('document3'))
+              {
+                 $file = $request->file('document3');
+                 $filename = $file->getClientOriginalName();
+                 $extension = $file->getClientOriginalExtension() ?: 'png';
+                 $folderName = '/upload/doctor_document/';
+                 $picture3 = time() . 'document3.' . $extension;
+                 $destinationPath = public_path() . $folderName;
+                 $request->file('document3')->move($destinationPath, $picture3);
+                 $document_url3 =$picture3;
+                  $image_path = public_path() ."/upload/doctor_document/".$rel_document_url3;
+                    if(file_exists($image_path)&&$rel_document_url3!="") {
+                        try {
+                             unlink($image_path);
+                        }
+                        catch(Exception $e) {
+
+                        }
+                  }
+             }
+            //  dd($document_url, $document_url1);
           $store->name=$request->get("name");
           $store->department_id=$request->get("department_id");
           $store->phoneno=$request->get("phoneno");
@@ -905,6 +980,9 @@ class DoctorController extends Controller
           $store->consultation_fees = $request->get("consultation_fees");
           $store->image=$img_url;
           $store->document=$document_url;
+          $store->document1=$document_url1;
+          $store->document2=$document_url2;
+          $store->document3=$document_url3;
           $store->save();
           Session::flash('message',$msg);
           Session::flash('alert-class', 'alert-success');
@@ -980,7 +1058,7 @@ $doctordata=Doctors::with('departmentls')->find(Session::get("user_id"));
 
                    for($j=0;$j<count($start_date);$j++){
                       if(isset($start_date[$j])&&$start_date[$j]!=""&&isset($end_date[$j])&&$end_date[$j]!=""&&isset($duration[$j])&&$duration[$j]!=""){
-                            $getslot=$this->getslotvalue($start_date[$j],$end_date[$j],$duration[$j]);
+                            // $getslot=$this->getslotvalue($start_date[$j],$end_date[$j],$duration[$j]);
 
                             $store=new Schedule();
                             $store->doctor_id=$request->get("doctor_id");
@@ -989,12 +1067,12 @@ $doctordata=Doctors::with('departmentls')->find(Session::get("user_id"));
                             $store->end_time=$end_date[$j];
                             $store->duration=$duration[$j];
                             $store->save();
-                            foreach ($getslot as $g) {
+                            // foreach ($getslot as $g) {
                                 $aslot=new SlotTiming();
                                 $aslot->schedule_id=$store->id;
-                                $aslot->slot=$g;
+                                $aslot->slot=$start_date[$j];
                                 $aslot->save();
-                            }
+                            // }
                       }
                    }
                }

@@ -176,14 +176,35 @@
                                     <label>{{__("message.Address")}}<span class="reqfield">*</span></label>
                                     <input type="text" id="us2-address" name="address" placeholder='{{__("message.Search Location")}}' data-parsley-required="true" />
                                 </div>
-                                <div class="col-md-12 p-0 mt-4" id="addressorder">
-                                    <label>{{__("Document: ")}}<span class="reqfield">*</span></label>
-                                    <input type="file" id="us2-address" class="form-control" name="document" />
-                                    @if (!empty($doctordata->document))
-                                        {{-- <img src="{{ asset('upload/doctor_document').'/'.$doctordata->document }}" alt=""> --}}
-                                        {{-- <a href="{{ route('download-doc', $doctordata->document) }}">Download Document</a> --}}
-                                        <a href="{{asset('upload/doctor_document').'/'.$doctordata->document}}" target="_blank">Download Document</a>
-                                    @endif
+                                <div class="row clearfix">
+                                    <div class="col-md-6 p-1 mt-4" id="document1">
+                                        <label>{{__("Document One: ")}}<span class="reqfield">*</span></label>
+                                        <input type="file" id="us2-address" class="form-control" name="document" />
+                                        @if (!empty($doctordata->document))
+                                            <a href="{{asset('upload/doctor_document').'/'.$doctordata->document}}" target="_blank">Download Document</a>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-6 p-1 mt-4" id="document2">
+                                        <label>{{__("Document Two: ")}}<span class="reqfield">*</span></label>
+                                        <input type="file" id="us2-address" class="form-control" name="document1" />
+                                        @if (!empty($doctordata->document1))
+                                            <a href="{{asset('upload/doctor_document').'/'.$doctordata->document1}}" target="_blank">Download Document</a>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-6 p-1 mt-4" id="document3">
+                                        <label>{{__("Document Three: ")}}<span class="reqfield">*</span></label>
+                                        <input type="file" id="us2-address" class="form-control" name="document2" />
+                                        @if (!empty($doctordata->document2))
+                                            <a href="{{asset('upload/doctor_document').'/'.$doctordata->document2}}" target="_blank">Download Document</a>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-6 p-1 mt-4" id="document4">
+                                        <label>{{__("Document Four: ")}}<span class="reqfield">*</span></label>
+                                        <input type="file" id="us2-address" class="form-control" name="document3" />
+                                        @if (!empty($doctordata->document3))
+                                            <a href="{{asset('upload/doctor_document').'/'.$doctordata->document3}}" target="_blank">Download Document</a>
+                                        @endif
+                                    </div>
                                 </div>
                                 <div class="map" id="maporder">
                                     <div class="form-group">

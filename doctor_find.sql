@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2024 at 09:17 PM
+-- Generation Time: Dec 12, 2024 at 08:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 7.4.7
 
@@ -160,7 +160,8 @@ CREATE TABLE `book_appointment` (
 --
 
 INSERT INTO `book_appointment` (`id`, `doctor_id`, `user_id`, `slot_id`, `slot_name`, `date`, `phone`, `user_description`, `status`, `created_at`, `updated_at`, `notify`, `payment_mode`, `transaction_id`, `consultation_fees`, `prescription_file`, `is_completed`) VALUES
-(1, 154, 1, 3073692, '09:00 AM', '2024-12-16', '13253465657', 'dfdgdfgdf', 3, '2024-12-11 18:06:42', '2024-12-11 18:23:19', '0', 'COD', NULL, '250', NULL, 1);
+(1, 154, 1, 3073692, '09:00 AM', '2024-12-16', '13253465657', 'dfdgdfgdf', 3, '2024-12-11 18:06:42', '2024-12-11 18:23:19', '0', 'COD', NULL, '250', NULL, 1),
+(2, 154, 1, 3073758, '08:00', '2024-12-16', '092845769', 'tsrtsdfgsf', 1, '2024-12-12 18:59:31', '2024-12-12 18:59:54', '0', 'COD', NULL, '250', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -268,17 +269,20 @@ CREATE TABLE `doctors` (
   `ifsc_code` varchar(255) DEFAULT NULL,
   `account_no` varchar(255) DEFAULT NULL,
   `account_holder_name` varchar(255) DEFAULT NULL,
-  `document` text DEFAULT NULL
+  `document` text DEFAULT NULL,
+  `document1` text DEFAULT NULL,
+  `document2` text DEFAULT NULL,
+  `document3` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `doctors`
 --
 
-INSERT INTO `doctors` (`id`, `name`, `email`, `aboutus`, `working_time`, `address`, `lat`, `lon`, `phoneno`, `services`, `healthcare`, `image`, `department_id`, `password`, `created_at`, `updated_at`, `is_approve`, `consultation_fees`, `login_id`, `connectycube_user_id`, `connectycube_password`, `unique_id`, `gender`, `age`, `title`, `institution_name`, `birth_name`, `spouse_name`, `state`, `city`, `bank_name`, `ifsc_code`, `account_no`, `account_holder_name`, `document`) VALUES
-(1, 'Dr. Mahajan', 'nurse@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', NULL, '', '40.71397887526981', '-73.99348443482666', '+919878767899', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1732859520.jpg', 15, '123456', '2023-08-01 05:14:47', '2024-12-11 16:54:46', '1', '500', '+9198787678991244197430#2', '9547765', 'Mahajan@123', NULL, 1, 29, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(153, 'Test1', 'test1.@gmail.com', NULL, NULL, NULL, NULL, NULL, '092845769', NULL, NULL, NULL, NULL, '123456', '2024-12-11 17:44:58', '2024-12-11 17:44:58', '0', '250', '0928457691156425402#2', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(154, 'Samira Khan', 'samira@gmail.com', 'Test', NULL, '', '40.74125420000001', '-73.9853311', '12347987654', 'Test', 'terrt', '1733939299.png', 15, '123456', '2024-12-11 17:45:48', '2024-12-11 18:48:23', '1', '250', '12347987654548344660#2', NULL, '123456', NULL, 2, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1733942903.pdf');
+INSERT INTO `doctors` (`id`, `name`, `email`, `aboutus`, `working_time`, `address`, `lat`, `lon`, `phoneno`, `services`, `healthcare`, `image`, `department_id`, `password`, `created_at`, `updated_at`, `is_approve`, `consultation_fees`, `login_id`, `connectycube_user_id`, `connectycube_password`, `unique_id`, `gender`, `age`, `title`, `institution_name`, `birth_name`, `spouse_name`, `state`, `city`, `bank_name`, `ifsc_code`, `account_no`, `account_holder_name`, `document`, `document1`, `document2`, `document3`) VALUES
+(1, 'Dr. Mahajan', 'nurse@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', NULL, '', '40.71397887526981', '-73.99348443482666', '+919878767899', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1732859520.jpg', 15, '123456', '2023-08-01 05:14:47', '2024-12-11 16:54:46', '1', '500', '+9198787678991244197430#2', '9547765', 'Mahajan@123', NULL, 1, 29, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(153, 'Test1', 'test1.@gmail.com', NULL, NULL, NULL, NULL, NULL, '092845769', NULL, NULL, NULL, NULL, '123456', '2024-12-11 17:44:58', '2024-12-11 17:44:58', '0', '250', '0928457691156425402#2', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(154, 'Samira Khan', 'samira@gmail.com', 'Test', NULL, '', '40.74125420000001', '-73.9853311', '12347987654', 'Test', 'terrt', '1733939299.png', 15, '123456', '2024-12-11 17:45:48', '2024-12-12 19:25:45', '1', '250', '12347987654548344660#2', NULL, '123456', NULL, 2, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1734031545document.webp', '1734031545document1.webp', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -337,8 +341,7 @@ INSERT INTO `doctor_schedule` (`id`, `doctor_id`, `day_id`, `start_time`, `end_t
 (2348, 1, 5, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
 (2349, 1, 6, '10:00', '14:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
 (2350, 1, 6, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
-(2353, 154, 0, '09:00', '10:50', '60', '2024-12-11 17:57:53', '2024-12-11 17:57:53'),
-(2354, 154, 0, '14:01', '17:01', '60', '2024-12-11 17:57:53', '2024-12-11 17:57:53');
+(2356, 154, 0, '08:00', '16:00', '8', '2024-12-12 18:58:15', '2024-12-12 18:58:15');
 
 -- --------------------------------------------------------
 
@@ -5958,7 +5961,8 @@ INSERT INTO `settlement` (`id`, `book_id`, `status`, `payment_date`, `created_at
 (265, 336, 0, '2024-12-15', '2024-11-28 23:22:24', '2024-11-28 23:22:24', 14, '250', NULL),
 (266, 337, 0, '2024-12-15', '2024-11-29 10:32:02', '2024-11-29 10:32:02', 1, '100', NULL),
 (267, 338, 0, '2025-01-15', '2024-12-01 07:06:26', '2024-12-01 07:06:26', 1, '100', NULL),
-(268, 1, 0, '2025-01-15', '2024-12-11 12:06:42', '2024-12-11 12:06:42', 154, '250', NULL);
+(268, 1, 0, '2025-01-15', '2024-12-11 12:06:42', '2024-12-11 12:06:42', 154, '250', NULL),
+(269, 2, 0, '2025-01-15', '2024-12-12 12:59:31', '2024-12-12 12:59:31', 154, '250', NULL);
 
 -- --------------------------------------------------------
 
@@ -11168,11 +11172,7 @@ INSERT INTO `slot_timing` (`id`, `schedule_id`, `slot`, `created_at`, `updated_a
 (3073682, 2350, '08:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
 (3073683, 2350, '09:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
 (3073684, 2350, '09:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
-(3073692, 2353, '09:00 AM', '2024-12-11 11:57:53', '2024-12-11 11:57:53'),
-(3073693, 2353, '10:00 AM', '2024-12-11 11:57:53', '2024-12-11 11:57:53'),
-(3073694, 2354, '02:01 PM', '2024-12-11 11:57:53', '2024-12-11 11:57:53'),
-(3073695, 2354, '03:01 PM', '2024-12-11 11:57:53', '2024-12-11 11:57:53'),
-(3073696, 2354, '04:01 PM', '2024-12-11 11:57:53', '2024-12-11 11:57:53');
+(3073758, 2356, '08:00', '2024-12-12 12:58:15', '2024-12-12 12:58:15');
 
 -- --------------------------------------------------------
 
@@ -12098,7 +12098,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `book_appointment`
 --
 ALTER TABLE `book_appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `code`
@@ -12134,7 +12134,7 @@ ALTER TABLE `doctor_hoildays`
 -- AUTO_INCREMENT for table `doctor_schedule`
 --
 ALTER TABLE `doctor_schedule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2355;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2357;
 
 --
 -- AUTO_INCREMENT for table `favorite_doctors`
@@ -12236,13 +12236,13 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `settlement`
 --
 ALTER TABLE `settlement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=269;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=270;
 
 --
 -- AUTO_INCREMENT for table `slot_timing`
 --
 ALTER TABLE `slot_timing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3073697;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3073759;
 
 --
 -- AUTO_INCREMENT for table `subscriber`

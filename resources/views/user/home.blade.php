@@ -31,7 +31,7 @@ $fav = app\models\Setting::find(1)->title;
       <div class="row clearfix">
          <div class="col-lg-6 col-md-12 col-sm-12 content-column">
             <div class="content-box">
-               <h1>{{__('message.Find A Doctor')}}</h1>
+               <h1>{{__('Home Care Service')}}</h1>
                <p>{{__('message.Amet consectetur adipisicing elit sed do eiusmod')}}</p>
                <div class="form-inner">
                   <form action="{{url('searchdoctor')}}" method="get">
