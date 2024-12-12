@@ -74,7 +74,7 @@
                      </div>
                      <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <label>{{__('message.Phone')}}</label>
-                        <input type="text" name="phone" id="phone" placeholder="{{__('message.Enter Your Phone number')}}" required="" value="{{old('phone')}}"/>
+                        <input type="text" name="phone" id="phone" placeholder="{{__('message.Enter Your Phone number')}}" required="" value="+880{{old('phone')}}" maxlength="14"/>
                         @if ($errors->has('phone'))
                           	<span class="text-danger">{{ $errors->first('phone') }}</span>
                         @endif
