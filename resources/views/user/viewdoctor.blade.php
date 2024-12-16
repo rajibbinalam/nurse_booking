@@ -454,7 +454,7 @@
                            <h4>{{__('message.Enter Information')}}</h4>
                            <div class="form-group">
                               <label>{{__('message.Phone no')}}</label>
-                              <input type="text" name="phone_no" id="phone_no" placeholder="{{__('message.Enter Your Phone number')}}" required="">
+                              <input type="text" name="phone_no" id="phone_no" placeholder="{{__('message.Enter Your Phone number')}}" required="" value="+880" maxlength="14">
                            </div>
                            <div class="form-group">
                               <label>{{__('message.Message')}}</label>
@@ -580,13 +580,17 @@
                                     $patient = App\Models\Patient::find(Session::get("user_id"));
                                     $doc_gender = $data->gender == 1 ? 'male' : ($data->gender == 2 ? 'female' : 'other');
                                 @endphp
-                                @if (isset($patient) && $patient->gender == $doc_gender)
-                                <button class="theme-btn-one centred" type="button" id="show_book" onclick="bookshow()" >{{__('message.Book Appointment')}}<i class="icon-Arrow-Right"></i></button>
+                                @if(isset($patient) && $patient->is_approve == 1)
+                                    @if (isset($patient) && $patient->gender == $doc_gender)
+                                    <button class="theme-btn-one centred" type="button" id="show_book" onclick="bookshow()" >{{__('message.Book Appointment')}}<i class="icon-Arrow-Right"></i></button>
+                                    @else
+                                    <span class="badge badge-warning">Please Find a "{{ ucfirst(@$patient->gender) }}" Doctor</span>
+                                    @endif
                                 @else
-                                <span class="badge badge-warning">Please Find a "{{ ucfirst(@$patient->gender) }}" Doctor</span>
+                                    <h6>You Need To Approve By Admin</h6>
                                 @endif
                             @else
-                                  <button type="button" class="theme-btn-one" onclick="pleaselogin()"  id="show_book">{{__('message.Book Appointment')}}<i class="icon-Arrow-Right"></i></button>
+                                  <button type="button" class="theme-btn-one" onclick="pleaselogin()"  id="show_book">{{__('Login First')}}<i class="icon-Arrow-Right"></i></button>
                             @endif
                             </div>
                             <div id="braintree_div" style="display:none;">
@@ -653,7 +657,20 @@
                                     <input id="nonce" name="payment_method_nonce" type="hidden" />
                                     <div class="btn-box" id="btnappointment">
                                         @if(Session::has("user_id"))
-                                              <button class="theme-btn-one" type="submit">{{__('message.Book Appointment')}}<i class="icon-Arrow-Right"></i></button>
+                                            @php
+                                                $patient = App\Models\Patient::find(Session::get("user_id"));
+                                                $doc_gender = $data->gender == 1 ? 'male' : ($data->gender == 2 ? 'female' : 'other');
+                                            @endphp
+                                            @if(isset($patient) && $patient->is_approve == 1)
+                                                @if (isset($patient) && $patient->gender == $doc_gender)
+                                                    <button class="theme-btn-one" type="submit">{{__('message.Book Appointment')}}<i class="icon-Arrow-Right"></i></button>
+                                                @else
+                                                    <span class="badge badge-warning">Please Find a "{{ ucfirst(@$patient->gender) }}" Doctor</span>
+                                                @endif
+                                            @else
+                                                <h6>You Need To Approve By Admin</h6>
+                                            @endif
+
                                         @else
                                               <button type="button" class="theme-btn-one" onclick="pleaselogin()">{{__('message.Book Appointment')}}<i class="icon-Arrow-Right"></i></button>
                                         @endif

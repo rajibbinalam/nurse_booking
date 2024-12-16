@@ -76,24 +76,24 @@
                            </div>
                         </div>
                         <div class="row">
-                           <div class="col-lg-4">
+                           <div class="col-lg-6">
                               <div class="form-group">
                                  <label for="phoneno">{{__("message.Phone")}}<span class="reqfield">*</span></label>
                                  <input type="text" class="form-control" id="phoneno" placeholder='{{__("message.Enter Phone")}}' name="phoneno" required="" value="{{isset($data->phoneno)?$data->phoneno:''}}">
                               </div>
                            </div>
-                           <div class="col-lg-4">
+                           <div class="col-lg-6">
                               <div class="form-group">
                                  <label for="email">{{__("message.Email")}}<span class="reqfield">*</span></label>
                                  <input type="email" class="form-control" id="email" placeholder='{{__("message.Enter Email Address")}}' name="email" required="" <?= isset($id)&&$id!=0?'readonly':""?> value="{{isset($data->email)?$data->email:''}}">
                               </div>
                            </div>
-                           <div class="col-lg-4">
+                           {{-- <div class="col-lg-4">
                               <div class="form-group">
                                  <label for="email">{{__("message.Working Time")}}<span class="reqfield">*</span></label>
                                  <input type="text" class="form-control" id="working_time" placeholder='{{__("message.Enter Working Time")}}' name="working_time" required=""  value="{{isset($data->working_time)?$data->working_time:''}}">
                               </div>
-                           </div>
+                           </div> --}}
                         </div>
                          <div class="row">
                            <div class="col-lg-3">
@@ -128,15 +128,44 @@
                         </div>
                         <div class="col-md-12 p-0"  id="addressorder">
                            <label>{{__("message.Address")}}<span class="reqfield">*</span></label>
-                           <input  type="text" id="us2-address" name="address" placeholder='{{__("message.Search Location")}}' required data-parsley-required="true" required=""/>
+                           <input  type="text" id="us2-address" name="address" value="{{ $data->address }}" placeholder='{{__("message.Search Location")}}' required data-parsley-required="true" required=""/>
                         </div>
-                        <div class="map" id="maporder">
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h5>Nurse Document: </h5>
+                            </div>
+                            @if (!empty($data->document))
+                            <div class="col-md-6 mb-5">
+                                <label for="">Document One</label>
+                                <a href="{{asset('upload/doctor_document').'/'.$data->document}}" class="ml-5" target="_blank">Download Document</a>
+                            </div>
+                            @endif
+                            @if (!empty($data->document1))
+                            <div class="col-md-6 mb-5">
+                                <label for="">Document Two</label>
+                                <a href="{{asset('upload/doctor_document').'/'.$data->document1}}" class="ml-5" target="_blank">Download Document</a>
+                            </div>
+                            @endif
+                            @if (!empty($data->document2))
+                            <div class="col-md-6 mb-5">
+                                <label for="">Document Three</label>
+                                <a href="{{asset('upload/doctor_document').'/'.$data->document2}}" class="ml-5" target="_blank">Download Document</a>
+                            </div>
+                            @endif
+                            @if (!empty($data->document3))
+                            <div class="col-md-6 mb-5">
+                                <label for="">Document Four</label>
+                                <a href="{{asset('upload/doctor_document').'/'.$data->document3}}" class="ml-5" target="_blank">Download Document</a>
+                            </div>
+                            @endif
+                        </div>
+                        {{-- <div class="map" id="maporder">
                            <div class="form-group">
                               <div class="col-md-12 p-0">
                                  <div id="us2"></div>
                               </div>
                            </div>
-                        </div>
+                        </div> --}}
                         <input type="hidden" name="lat" id="us2-lat" value="243523" />
                         <input type="hidden" name="lon" id="us2-lon" value="23421" />
                         <div class="row">
@@ -146,7 +175,11 @@
                            @else
                                <button  class="btn btn-primary" type="submit" value="Submit">{{__("message.Submit")}}</button>
                            @endif
-
+                           @if ($data->is_approve == 0)
+                            <a href="{{ url('admin/approvedoctor',array('id'=>$data->id,"approve"=>'1')) }}" class="btn btn-success">Approve</a>
+                           @else
+                           <a href="{{ url('admin/approvedoctor',array('id'=>$data->id,"approve"=>'0')) }}" class="btn btn-danger">Block</a>
+                           @endif
                            </div>
                         </div>
                      </form>

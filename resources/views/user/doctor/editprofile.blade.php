@@ -110,8 +110,8 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <div class="seldoctor">
-                                            <label>{{__('Services')}}</label>
-                                            <select name="department_id" id="department_id">
+                                            <label>{{__('Services')}} *</label>
+                                            <select name="department_id" id="department_id" required>
                                                 <option value="">{{__('message.Select Specialist')}}</option>
                                                 @foreach($department as $dp)
                                                 <option value="{{$dp->id}}" <?= isset($doctordata->department_id)&&$dp->id==$doctordata->department_id?'selected="selected"':""?>>{{$dp->name}}</option>
@@ -128,8 +128,8 @@
                                         <input type="text" name="phoneno" id="phoneno" placeholder="{{__('message.Enter Phone No')}}" required="" value="{{isset($doctordata->phoneno)?$doctordata->phoneno:''}}">
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 form-group">
-                                        <label>{{__('Gender')}}</label>
-                                        <select name="gender" class="form-control" id="">
+                                        <label>{{__('Gender')}} *</label>
+                                        <select name="gender" class="form-control" id="" required>
                                             <option value="" selected disabled>Choose One</option>
                                             <option value="1" {{ $doctordata->gender == 1 ? 'selected' : '' }}>Male</option>
                                             <option value="2" {{ $doctordata->gender == 2 ? 'selected' : '' }}>Female</option>
@@ -143,7 +143,7 @@
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 form-group">
                                         <label for="age">{{__("Age")}}<span class="reqfield">*</span></label>
-                                        <input type="number" name="age" value="{{isset($doctordata->age)?$doctordata->age:''}}" class="form-control" id="age" min="1">
+                                        <input type="number" name="age" value="{{isset($doctordata->age)?$doctordata->age:''}}" class="form-control" id="age" min="1" required>
                                     </div>
 
                                     {{-- <div class="col-lg-4 col-md-4 col-sm-6 form-group">

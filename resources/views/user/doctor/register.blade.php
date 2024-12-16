@@ -72,7 +72,7 @@
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <label class="fr">{{__('message.Phone Number')}}</label>
-                                <input type="text" name="phone" id="phone" placeholder="{{__('message.Enter Your Phone number')}}" required="" />
+                                <input type="text" name="phone" id="phone" placeholder="{{__('message.Enter Your Phone number')}}" required="" value="+880" maxlength="14" />
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <label class="fr">{{__('message.Email')}}</label>

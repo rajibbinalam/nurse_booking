@@ -76,10 +76,10 @@
 
                                   </ul>
                             </div>
-                            <div class="col-4">
+                            {{-- <div class="col-4">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_Prescription">Add Prescription</button><br><br>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_report">Add Report</button>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="row pt-4">

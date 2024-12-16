@@ -15,14 +15,14 @@ use App\Models\Patient;
 use DataTables;
 class AppointmentController extends Controller
 {
-    
+
     public function showappointment(){
          return view("admin.appointment.default");
     }
-   
+
     public function appointmenttable(){
           $book =BookAppointment::where('is_completed','1')->get();
-         
+
            return DataTables::of($book)
             ->editColumn('id', function ($book) {
                 return $book->id;
@@ -32,17 +32,17 @@ class AppointmentController extends Controller
             })
             ->editColumn('patient_name', function ($book) {
                 return isset($book->patientls)?$book->patientls->name:"";
-            })  
+            })
             ->editColumn('date', function ($book) {
                 return $book->date." ".$book->slot_name;
-            })  
+            })
             ->editColumn('phone', function ($book) {
                 return $book->phone;
-            })  
+            })
             ->editColumn('u_desc', function ($book) {
 
                 return isset($book->user_description)?$book->user_description:"";
-            })  
+            })
             ->editColumn('status', function ($book) {
                 if($book->status=='1'){
                      return __("message.Received");
@@ -61,15 +61,15 @@ class AppointmentController extends Controller
                 }else{
                      return __("message.Absent");
                 }
-            }) 
-            
+            })
+
             ->editColumn('action', function ($book) {
                 if($book->status=='5'){
                   $payurl=url('admin/refundappointment',array('id'=>$book->id));
                   return '<a href="'.$payurl.'" class=" btn btn-success" style="color:white !important" >'.__("message.Refund").'</a>';
                }
             })
-           
+
             ->make(true);
     }
 
@@ -84,17 +84,17 @@ class AppointmentController extends Controller
             })
             ->editColumn('patient_name', function ($book) {
                 return isset($book->patientls)?$book->patientls->name:"";
-            })  
+            })
             ->editColumn('date', function ($book) {
                 return $book->date." ".$book->slot_name;
-            })  
+            })
             ->editColumn('phone', function ($book) {
                 return $book->phone;
-            })  
+            })
             ->editColumn('u_desc', function ($book) {
 
                 return isset($book->user_description)?$book->user_description:"";
-            })  
+            })
             ->editColumn('status', function ($book) {
                 if($book->status=='1'){
                      return __("message.Received");
@@ -113,8 +113,8 @@ class AppointmentController extends Controller
                 }else{
                      return __("message.Absent");
                 }
-            }) 
-           
+            })
+
             ->make(true);
     }
 
@@ -129,30 +129,30 @@ class AppointmentController extends Controller
         }else{//reject
             $msg=__("message.Appointment In Reject");
         }
-        Session::flash('message',$msg); 
+        Session::flash('message',$msg);
         Session::flash('alert-class', 'alert-success');
         return redirect("admin/appointment");
     }
 
-    public function show_refundappointment($id){            
+    public function show_refundappointment($id){
             $data=BookAppointment::find($id);
             if($data){
                 $result = $this->refunded_order_amount($data->payment_mode,$data->transaction_id,$data->consultation_fees);
                 $data->status = 6;
                 $data->save();
                 $msg = __("message.Refund Successfully");
-                Session::flash('message',$msg); 
+                Session::flash('message',$msg);
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
             }else{
-                Session::flash('message',__("message.something getting wrong")); 
+                Session::flash('message',__("message.something getting wrong"));
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
-            }            
+            }
     }
 
      public function refunded_order_amount($method,$token,$amount){
-       
+
         if($method=="braintree"){
                 $gateway = new \Braintree\Gateway([
                     'environment' => env('BRAINTREE_ENV'),

@@ -228,12 +228,42 @@ class AuthenticationController extends Controller
                 return $users->phone;
             })
             ->editColumn('action', function ($users) {
+                $patientApprove=url('admin/approvepatient',array('id'=>$users->id,"approve"=>'1'));
                 $delete= url('admin/deleteuser',array('id'=>$users->id));
-                $return = '<a onclick="delete_record(' . "'" . $delete . "'" . ')" rel="tooltip" title="" class="m-b-10 m-l-5" data-original-title="Remove"><i class="fa fa-trash f-s-25"></i></a>';
+
+
+                if($users->is_approve == 0 || empty($users->is_approve)){
+                    $txt ='<a  rel="tooltip" title="" href="'.$patientApprove.'" class="m-b-10 m-l-5" data-original-title="Remove"><i class="fa fa-check f-s-25" style="margin-left: 10px;color:red"></i></a>';
+                 }else{
+                    $txt ='<i class="fa fa-check f-s-25" style="margin-left: 10px;color:green"></i>';
+                 }
+
+                 $return = '<a onclick="delete_record(' . "'" . $delete . "'" . ')" rel="tooltip" title="" class="m-b-10 m-l-5" data-original-title="Remove"><i class="fa fa-trash f-s-25"></i></a>'.$txt;
                 return $return;
             })
 
             ->make(true);
+    }
+
+    public function postapprovepatient($id,$status){
+        if(Session::get("is_demo")=='0'){
+               Session::flash('message',"This Action Disable In Demo");
+               Session::flash('alert-class', 'alert-danger');
+               return redirect()->back();
+        }else{
+               $store=Patient::find($id);
+               $store->is_approve=$status;
+               $store->save();
+
+               if($status=='1'){
+                   $msg=__('message.Profile Enable Successfully');
+               }else{
+                   $msg=__('message.Profile Disable Successfully');
+               }
+               Session::flash('message',$msg);
+               Session::flash('alert-class', 'alert-success');
+               return redirect()->back();
+        }
     }
 
     public function deleteuser($id){

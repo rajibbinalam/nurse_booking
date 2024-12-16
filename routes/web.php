@@ -193,6 +193,7 @@ Route::group(['prefix' => 'admin'], function () {
 		    Route::get("patients",[AuthenticationController::class,"showsuser"]);
 		    Route::get("userstable",[AuthenticationController::class,"userstable"]);
 		    Route::get("deleteuser/{id}",[AuthenticationController::class,"deleteuser"]);
+		    Route::get("approvepatient/{id}/{status}",[AuthenticationController::class,"postapprovepatient"]);
 
 		    Route::get("editprofile",[AuthenticationController::class,"editprofile"]);
 		    Route::post("updateprofile",[AuthenticationController::class,"updateprofile"]);

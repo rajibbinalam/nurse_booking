@@ -27,6 +27,7 @@ use Mail;
 use App\Models\Medicines ;
 use App\Models\AppointmentMedicines;
 use App\Models\ap_img_uplod;
+use App\Models\Settlement;
 use App\Models\Subscriber ;
 
 class DoctorController extends Controller
@@ -1107,8 +1108,8 @@ $doctordata=Doctors::with('departmentls')->find(Session::get("user_id"));
                                 $msg="";
                             }
                             $user=User::find(1);
-                            $android=$this->send_notification_android($user->android_key,$msg,$getapp->user_id,"user_id");
-                            $ios=$this->send_notification_IOS($user->ios_key,$msg,$getapp->user_id,"user_id");
+                            // $android=$this->send_notification_android($user->android_key,$msg,$getapp->user_id,"user_id");
+                            // $ios=$this->send_notification_IOS($user->ios_key,$msg,$getapp->user_id,"user_id");
                              try {
                                       $user=Patient::find($getapp->user_id);
                                       $user->msg=$msg;
