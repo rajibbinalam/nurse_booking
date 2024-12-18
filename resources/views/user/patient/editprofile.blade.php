@@ -128,9 +128,39 @@
                             <input type="number" name="age" class="form-control" placeholder="{{__('Enter Your Age')}}" required="" value="{{isset($userdata->age)?$userdata->age:''}}">
                          </div>
                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <label>{{__('Address')}}</label>
-                            <textarea name="address" class="form-control" id="" cols="5" rows="10">{{ isset($userdata->address)?$userdata->address:'' }}</textarea>
-                         </div>
+                                <label>{{__('Address')}}</label>
+                                <textarea name="address" class="form-control" id="" cols="5" rows="10">{{ isset($userdata->address)?$userdata->address:'' }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-md-6 p-1 mt-4" id="document1">
+                                <label>{{__("NID Front: ")}}<span class="reqfield">*</span></label>
+                                <input type="file" id="us2-address" class="form-control" name="document4" />
+                                @if (!empty($userdata->document4))
+                                    <a href="{{asset('upload/user_document').'/'.$userdata->document4}}" target="_blank">Download Document</a>
+                                @endif
+                            </div>
+                            <div class="col-md-6 p-1 mt-4" id="document2">
+                                <label>{{__("NID Back: ")}}<span class="reqfield">*</span></label>
+                                <input type="file" id="us2-address" class="form-control" name="document1" />
+                                @if (!empty($userdata->document1))
+                                    <a href="{{asset('upload/user_document').'/'.$userdata->document1}}" target="_blank">Download Document</a>
+                                @endif
+                            </div>
+                            <div class="col-md-6 p-1 mt-4" id="document3">
+                                <label>{{__("Document One: ")}}<span class="reqfield">*</span></label>
+                                <input type="file" id="us2-address" class="form-control" name="document2" />
+                                @if (!empty($userdata->document2))
+                                    <a href="{{asset('upload/user_document').'/'.$userdata->document2}}" target="_blank">Download Document</a>
+                                @endif
+                            </div>
+                            <div class="col-md-6 p-1 mt-4" id="document4">
+                                <label>{{__("Document Two: ")}}<span class="reqfield">*</span></label>
+                                <input type="file" id="us2-address" class="form-control" name="document3" />
+                                @if (!empty($userdata->document3))
+                                    <a href="{{asset('upload/user_document').'/'.$userdata->document3}}" target="_blank">Download Document</a>
+                                @endif
+                            </div>
                         </div>
                   </div>
                </div>

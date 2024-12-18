@@ -230,7 +230,7 @@ class AuthenticationController extends Controller
             ->editColumn('action', function ($users) {
                 $patientApprove=url('admin/approvepatient',array('id'=>$users->id,"approve"=>'1'));
                 $delete= url('admin/deleteuser',array('id'=>$users->id));
-
+                $userView=url('admin/show-user',array('id'=>$users->id));
 
                 if($users->is_approve == 0 || empty($users->is_approve)){
                     $txt ='<a  rel="tooltip" title="" href="'.$patientApprove.'" class="m-b-10 m-l-5" data-original-title="Remove"><i class="fa fa-check f-s-25" style="margin-left: 10px;color:red"></i></a>';
@@ -238,7 +238,7 @@ class AuthenticationController extends Controller
                     $txt ='<i class="fa fa-check f-s-25" style="margin-left: 10px;color:green"></i>';
                  }
 
-                 $return = '<a onclick="delete_record(' . "'" . $delete . "'" . ')" rel="tooltip" title="" class="m-b-10 m-l-5" data-original-title="Remove"><i class="fa fa-trash f-s-25"></i></a>'.$txt;
+                 $return = '<a  rel="tooltip" title="" href="'.$userView.'" class="m-b-10 m-l-5" data-original-title="Remove"><i class="fa fa-edit f-s-25" style="margin-right: 10px;"></i></a><a onclick="delete_record(' . "'" . $delete . "'" . ')" rel="tooltip" title="" class="m-b-10 m-l-5" data-original-title="Remove"><i class="fa fa-trash f-s-25"></i></a>'.$txt;
                 return $return;
             })
 
@@ -264,6 +264,16 @@ class AuthenticationController extends Controller
                Session::flash('alert-class', 'alert-success');
                return redirect()->back();
         }
+    }
+
+    public function showUser($id){
+        $data['patient']=Patient::find($id);
+        if($data){
+            return view('admin.user.user_view', $data);
+        }
+        Session::flash('message',__("message.Patient Delete Successfully"));
+        Session::flash('alert-class', 'alert-success');
+        return redirect()->back();
     }
 
     public function deleteuser($id){

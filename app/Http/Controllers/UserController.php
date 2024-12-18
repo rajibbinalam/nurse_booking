@@ -839,10 +839,22 @@ class UserController extends Controller
            return redirect()->back();
       }else{
 
+
+          $document_url1=$user->document1;
+          $document_url2=$user->document2;
+          $document_url3=$user->document3;
+          $document_url4=$user->document4;
+
+          $rel_document_url1=$user->document1;
+          $rel_document_url2=$user->document2;
+          $rel_document_url3=$user->document3;
+          $rel_document_url4=$user->document4;
+
+
            $img=$user->profile_pic;
            $rel_url=$user->profile_pic;
            if ($request->hasFile('image'))
-              {
+           {
                   $file = $request->file('image');
                   $filename = $file->getClientOriginalName();
                   $extension = $file->getClientOriginalExtension() ?: 'png';
@@ -860,6 +872,88 @@ class UserController extends Controller
                       }
                   }
             }
+
+
+            if ($request->hasFile('document1'))
+            {
+                 $file = $request->file('document1');
+                 $filename = $file->getClientOriginalName();
+                 $extension = $file->getClientOriginalExtension() ?: 'png';
+                 $folderName = '/upload/user_document/';
+                 $picture1 = time() . 'document1.' . $extension;
+                 $destinationPath = public_path() . $folderName;
+                 $request->file('document1')->move($destinationPath, $picture1);
+                 $document_url1 =$picture1;
+                  $image_path = public_path() ."/upload/user_document/".$rel_document_url1;
+                    if(file_exists($image_path)&&$rel_document_url1!="") {
+                        try {
+                             unlink($image_path);
+                        }
+                        catch(Exception $e) {
+
+                        }
+                  }
+            }
+            if ($request->hasFile('document2'))
+            {
+                 $file = $request->file('document2');
+                 $filename = $file->getClientOriginalName();
+                 $extension = $file->getClientOriginalExtension() ?: 'png';
+                 $folderName = '/upload/user_document/';
+                 $picture2 = time() . 'document2.' . $extension;
+                 $destinationPath = public_path() . $folderName;
+                 $request->file('document2')->move($destinationPath, $picture2);
+                 $document_url2 =$picture2;
+                  $image_path = public_path() ."/upload/user_document/".$rel_document_url2;
+                    if(file_exists($image_path)&&$rel_document_url2!="") {
+                        try {
+                             unlink($image_path);
+                        }
+                        catch(Exception $e) {
+
+                        }
+                  }
+            }
+            if ($request->hasFile('document3'))
+            {
+                 $file = $request->file('document3');
+                 $filename = $file->getClientOriginalName();
+                 $extension = $file->getClientOriginalExtension() ?: 'png';
+                 $folderName = '/upload/user_document/';
+                 $picture3 = time() . 'document3.' . $extension;
+                 $destinationPath = public_path() . $folderName;
+                 $request->file('document3')->move($destinationPath, $picture3);
+                 $document_url3 =$picture3;
+                  $image_path = public_path() ."/upload/user_document/".$rel_document_url3;
+                    if(file_exists($image_path)&&$rel_document_url3!="") {
+                        try {
+                             unlink($image_path);
+                        }
+                        catch(Exception $e) {
+
+                        }
+                  }
+            }
+            if ($request->hasFile('document4'))
+            {
+                 $file = $request->file('document4');
+                 $filename = $file->getClientOriginalName();
+                 $extension = $file->getClientOriginalExtension() ?: 'png';
+                 $folderName = '/upload/user_document/';
+                 $picture4 = time() . 'document4.' . $extension;
+                 $destinationPath = public_path() . $folderName;
+                 $request->file('document4')->move($destinationPath, $picture4);
+                 $document_url4 =$picture4;
+                  $image_path = public_path() ."/upload/user_document/".$rel_document_url4;
+                    if(file_exists($image_path)&&$rel_document_url4!="") {
+                        try {
+                             unlink($image_path);
+                        }
+                        catch(Exception $e) {
+
+                        }
+                  }
+            }
            $user->name=$request->get("name");
            $user->email=$request->get("email");
            $user->phone=$request->get("phone");
@@ -867,6 +961,10 @@ class UserController extends Controller
            $user->age=$request->get("age");
            $user->address=$request->get("address");
            $user->profile_pic=$img;
+           $user->document1=$document_url1;
+           $user->document2=$document_url2;
+           $user->document3=$document_url3;
+           $user->document4=$document_url4;
            $user->save();
            Session::flash('message',__('message.Profile Update Successfully'));
            Session::flash('alert-class', 'alert-success');

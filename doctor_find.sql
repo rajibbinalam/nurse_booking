@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2024 at 07:28 PM
+-- Generation Time: Dec 18, 2024 at 08:24 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 7.4.7
 
@@ -162,7 +162,9 @@ CREATE TABLE `book_appointment` (
 INSERT INTO `book_appointment` (`id`, `doctor_id`, `user_id`, `slot_id`, `slot_name`, `date`, `phone`, `user_description`, `status`, `created_at`, `updated_at`, `notify`, `payment_mode`, `transaction_id`, `consultation_fees`, `prescription_file`, `is_completed`) VALUES
 (1, 154, 1, 3073692, '09:00 AM', '2024-12-16', '13253465657', 'dfdgdfgdf', 3, '2024-12-11 18:06:42', '2024-12-11 18:23:19', '0', 'COD', NULL, '250', NULL, 1),
 (2, 154, 1, 3073758, '08:00', '2024-12-16', '092845769', 'tsrtsdfgsf', 3, '2024-12-12 18:59:31', '2024-12-16 16:41:37', '0', 'COD', NULL, '250', NULL, 1),
-(3, 154, 1, 3073761, '08:00', '2024-12-18', '+8801324246456', 'Test Raj', 6, '2024-12-16 18:20:31', '2024-12-16 18:27:59', '0', 'COD', NULL, '250', NULL, 1);
+(3, 154, 1, 3073761, '08:00', '2024-12-18', '+8801324246456', 'Test Raj', 6, '2024-12-16 18:20:31', '2024-12-16 18:27:59', '0', 'COD', NULL, '250', NULL, 1),
+(4, 154, 1, 3073762, '08:00', '2024-12-19', '+8801234345345', 'w4wersr', 5, '2024-12-18 17:59:19', '2024-12-18 18:13:20', '0', 'COD', NULL, '250', NULL, 1),
+(5, 154, 1, 3073763, '08:00', '2024-12-20', '+8801465645454', 'rfrfsds', 1, '2024-12-18 17:59:50', '2024-12-18 18:08:54', '0', 'COD', NULL, '250', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -559,7 +561,7 @@ CREATE TABLE `patient` (
   `password` varchar(250) DEFAULT NULL,
   `phone` varchar(250) DEFAULT NULL,
   `gender` varchar(255) DEFAULT NULL,
-  `age` int(11) NOT NULL,
+  `age` int(11) DEFAULT NULL,
   `address` text DEFAULT NULL,
   `is_approve` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
@@ -567,15 +569,19 @@ CREATE TABLE `patient` (
   `is_deleted` enum('0','1') NOT NULL DEFAULT '0',
   `connectycube_user_id` varchar(1000) DEFAULT NULL,
   `login_id` varchar(1000) DEFAULT NULL,
-  `connectycube_password` varchar(1000) DEFAULT NULL
+  `connectycube_password` varchar(1000) DEFAULT NULL,
+  `document1` text DEFAULT NULL,
+  `document2` text DEFAULT NULL,
+  `document3` text DEFAULT NULL,
+  `document4` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`id`, `login_type`, `profile_pic`, `name`, `email`, `password`, `phone`, `gender`, `age`, `address`, `is_approve`, `created_at`, `updated_at`, `is_deleted`, `connectycube_user_id`, `login_id`, `connectycube_password`) VALUES
-(1, 1, '1732859082.jpg', 'Johh Due', 'patient@gmail.com', '123456', '0506527568', 'female', 26, 'Muhammodpur, dhaka', 1, '2023-04-07 03:12:28', '2024-12-16 12:24:56', '0', '11994074', '0506527568#1', '12345678');
+INSERT INTO `patient` (`id`, `login_type`, `profile_pic`, `name`, `email`, `password`, `phone`, `gender`, `age`, `address`, `is_approve`, `created_at`, `updated_at`, `is_deleted`, `connectycube_user_id`, `login_id`, `connectycube_password`, `document1`, `document2`, `document3`, `document4`) VALUES
+(1, 1, '1732859082.jpg', 'Johh Due', 'patient@gmail.com', '123456', '0506527568', 'female', 26, 'Muhammodpur, dhaka', 1, '2023-04-07 03:12:28', '2024-12-18 12:53:53', '0', '11994074', '0506527568#1', '12345678', '1734547701document1.png', '1734548033document2.webp', '1734548033document3.png', '1734547937document4.jpeg');
 
 -- --------------------------------------------------------
 
@@ -4717,7 +4723,8 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (4138, 1, 'DfC9o8OOm4jLVVLMKRywmxxE3752iQCf', '2024-12-01 07:10:46', '2024-12-01 07:10:46'),
 (4139, 1, 'E4I0p6qaBFf0oAiYSwp2O9bFtlDm5h7r', '2024-12-11 09:57:33', '2024-12-11 09:57:33'),
 (4140, 1, 'I4TMEaoEk7idKL6ByxhnPHBtqlp0iPZ3', '2024-12-13 08:31:19', '2024-12-13 08:31:19'),
-(4141, 1, 'jTklrT3EInwy6TrYIN5ht2zSOlN7G6sm', '2024-12-16 10:20:43', '2024-12-16 10:20:43');
+(4141, 1, 'jTklrT3EInwy6TrYIN5ht2zSOlN7G6sm', '2024-12-16 10:20:43', '2024-12-16 10:20:43'),
+(4142, 1, '9RTmNUgNO7SKCjminebE8IrrA3fYpc5A', '2024-12-18 11:55:49', '2024-12-18 11:55:49');
 
 -- --------------------------------------------------------
 
@@ -5709,7 +5716,6 @@ CREATE TABLE `settlement` (
 
 INSERT INTO `settlement` (`id`, `book_id`, `status`, `payment_date`, `created_at`, `updated_at`, `doctor_id`, `amount`, `settlement_id`) VALUES
 (1, 2, 1, '2021-09-15', '2021-08-01 18:28:16', '2021-08-01 18:28:16', 1, '250', 4),
-(2, 4, 1, '2021-09-15', '2021-08-14 04:11:40', '2021-08-14 04:11:40', 1, '250', 4),
 (3, 11, 1, '2021-09-15', '2021-08-14 04:15:41', '2021-08-14 04:15:41', 10, '250', 1),
 (4, 12, 1, '2021-09-15', '2021-08-16 23:44:04', '2021-08-16 23:44:04', 19, '250', 26),
 (5, 13, 0, '2021-09-15', '2021-08-17 00:02:10', '2021-08-17 00:02:10', 27, '250', NULL),
@@ -5975,7 +5981,8 @@ INSERT INTO `settlement` (`id`, `book_id`, `status`, `payment_date`, `created_at
 (266, 337, 0, '2024-12-15', '2024-11-29 10:32:02', '2024-11-29 10:32:02', 1, '100', NULL),
 (267, 338, 0, '2025-01-15', '2024-12-01 07:06:26', '2024-12-01 07:06:26', 1, '100', NULL),
 (268, 1, 0, '2025-01-15', '2024-12-11 12:06:42', '2024-12-11 12:06:42', 154, '250', NULL),
-(269, 2, 0, '2025-01-15', '2024-12-12 12:59:31', '2024-12-12 12:59:31', 154, '250', NULL);
+(269, 2, 0, '2025-01-15', '2024-12-12 12:59:31', '2024-12-12 12:59:31', 154, '250', NULL),
+(272, 5, 0, '2025-01-15', '2024-12-18 11:59:50', '2024-12-18 11:59:50', 154, '250', NULL);
 
 -- --------------------------------------------------------
 
@@ -11858,7 +11865,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `created_at`, `updated_at`, `phone`, `profile_pic`, `android_key`, `ios_key`) VALUES
-(1, 'admin@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2024-12-16 10:20:43', 'Medico', 'App', '2020-09-29 23:00:13', '2024-12-16 10:20:43', '0123456789', '1694149059.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc'),
+(1, 'admin@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2024-12-18 11:55:49', 'Medico', 'App', '2020-09-29 23:00:13', '2024-12-18 11:55:49', '0123456789', '1694149059.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc'),
 (2, 'owner@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2022-09-28 09:07:18', 'Appoint', 'Booking System', '2020-09-29 23:00:13', '2022-09-28 09:07:18', '0123456789', '1603175222.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc');
 
 --
@@ -12117,7 +12124,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `book_appointment`
 --
 ALTER TABLE `book_appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `code`
@@ -12201,7 +12208,7 @@ ALTER TABLE `payment_gateway_details`
 -- AUTO_INCREMENT for table `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4142;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4143;
 
 --
 -- AUTO_INCREMENT for table `reminders`
@@ -12255,7 +12262,7 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `settlement`
 --
 ALTER TABLE `settlement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=271;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=273;
 
 --
 -- AUTO_INCREMENT for table `slot_timing`
