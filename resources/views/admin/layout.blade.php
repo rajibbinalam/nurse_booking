@@ -282,7 +282,7 @@
                         <span>{{__("message.Complete Payment")}}</span>
                         </a>
                      </li>
-                     <li class="menu-title">{{__("message.Notification")}}</li>
+                     {{-- <li class="menu-title">{{__("message.Notification")}}</li>
                      <li>
                         <a href="{{url('admin/sendnotification')}}" class="waves-effect">
                         <i class="uil-snapchat-ghost"></i>
@@ -294,7 +294,7 @@
                         <i class="uil-key-skeleton-alt"></i>
                         <span>{{__("message.Notification Key")}}</span>
                         </a>
-                     </li>
+                     </li> --}}
                       <?php if(env('IS_FORNT')=="1")
                      {
                         ?>

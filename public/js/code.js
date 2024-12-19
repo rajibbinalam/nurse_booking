@@ -171,7 +171,7 @@ function slotchange(s_id) {
         },
         method: "get",
         success: function (data) {
-            console.log(data);
+            // console.log(data);
             if (data == 0) {
                 $("#slotdiv").html(
                     '<p style="color: red;margin-left: 10px;">' +
@@ -182,6 +182,7 @@ function slotchange(s_id) {
                 var str = JSON.parse(data);
                 var txt = "";
                 for (var i = 0; i < str.length; i++) {
+                    const convertedSlot = convertToAMPM(str[i].slot);
                     txt = txt + "<li>";
                     if (str[i].is_book == "1") {
                         txt =
@@ -192,10 +193,10 @@ function slotchange(s_id) {
                             str[i].slot +
                             '" name="slot" id="' +
                             str[i].id +
-                            '" disabled/><label class="custom-radio-disabled" for="' +
+                            '" disabled/><label style="width: 145px;" class="custom-radio-disabled" for="' +
                             str[i].id +
                             '">' +
-                            str[i].slot +
+                            convertedSlot +
                             "</label>";
                     } else {
                         txt =
@@ -206,10 +207,10 @@ function slotchange(s_id) {
                             str[i].slot +
                             '" name="slot" id="' +
                             str[i].id +
-                            '"/><label for="' +
+                            '"/><label style="width: 145px;" for="' +
                             str[i].id +
                             '">' +
-                            str[i].slot +
+                            convertedSlot +
                             "</label>";
                     }
                     txt = txt + "</li>";
@@ -218,6 +219,22 @@ function slotchange(s_id) {
             }
         },
     });
+}
+function convertToAMPM(slot) {
+    const times = slot.split(' - ');
+    const convertTime = (time24) => {
+        const [hours, minutes] = time24.split(':');
+        let hour = parseInt(hours);
+        const suffix = hour >= 12 ? 'PM' : 'AM';
+        if (hour > 12) {
+            hour -= 12;
+        } else if (hour === 0) {
+            hour = 12;
+        }
+        return `${hour}:${minutes} ${suffix}`;
+    };
+
+    return convertTime(times[0]) + ' - ' + convertTime(times[1]);
 }
 
 function checkcurrentpwd(val) {

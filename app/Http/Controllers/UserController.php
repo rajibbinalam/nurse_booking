@@ -161,17 +161,39 @@ class UserController extends Controller
               }else{
                    $b->department_name="";
               }
+              $b->slot_name = $this->convertToAMPM($b->slot_name);
           }
 
           $userdata=Patient::find(Session::get("user_id"));
           if(empty($userdata)){
               $this->logout();
           }
+        //   dd($bookdata);
           return view("user.patient.dashboard")->with("setting",$setting)->with("bookdata",$bookdata)->with("type",$type)->with("totalappointment",$totalappointment)->with("completeappointment",$completeappointment)->with("pendingappointment",$pendingappointment)->with("userdata",$userdata);
        }else{
           return redirect("/");
        }
 
+    }
+
+    private function convertTime($time24) {
+        list($hours, $minutes) = explode(':', $time24);
+        $hours = (int)$hours;
+        $suffix = $hours >= 12 ? 'PM' : 'AM';
+
+        // Convert hours to 12-hour format
+        if ($hours > 12) {
+            $hours -= 12;
+        } elseif ($hours == 0) {
+            $hours = 12; // Midnight case
+        }
+
+        return $hours . ':' . $minutes . ' ' . $suffix;
+    }
+
+    private function convertToAMPM($slot) {
+        $times = explode(' - ', $slot);
+        return $this->convertTime($times[0]) . ' - ' . $this->convertTime($times[1]);
     }
 
     public function logout(){

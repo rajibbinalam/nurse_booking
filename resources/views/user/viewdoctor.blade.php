@@ -413,7 +413,7 @@
                            <input type="hidden" name="doctor_id" id="doctor_id" value="{{$data->id}}">
                            <input type="hidden" name="consultation_fees" value="{{$data->consultation_fees}}">
                            <div class="form-group">
-                              <input type="text" name="date"  id="date" value="{{date('m/d/Y')}}" id="datepicker" onchange="slotdivchange(this.value)">
+                              <input type="text" name="date"  id="date" value="" id="datepicker" onchange="slotdivchange(this.value)">
                               <i class="fas fa-calendar-alt"></i>
                            </div>
                            @if(!empty($schedule))
@@ -434,10 +434,10 @@
                                     <li>
                                        @if($ns['is_book']==0)
                                        <input type='radio' value='{{$ns["id"]."#".$ns["name"]}}' name='slot' id='{{$ns["id"]}}'/>
-                                       <label for='{{$ns["id"]}}'>{{$ns["name"]}}</label>
+                                       <label style="width: 115px;" for='{{$ns["id"]}}'>{{$ns["name"]}}</label>
                                        @else
-                                       <input type='radio' value='{{$ns["id"]."#".$ns["name"]}}' name='slot' id='{{$ns["id"]}}' disabled/>
-                                       <label class="custom-radio-disabled" for='radio4'>{{$ns["name"]}}</label>
+                                       <input type='radio' value='{{$ns["id"]."#".$ns["name"]}}'  name='slot' id='{{$ns["id"]}}' disabled/>
+                                       <label  style="width: 115px;" class="custom-radio-disabled" for='radio4'>{{$ns["name"]}}</label>
                                        @endif
                                     </li>
                                     @endforeach
@@ -445,7 +445,7 @@
                                     @endforeach
                                     @endif
                                  @else
-                                    <p style="color: red;margin-left: 10px;">{{__("message.Doctor isnot Avilable")}}</p>
+                                    <p style="color: red;margin-left: 10px;">{{__("message.Doctor is not Avilable")}}</p>
                                  @endif
                               </ul>
                            </div>

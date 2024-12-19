@@ -1071,7 +1071,7 @@ $doctordata=Doctors::with('departmentls')->find(Session::get("user_id"));
                             // foreach ($getslot as $g) {
                                 $aslot=new SlotTiming();
                                 $aslot->schedule_id=$store->id;
-                                $aslot->slot=$start_date[$j];
+                                $aslot->slot=$start_date[$j] . ' - ' . $end_date[$j];
                                 $aslot->save();
                             // }
                       }

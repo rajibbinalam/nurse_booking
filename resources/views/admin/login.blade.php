@@ -95,9 +95,9 @@
                         </div>
                      </div>
                   </div>
-                  <div class="mt-5 text-center">
+                  {{-- <div class="mt-5 text-center">
                      <p>© {{date('Y')}} {{__("message.System Name")}} <i class="mdi mdi-heart text-danger"></i> {{__("message.by Admin Panel")}}</p>
-                  </div>
+                  </div> --}}
                </div>
             </div>
          </div>
