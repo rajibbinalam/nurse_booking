@@ -68,7 +68,8 @@
                                  <div class="row clearfix">
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <label class="fr" >{{__('message.Name')}}</label>
-                                <input type="text" id="name" name="name" placeholder="{{__('message.Your name')}}" required="" />
+                                <input type="text" id="name" name="name" placeholder="{{__('message.Your name')}}" required="" onkeyup="restrictToString(this)" />
+                                <p class="name-field-error" style="color: red"></p>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <label class="fr">{{__('message.Phone Number')}}</label>
@@ -80,11 +81,13 @@
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <label class="fr">{{__('message.Password')}}</label>
-                                <input type="password" name="password" id="pwd" placeholder="{{__('message.Enter password')}}" required="" />
+                                <input type="password" name="password" id="pwd" placeholder="{{__('message.Enter password')}}" required="" onkeyup="checkPasswordStrength()" />
+                                <div id="password-error" style="color: red;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <label class="fr">{{__('message.Confirm password')}}</label>
                                 <input type="password" name="cpassword" id="cpwd" onchange="checkbothpassword(this.value)" placeholder="{{__('message.Enter Confirm password')}}" required="" />
+                                <div id="cpassword-error" style="color: red;"></div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                 <div class="custom-check-box fr">
@@ -145,4 +148,20 @@
 </section>
 @stop
 @section('footer')
+<script>
+    function restrictToString(obj) {
+        let value = $(obj).val();
+        let originalValue = value;
+
+        value = value.replace(/[^A-Za-z\s]/g, '');
+
+        if (originalValue !== value) {
+            $('.name-field-error').html('Only letters and spaces are allowed.');
+        } else {
+            $('.name-field-error').html('');
+        }
+
+        $(obj).val(value);
+    }
+</script>
 @stop

@@ -152,12 +152,49 @@ function ValidateEmail(mail) {
 function checkbothpassword(value) {
     var pwd = $("#pwd").val();
     if (pwd != value) {
-        var txt =
-            '<div class="col-sm-12"><div class="alert  alert-danger alert-dismissible fade show" role="alert">' +
-            $("#pwdmatch").val() +
-            '<button type="button"  class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
-        $("#registererror").html(txt);
-        $("#cpwd").val("");
+        // var txt =
+        //     '<div class="col-sm-12"><div class="alert  alert-danger alert-dismissible fade show" role="alert">' +
+        //     $("#pwdmatch").val() +
+        //     '<button type="button"  class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div></div>';
+        // $("#registererror").html(txt);
+        // $("#cpwd").val("");
+        $('#cpassword-error').html('Password not matched')
+        $("#cpwd").css("color","red");
+    }else{
+        $('#cpassword-error').html('')
+        $("#cpwd").css("color","black");
+    }
+}
+
+function checkPasswordStrength() {
+    var password = $('#pwd').val();
+    var passwordError = $('#password-error');
+
+    // Regular expressions to check for letters, digits, and special characters
+    var letterPattern = /[A-Za-z]/; // Check for letters (both lowercase and uppercase)
+    var digitPattern = /\d/; // Check for digits
+    var specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/; // Check for special characters
+
+    var errorMessage = '';
+    if (!letterPattern.test(password)) {
+        errorMessage += 'Password must contain at least one letter.<br>';
+    }
+    if (!digitPattern.test(password)) {
+        errorMessage += 'Password must contain at least one digit.<br>';
+    }
+    if (!specialCharPattern.test(password)) {
+        errorMessage += 'Password must contain at least one special character.<br>';
+    }
+
+    // Display the error message if any condition is not met
+    if (errorMessage) {
+        passwordError.html(errorMessage);
+        $('.registration-form button[type="submit"]').attr('disabled', true); // Disable submit button
+        return false;
+    } else {
+        passwordError.html(''); // Clear error message if the input is valid
+        $('.registration-form button[type="submit"]').attr('disabled', false); // Enable submit button
+        return true;
     }
 }
 

@@ -139,7 +139,8 @@
 
                                     <div class="col-lg-4 col-md-4 col-sm-6 form-group">
                                         <label for="consultation_fees">{{__("Fee")}}<span class="reqfield">*</span></label>
-                                        <input type="number" name="consultation_fees" value="{{isset($doctordata->consultation_fees)?$doctordata->consultation_fees:''}}" class="form-control" id="consultation_fees" min="1" step="0.01">
+                                        <input type="number" name="consultation_fees" value="{{isset($doctordata->consultation_fees)?$doctordata->consultation_fees:''}}" class="form-control" id="consultation_fees" min="1" step="0.01" style="width: 60%; display: inline;">
+                                        <span>/Shift</span>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-6 form-group">
                                         <label for="age">{{__("Age")}}<span class="reqfield">*</span></label>
@@ -178,28 +179,28 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-md-6 p-1 mt-4" id="document1">
-                                        <label>{{__("Document One: ")}}<span class="reqfield">*</span></label>
-                                        <input type="file" id="us2-address" class="form-control" name="document" />
+                                        <label>{{__("Last education certificate : ")}}<span class="reqfield">@if (empty($doctordata->document)) * @endif</span></label>
+                                        <input type="file" id="us2-address" class="form-control" name="document" @if (empty($doctordata->document)) required @endif/>
                                         @if (!empty($doctordata->document))
                                             <a href="{{asset('upload/doctor_document').'/'.$doctordata->document}}" target="_blank">Download Document</a>
                                         @endif
                                     </div>
                                     <div class="col-md-6 p-1 mt-4" id="document2">
-                                        <label>{{__("Document Two: ")}}<span class="reqfield">*</span></label>
-                                        <input type="file" id="us2-address" class="form-control" name="document1" />
+                                        <label>{{__("NID / birth certificate : ")}}<span class="reqfield">@if (empty($doctordata->document1)) * @endif</span></label>
+                                        <input type="file" id="us2-address" class="form-control" name="document1" @if (empty($doctordata->document1)) required @endif />
                                         @if (!empty($doctordata->document1))
                                             <a href="{{asset('upload/doctor_document').'/'.$doctordata->document1}}" target="_blank">Download Document</a>
                                         @endif
                                     </div>
                                     <div class="col-md-6 p-1 mt-4" id="document3">
-                                        <label>{{__("Document Three: ")}}<span class="reqfield">*</span></label>
-                                        <input type="file" id="us2-address" class="form-control" name="document2" />
+                                        <label>{{__("Diploma/Certification : ")}}<span class="reqfield">@if (empty($doctordata->document2)) * @endif</span></label>
+                                        <input type="file" id="us2-address" class="form-control" name="document2" @if (empty($doctordata->document2)) required @endif />
                                         @if (!empty($doctordata->document2))
                                             <a href="{{asset('upload/doctor_document').'/'.$doctordata->document2}}" target="_blank">Download Document</a>
                                         @endif
                                     </div>
                                     <div class="col-md-6 p-1 mt-4" id="document4">
-                                        <label>{{__("Document Four: ")}}<span class="reqfield">*</span></label>
+                                        <label>{{__("Experience (if you have): ")}}<span class="reqfield">*</span></label>
                                         <input type="file" id="us2-address" class="form-control" name="document3" />
                                         @if (!empty($doctordata->document3))
                                             <a href="{{asset('upload/doctor_document').'/'.$doctordata->document3}}" target="_blank">Download Document</a>

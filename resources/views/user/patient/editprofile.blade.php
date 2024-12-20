@@ -134,33 +134,38 @@
                         </div>
                         <div class="row clearfix">
                             <div class="col-md-6 p-1 mt-4" id="document1">
-                                <label>{{__("NID Front: ")}}<span class="reqfield">*</span></label>
-                                <input type="file" id="us2-address" class="form-control" name="document4" />
+                                <label>National ID (NID)
+                                        Passport (if applicable)
+                                        /Driving License
+                                        /Birth Certificate:<span class="reqfield">@if (empty($userdata->document4)) * @endif</span></label>
+                                <input type="file" id="us2-address" class="form-control" name="document4" @if (empty($userdata->document4)) required @endif/>
                                 @if (!empty($userdata->document4))
                                     <a href="{{asset('upload/user_document').'/'.$userdata->document4}}" target="_blank">Download Document</a>
                                 @endif
                             </div>
                             <div class="col-md-6 p-1 mt-4" id="document2">
-                                <label>{{__("NID Back: ")}}<span class="reqfield">*</span></label>
-                                <input type="file" id="us2-address" class="form-control" name="document1" />
+                                <label>Recent medical reports
+                                    /Doctor’s prescriptions
+                                    /History of previous treatments<span class="reqfield">@if (empty($userdata->document1)) * @endif</span></label>
+                                <input type="file" id="us2-address" class="form-control" name="document1" @if (empty($userdata->document1)) required @endif/>
                                 @if (!empty($userdata->document1))
                                     <a href="{{asset('upload/user_document').'/'.$userdata->document1}}" target="_blank">Download Document</a>
                                 @endif
                             </div>
                             <div class="col-md-6 p-1 mt-4" id="document3">
-                                <label>{{__("Document One: ")}}<span class="reqfield">*</span></label>
-                                <input type="file" id="us2-address" class="form-control" name="document2" />
+                                <label>Utility bills (electricity, gas, water)<span class="reqfield">@if (empty($userdata->document2)) * @endif</span></label>
+                                <input type="file" id="us2-address" class="form-control" name="document2" @if (empty($userdata->document2)) required @endif/>
                                 @if (!empty($userdata->document2))
                                     <a href="{{asset('upload/user_document').'/'.$userdata->document2}}" target="_blank">Download Document</a>
                                 @endif
                             </div>
-                            <div class="col-md-6 p-1 mt-4" id="document4">
+                            {{-- <div class="col-md-6 p-1 mt-4" id="document4">
                                 <label>{{__("Document Two: ")}}<span class="reqfield">*</span></label>
                                 <input type="file" id="us2-address" class="form-control" name="document3" />
                                 @if (!empty($userdata->document3))
                                     <a href="{{asset('upload/user_document').'/'.$userdata->document3}}" target="_blank">Download Document</a>
                                 @endif
-                            </div>
+                            </div> --}}
                         </div>
                   </div>
                </div>
