@@ -60,6 +60,10 @@ class UserController extends Controller
 
         $getuser=Patient::where("email",$request->get("email"))->first();
         if($getuser){
+
+            Session::forget('patient_reg_number');
+            Session::forget('patient_reg_number_timestamp');
+            Session::forget('patient_reg_otp_verified');
             Session::flash('message',__("message.Email Already Existe"));
             Session::flash('alert-class', 'alert-danger');
             return redirect()->back();
@@ -101,6 +105,10 @@ class UserController extends Controller
 
                 Session::put("user_id",$store->id);
                 Session::put("role_id",'1');
+
+                Session::forget('patient_reg_number');
+                Session::forget('patient_reg_number_timestamp');
+                Session::forget('patient_reg_otp_verified');
                 Session::flash('message',__("Successful Register"));
                 Session::flash('alert-class', 'alert-success');
                 return redirect("userdashboard");

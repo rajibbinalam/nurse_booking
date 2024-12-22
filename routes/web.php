@@ -79,6 +79,10 @@ Route::group(['prefix' => '/'], function () {
 	Route::get("getschedule",[FrontController::class,"getschedule"]);
 	Route::post("savecontact",[FrontController::class,"savecontact"]);
 
+    // OTP Verification
+	Route::post("send-otp",[FrontController::class,"sendotp"]);
+	Route::post("verify-otp",[FrontController::class,"verifyotp"]);
+
 	Route::post("userpostregister",[UserController::class,"userpostregister"]);
 	Route::post("postloginuser",[UserController::class,"postloginuser"]);
 	Route::get("userdashboard",[UserController::class,"userdashboard"]);

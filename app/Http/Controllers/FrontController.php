@@ -28,7 +28,12 @@ use App\Models\Code;
 use App\Models\PaymentGatewayDetail;
 use App\Models\PrivecyApp;
 use App\Models\DataDeletion;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session as FacadesSession;
 use Mail;
+use Nette\Utils\Random;
+
 class FrontController extends Controller
 {
 
@@ -484,8 +489,22 @@ class FrontController extends Controller
     }
 
     public function patientregister(){
-        $setting=Setting::find(1);
-        return view("user.patient.register")->with("setting",$setting);
+        $data['setting']=Setting::find(1);
+
+        $patientRegNumber = FacadesSession::get('patient_reg_number');
+        $timestamp = FacadesSession::get('patient_reg_number_timestamp');
+
+        if ($patientRegNumber && (time() - $timestamp) <= 300) {
+            $data['patient_reg_number'] = $patientRegNumber;
+            $data['patient_reg_otp_verified'] = FacadesSession::get('patient_reg_otp_verified');
+        } else {
+            FacadesSession::forget('patient_reg_number');
+            FacadesSession::forget('patient_reg_number_timestamp');
+            FacadesSession::forget('patient_reg_otp_verified');
+            $data['patient_reg_otp_verified'] = null;
+            $data['patient_reg_number'] = null;
+        }
+        return view("user.patient.register")->with($data);
     }
 
     public function forgotpassword(){
@@ -494,13 +513,110 @@ class FrontController extends Controller
     }
 
     public function doctorlogin(){
+
+        FacadesSession::forget('doctor_reg_number');
+        FacadesSession::forget('doctor_reg_number_timestamp');
+         FacadesSession::forget('doctor_reg_otp_verified');
        $setting=Setting::find(1);
        return view("user.doctor.login")->with("setting",$setting);
     }
 
     public function doctorregister(){
-       $setting=Setting::find(1);
-       return view("user.doctor.register")->with("setting",$setting);
+       $data['setting'] = $setting =Setting::find(1);
+       $doctorRegNumber = FacadesSession::get('doctor_reg_number');
+       $timestamp = FacadesSession::get('doctor_reg_number_timestamp');
+
+       if ($doctorRegNumber && (time() - $timestamp) <= 300) {
+           $data['doctor_reg_otp_verified'] = FacadesSession::get('doctor_reg_otp_verified');
+              $data['doctor_reg_number'] = $doctorRegNumber;
+       } else {
+           FacadesSession::forget('doctor_reg_number');
+           FacadesSession::forget('doctor_reg_number_timestamp');
+            FacadesSession::forget('doctor_reg_otp_verified');
+           $data['doctor_reg_otp_verified'] = null;
+           $data['doctor_reg_number'] = null;
+       }
+
+       return view("user.doctor.register")->with($data);
+    }
+
+
+    public function sendotp(Request $request){
+        $base_url = config('app.base_url');
+        $key = config('app.smkey');
+        $count = config('app.count');
+        $otp_code = random_int(1000, 9999);
+        $sms = "Your OTP code is: ".$otp_code;
+        $phone = $request->get('phone');
+
+        if($request->get('type') == 'doctor'){
+            FacadesSession::put('doctor_reg_number', $phone);
+            FacadesSession::put('doctor_reg_otp', $otp_code);
+            FacadesSession::put('doctor_reg_number_timestamp', time());
+        }else{
+            FacadesSession::put('patient_reg_number', $phone);
+            FacadesSession::put('patient_reg_otp', $otp_code);
+            FacadesSession::put('patient_reg_number_timestamp', time());
+        }
+
+        if (substr($phone, 0, 4) !== "+880") {
+            $phone = "+880" . $phone;
+        }
+
+		$data = array(
+		    "to" => $phone,
+		    "token" => $key,
+		    "message" => $sms
+		);
+        // return response()->json(['status' => 'success', 'message' => $otp_code]);
+        try {
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL,$base_url);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($curl, CURLOPT_ENCODING, '');
+            curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $smsresponse = curl_exec($curl);
+            curl_close($curl);
+
+            Log::info('SMS notification sended on phone #'.$phone);
+            Log::info('SMS Response: '.$smsresponse);
+
+            // return $smsresponse;
+            return response()->json(['status' => 'success', 'message' => $smsresponse]);
+        } catch (\Throwable $th) {
+            Log::error('SMS notification failed on phone #'.$phone);
+            Log::error('SMS Response: '.$th->getMessage());
+            return response()->json(['status' => 'error', 'message' => $th->getMessage()]);
+        }
+    }
+
+    public function verifyotp(Request $request){
+        $otp = $request->get('otp');
+        $type = $request->get('type');
+        $phone = $request->get('phone');
+        if($type == 'doctor'){
+            $ss_otp_code = FacadesSession::get('doctor_reg_otp');
+            $ss_phone = FacadesSession::get('doctor_reg_number');
+            if($phone == $ss_phone && $otp == $ss_otp_code){
+                FacadesSession::put('doctor_reg_otp_verified', 1);
+                return response()->json(['status' => 'success', 'message' => 'OTP verified successfully']);
+            }else{
+                return response()->json(['status' => 'error', 'message' => 'OTP verification failed']);
+            }
+        }else{
+            $ss_otp_code = FacadesSession::get('patient_reg_otp');
+            $ss_phone = FacadesSession::get('patient_reg_number');
+            if($phone == $ss_phone && $otp == $ss_otp_code){
+                FacadesSession::put('patient_reg_otp_verified', 1);
+                return response()->json(['status' => 'success', 'message' => 'OTP verified successfully']);
+            }else{
+                return response()->json(['status' => 'error', 'message' => 'OTP verification failed']);
+            }
+        }
+
+
     }
 
     public function getslotlist(Request $request){

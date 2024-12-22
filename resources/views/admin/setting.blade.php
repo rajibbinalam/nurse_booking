@@ -98,14 +98,14 @@
                                        </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                        <label for="verti-nav-phoneno-input">{{__("message.App Store URL")}}</label>
                                        <input type="text" required name="app_url" value="{{isset($data->app_url)?$data->app_url:''}}" class="form-control" id="verti-nav-phoneno-input">
                                     </div>
                                     <div class="form-group">
                                        <label for="verti-nav-phoneno-input">{{__("message.Play Store URL")}}</label>
                                        <input type="text" required name="playstore_url" value="{{isset($data->playstore_url)?$data->playstore_url:''}}" class="form-control" id="verti-nav-phoneno-input">
-                                    </div>
+                                    </div> --}}
 
                                     <div class="mt-4">
                                        <button type="submit" class="btn btn-primary w-md">{{__("message.Submit")}}</button>

@@ -47,6 +47,12 @@ return [
             'level' => 'debug',
         ],
 
+        'notification' => [
+            'driver' => 'notification',
+            'path' => storage_path('logs/notification.log'),
+            'level' => 'debug',
+        ],
+
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),

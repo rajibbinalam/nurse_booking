@@ -62,19 +62,20 @@
                @endif
                <div id="registererror">
                </div>
+               @if ($patient_reg_number)
                <form action="{{url('userpostregister')}}" method="post" class="registration-form">
                   {{csrf_field()}}
                   <div class="row clearfix">
                      <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <label>{{__('message.Name')}}</label>
-                        <input type="text" id="name" name="name" placeholder="{{__('message.Your name')}}" required="" value="{{old('name')}}" />
+                        <input type="text" id="name" name="name" placeholder="{{__('message.Your name')}}" required="" value="{{old('name')}}" onkeyup="restrictToString(this)" />
                         @if ($errors->has('name'))
                           	<span class="text-danger">{{ $errors->first('name') }}</span>
                         @endif
                      </div>
                      <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <label>{{__('message.Phone')}}</label>
-                        <input type="text" name="phone" id="phone" placeholder="{{__('message.Enter Your Phone number')}}" required="" value="+880{{old('phone')}}" maxlength="14"/>
+                        <input type="text" name="phone" id="phone" placeholder="{{__('message.Enter Your Phone number')}}" value={{ $patient_reg_number }} value="+880{{old('phone')}}" maxlength="14" readonly/>
                         @if ($errors->has('phone'))
                           	<span class="text-danger">{{ $errors->first('phone') }}</span>
                         @endif
@@ -88,14 +89,16 @@
                      </div>
                      <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <label>{{__('message.Password')}}</label>
-                        <input type="password" name="password" id="pwd" placeholder="{{__('message.Enter password')}}" required="" value="{{old('password')}}"/>
+                        <input type="password" name="password" id="pwd" placeholder="{{__('message.Enter password')}}" required="" value="{{old('password')}}" onkeyup="checkPasswordStrength()" />
+                        <div id="password-error" style="color: red;"></div>
                         @if ($errors->has('password'))
                           	<span class="text-danger">{{ $errors->first('password') }}</span>
                         @endif
                      </div>
                      <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                         <label>{{__('message.Confirm password')}}</label>
-                        <input type="password" name="password_confirmation" id="cpwd"  placeholder="{{__('message.Enter Confirm password')}}" required="" />
+                        <input type="password" name="password_confirmation" id="cpwd"  placeholder="{{__('message.Enter Confirm password')}}" required="" onchange="checkbothpassword(this.value)"/>
+                        <div id="cpassword-error" style="color: red;"></div>
                         @if ($errors->has('password_confirmation'))
                           	<span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
                         @endif
@@ -119,6 +122,24 @@
                      </div>
                   </div>
                </form>
+               @else
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <label class="fr">{{__('message.Phone Number')}}</label>
+                            <input type="text" name="phone" id="phone" placeholder="{{__('message.Enter Your Phone number')}}" required="" value="+880" maxlength="14" />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group otp-div" style="display: none">
+                            <label class="fr">Enter OTP</label>
+                            <input type="text" name="otp" id="otp" placeholder="Enter Your OTP number" maxlength="4" />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group otp-submit-btn" style="display: none">
+                            <button type="button" class="theme-btn-one" onclick="verifyOTP()">OTP Verify<i class="icon-Arrow-Right"></i></button>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group otp-sent-btn">
+                            <button type="button" class="theme-btn-one" id="otp-verify" onclick="sendOTP()">Send OTP<i class="icon-Arrow-Right"></i></button>
+                        </div>
+                    </div>
+                    @endif
                <div class="text"><span>{{__('message.or')}}</span></div>
                <div class="login-now">
                   <p>{{__('message.Already have an account')}} <a href="{{url('patientlogin')}}">{{__('message.Login Now')}}</a></p>
@@ -163,4 +184,88 @@
 </section>
 @stop
 @section('footer')
+<script>
+    function restrictToString(obj) {
+        let value = $(obj).val();
+        let originalValue = value;
+
+        value = value.replace(/[^A-Za-z\s]/g, '');
+
+        if (originalValue !== value) {
+            $('.name-field-error').html('Only letters and spaces are allowed.');
+        } else {
+            $('.name-field-error').html('');
+        }
+
+        $(obj).val(value);
+    }
+
+
+    function sendOTP(){
+        var phone = $('#phone').val();
+        if(phone == ''){
+            alert('Please enter phone number');
+            return false;
+        }
+        let otpDiv = $('.otp-div');
+        let otpSubmitBtn = $('.otp-submit-btn');
+        let otpSentBtn = $('.otp-sent-btn');
+        $.ajax({
+            url: "{{url('send-otp')}}",
+            type: 'POST',
+            data: {
+                phone: phone,
+                type: 'patient',
+                _token: "{{csrf_token()}}"
+            },
+            success: function(data){
+                console.log(data);
+                if(data.status == 'success'){
+                    otpDiv.show();
+                    otpSubmitBtn.show();
+                    $('#phone').attr('readonly', true);
+                    otpSentBtn.hide();
+                }else{
+                    alert('OTP not sent. There is some issue');
+                }
+            },
+            error: function(err){
+                console.log(err);
+            }
+        });
+    }
+
+    function verifyOTP(){
+        var otp = $('#otp').val();
+        var phone = $('#phone').val();
+        if(otp == ''){
+            alert('Please enter OTP');
+            return false;
+        }
+        $.ajax({
+            url: "{{url('verify-otp')}}",
+            type: 'POST',
+            data: {
+                phone: phone,
+                otp: otp,
+                type: 'patient',
+                _token: "{{csrf_token()}}"
+            },
+            success: function(data){
+                console.log(data);
+                if(data.status == 'success'){
+                    $('#registererror').html('<div class="alert alert-success">OTP verified successfully</div>');
+                    setTimeout(function(){
+                        window.location.reload();
+                    }, 1000);
+                }else{
+                    alert('OTP not verified. Please try again');
+                }
+            },
+            error: function(err){
+                console.log(err);
+            }
+        });
+    }
+</script>
 @stop

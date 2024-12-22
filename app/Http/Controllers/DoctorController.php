@@ -675,9 +675,12 @@ class DoctorController extends Controller
      }
 
      public function postdoctorregister(Request $request){
-        //dd($request->all());
+        // dd($request->all());
         $getuser=Doctors::where("email",$request->get("email"))->first();
         if($getuser){
+            Session::forget('doctor_reg_number');
+            Session::forget('doctor_reg_number_timestamp');
+            Session::forget('doctor_reg_otp_verified');
             Session::flash('message',__("message.Email Already Existe"));
             Session::flash('alert-class', 'alert-danger');
             return redirect()->back();
@@ -717,6 +720,9 @@ class DoctorController extends Controller
 
                 Session::put("user_id",$store->id);
                 Session::put("role_id",'2');
+                Session::forget('doctor_reg_number');
+                Session::forget('doctor_reg_number_timestamp');
+                Session::forget('doctor_reg_otp_verified');
                 Session::flash('message',__("Successful Register"));
                 Session::flash('alert-class', 'alert-success');
                 return redirect("doctordashboard");
