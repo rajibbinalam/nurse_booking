@@ -200,7 +200,7 @@
                                         @endif
                                     </div>
                                     <div class="col-md-6 p-1 mt-4" id="document4">
-                                        <label>{{__("Experience (if you have): ")}}<span class="reqfield">*</span></label>
+                                        <label>{{__("Experience (if you have): ")}}<span class="reqfield"></span></label>
                                         <input type="file" id="us2-address" class="form-control" name="document3" />
                                         @if (!empty($doctordata->document3))
                                             <a href="{{asset('upload/doctor_document').'/'.$doctordata->document3}}" target="_blank">Download Document</a>

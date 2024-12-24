@@ -211,7 +211,7 @@ class UserController extends Controller
     }
 
     public function makeappointment(Request $request){
-
+        // dd($request->all());
         $this->validate($request, [
             "date"    => "required",
             "slot"    => "required",
@@ -348,10 +348,15 @@ class UserController extends Controller
                       $data->phone=$request->get("phone_no");
                       $data->user_description=$request->get("message");
                       $data->payment_mode="COD";
-                    //   $data->transaction_id="";
                       $data->is_completed = "1";
                       $data->consultation_fees = $request->get("consultation_fees");
+                      $data->patient_name = $request->get("name");
+                      $data->age = $request->get("age");
+                      $data->gender = $request->get("gender");
+                      $data->helth_condition = $request->get("helth_condition");
+                      $data->require_service = $request->get("require_service");
                       $data->save();
+
                       $store = new Settlement();
                       $store->book_id = $data->id;
                       $store->status = '0';

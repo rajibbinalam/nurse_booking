@@ -452,9 +452,44 @@
                         </div>
                         <div class="choose-service">
                            <h4>{{__('message.Enter Information')}}</h4>
+                            @php
+                                $patient = Session::has("user_id") ? App\Models\Patient::find(Session::get("user_id")) : '';
+                            @endphp
+                           <div class="form-group">
+                              <label>Patient Name</label>
+                              <input type="text" name="name" id="name" placeholder="Enter Your name')}}" value="{{ $patient ? $patient->name : '' }}" required="">
+                           </div>
                            <div class="form-group">
                               <label>{{__('message.Phone no')}}</label>
-                              <input type="text" name="phone_no" id="phone_no" placeholder="{{__('message.Enter Your Phone number')}}" required="" value="+880" maxlength="14">
+                              <input type="text" name="phone_no" id="phone_no" placeholder="{{__('message.Enter Your Phone number')}}" required="" value="{{ $patient ? $patient->phone : '+880' }}" maxlength="14">
+                           </div>
+                           <div class="form-group">
+                              <label>Age</label>
+                              <input type="text" name="age" id="age" placeholder="Enter Your Age" value="{{ $patient ? $patient->age : '' }}" required="">
+                           </div>
+                           <div class="form-group">
+                              <label>Gender</label>
+                              @if ($patient)
+                                <select name="gender" id="gender" class="form-control" >
+                                    <option value="male" {{ $patient->gender == 'male' ? 'selected' : ''  }}>Male</option>
+                                    <option value="female" {{ $patient->gender == 'female' ? 'selected' : ''  }}>Female</option>
+                                    <option value="others" {{ $patient->gender == 'others' ? 'selected' : ''  }}>Others</option>
+                                </select>
+                                @else
+                                    <select name="gender" id="gender" class="form-control" >
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                @endif
+                           </div>
+                           <div class="form-group">
+                              <label>Health condition</label>
+                              <textarea id="helth_condition" rows="15"  name="helth_condition" placeholder="Enter Your Health condition"></textarea>
+                           </div>
+                           <div class="form-group">
+                              <label>Required service</label>
+                              <textarea id="require_service" rows="15"  name="require_service" placeholder="Enter Your Required service"></textarea>
                            </div>
                            <div class="form-group">
                               <label>{{__('message.Message')}}</label>
@@ -650,6 +685,11 @@
                                     <input type="hidden" name="date" id="date_3">
                                     <input type="hidden" name="slot" id="slot_3">
                                     <input type="hidden" name="message" id="message_3">
+                                    <input type="hidden" name="name" id="name_2">
+                                    <input type="hidden" name="age" id="age_2">
+                                    <input type="hidden" name="gender" id="gender_2">
+                                    <input type="hidden" name="helth_condition" id="helth_condition_2">
+                                    <input type="hidden" name="require_service" id="require_service_2">
                                     <input type="hidden" name="payment_type" value="cod">
                                     <div class="bt-drop-in-wrapper">
                                         <div id="bt-dropin"></div>
@@ -820,7 +860,14 @@
       var date = $("#date").val();
       var message = $("#message").val();
       var slot = $('input[name="slot"]:checked').val();
+      let age = $('#age').val();
+      let name = $('#name').val();
+      let gender = $('#gender option:selected').val();
+      let helth_condition = $('#helth_condition').val();
+      let require_service = $('#require_service').val();
+      
       if(phone_no!=""&&date!=""&&message!=""&&slot!=""){
+
             if($("#payment_type_braintree").prop("checked")==true){
                  $("#braintree_div").css("display","block");
                  $("#cod_div").css("display","none");
@@ -849,6 +896,8 @@
                  $("#message_2").val(message);
                  $("#slot_2").val(slot);
             }
+
+
             if($("#payment_type_cod").prop("checked")==true){
                  $("#cod_div").css("display","block");
                  $("#braintree_div").css("display","none");
@@ -862,7 +911,16 @@
                  $("#date_3").val(date);
                  $("#message_3").val(message);
                  $("#slot_3").val(slot);
+                 $("#name_2").val(name);
+                 $("#age_2").val(age);
+                 $("#gender_2").val(gender);
+                 $("#helth_condition_2").val(helth_condition);
+                 $("#require_service_2").val(require_service);
+
             }
+
+
+
             if($("#payment_type_rave").prop("checked")==true){
                  $("#rave_div").css("display","block");
                  $("#braintree_div").css("display","none");
@@ -933,7 +991,7 @@
         var date = $("#date").val();
         var message = $("#message").val();
         var slot = $('input[name="slot"]:checked').val();
-
+        console.log({phone_no,date,message,slot});
         if(phone_no!=""&&date!=""&&message!=""&&slot!=""){
             alert("please choose payment type");
         }

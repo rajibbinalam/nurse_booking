@@ -8,6 +8,7 @@ class BookAppointment extends Model
 {
     protected $table = 'book_appointment';
     protected $primaryKey = 'id';
+    protected $guarded = [];
 
      public function doctorls(){
      	return $this->hasone("App\Models\Doctors",'id','doctor_id');
@@ -16,6 +17,6 @@ class BookAppointment extends Model
       public function patientls(){
      	return $this->hasone("App\Models\Patient",'id','user_id');
      }
-  
+
 }
 ?>
