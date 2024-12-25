@@ -257,56 +257,56 @@ class FrontController extends Controller
     }
 
 
- public function postforgotpassword(Request $request){
-                      $checkmobile=Patient::where("email",$request->get("email"))->first();
-                      $checkdoctor = Doctors::where("email",$request->get("email"))->first();
-                      if($checkmobile){
-                          $code=mt_rand(100000, 999999);
-                          $store=array();
-                          $store['email']=$checkmobile->email;
-                          $store['name']=$checkmobile->name;
-                          $store['code']=$code;
-                          $add=new ResetPassword();
-                          $add->user_id=$checkmobile->id;
-                          $add->code=$code;
-                          $add->type=1;
-                          $add->save();
-                          try {
-                                  Mail::send('email.forgotpassword', ['user' => $store], function($message) use ($store){
-                                    $message->to($store['email'],$store['name'])->subject(__("message.System Name"));
-                                });
-                          } catch (\Exception $e) {
-                          }
+    public function postforgotpassword(Request $request){
+        $checkmobile=Patient::where("email",$request->get("email"))->first();
+        $checkdoctor = Doctors::where("email",$request->get("email"))->first();
+        if($checkmobile){
+            $code=mt_rand(100000, 999999);
+            $store=array();
+            $store['email']=$checkmobile->email;
+            $store['name']=$checkmobile->name;
+            $store['code']=$code;
+            $add=new ResetPassword();
+            $add->user_id=$checkmobile->id;
+            $add->code=$code;
+            $add->type=1;
+            $add->save();
+            try {
+                    Mail::send('email.forgotpassword', ['user' => $store], function($message) use ($store){
+                    $message->to($store['email'],$store['name'])->subject(__("message.System Name"));
+                });
+            } catch (\Exception $e) {
+            }
 
-                           Session::flash('message',__("message.Mail Send Successfully"));
-                           Session::flash('alert', 'sucess');
+            Session::flash('message',__("message.Mail Send Successfully"));
+            Session::flash('alert', 'sucess');
 
-                      }elseif($checkdoctor){
-                           $code=mt_rand(100000, 999999);
-                          $store=array();
-                          $store['email']=$checkdoctor->email;
-                          $store['name']=$checkdoctor->name;
-                          $store['code']=$code;
-                          $add=new ResetPassword();
-                          $add->user_id=$checkdoctor->id;
-                          $add->code=$code;
-                          $add->type=2;
-                          $add->save();
-                          try {
-                                  Mail::send('email.forgotpassword', ['user' => $store], function($message) use ($store){
-                                    $message->to($store['email'],$store['name'])->subject(__("message.System Name"));
-                                });
-                          } catch (\Exception $e) {
-                          }
+        }elseif($checkdoctor){
+            $code=mt_rand(100000, 999999);
+            $store=array();
+            $store['email']=$checkdoctor->email;
+            $store['name']=$checkdoctor->name;
+            $store['code']=$code;
+            $add=new ResetPassword();
+            $add->user_id=$checkdoctor->id;
+            $add->code=$code;
+            $add->type=2;
+            $add->save();
+            try {
+                    Mail::send('email.forgotpassword', ['user' => $store], function($message) use ($store){
+                    $message->to($store['email'],$store['name'])->subject(__("message.System Name"));
+                });
+            } catch (\Exception $e) {
+            }
 
-                           Session::flash('message',__("message.Mail Send Successfully"));
-                           Session::flash('alert', 'sucess');
-                      }else{
-                            Session::flash('message',__("message.error mail sending"));
-                            Session::flash('alert', 'danger');
+            Session::flash('message',__("message.Mail Send Successfully"));
+            Session::flash('alert', 'sucess');
+        }else{
+            Session::flash('message',__("message.error mail sending"));
+            Session::flash('alert', 'danger');
 
-                      }
-                      return redirect()->back();
+        }
+        return redirect()->back();
     }
     public function addnewsletter(Request $request){
 		$email = $request->get("email");
@@ -559,6 +559,29 @@ class FrontController extends Controller
             FacadesSession::put('patient_reg_number_timestamp', time());
         }
 
+        if($request->get('type') == 'forgot'){
+
+            $patient=Patient::where("phone",$request->get("phone"))->first();
+            $checkdoctor = Doctors::where("phoneno",$request->get("phone"))->first();
+
+            if($patient){
+                $add=new ResetPassword();
+                $add->user_id=$patient->id;
+                $add->code=$otp_code;
+                $add->type=1;
+                $add->save();
+            }elseif($checkdoctor){
+                $add=new ResetPassword();
+                $add->user_id=$checkdoctor->id;
+                $add->code=$otp_code;
+                $add->type=2;
+                $add->save();
+            }else{
+                return response()->json(['status' => 'error', 'message' => 'Phone number not found']);
+            }
+
+        }
+
         if (substr($phone, 0, 4) !== "+880") {
             $phone = "+880" . $phone;
         }
@@ -568,7 +591,7 @@ class FrontController extends Controller
 		    "token" => $key,
 		    "message" => $sms
 		);
-        // return response()->json(['status' => 'success', 'message' => $otp_code]);
+        // return response()->json(['status' => 'success', 'message' => $otp_code, 'code' => $otp_code]);
         try {
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_URL,$base_url);
@@ -584,7 +607,7 @@ class FrontController extends Controller
             Log::info('SMS Response: '.$smsresponse);
 
             // return $smsresponse;
-            return response()->json(['status' => 'success', 'message' => $smsresponse]);
+            return response()->json(['status' => 'success', 'message' => $smsresponse, 'code' => $otp_code]);
         } catch (\Throwable $th) {
             Log::error('SMS notification failed on phone #'.$phone);
             Log::error('SMS Response: '.$th->getMessage());

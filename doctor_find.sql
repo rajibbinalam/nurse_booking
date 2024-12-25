@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2024 at 08:24 PM
+-- Generation Time: Dec 25, 2024 at 07:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 7.4.7
 
@@ -152,19 +152,27 @@ CREATE TABLE `book_appointment` (
   `transaction_id` varchar(1000) DEFAULT NULL,
   `consultation_fees` varchar(1000) DEFAULT NULL,
   `prescription_file` varchar(50) DEFAULT NULL,
-  `is_completed` int(11) NOT NULL DEFAULT 0
+  `is_completed` int(11) NOT NULL DEFAULT 0,
+  `patient_name` varchar(255) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `gender` varchar(255) DEFAULT NULL,
+  `helth_condition` text DEFAULT NULL,
+  `require_service` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `book_appointment`
 --
 
-INSERT INTO `book_appointment` (`id`, `doctor_id`, `user_id`, `slot_id`, `slot_name`, `date`, `phone`, `user_description`, `status`, `created_at`, `updated_at`, `notify`, `payment_mode`, `transaction_id`, `consultation_fees`, `prescription_file`, `is_completed`) VALUES
-(1, 154, 1, 3073692, '09:00 AM', '2024-12-16', '13253465657', 'dfdgdfgdf', 3, '2024-12-11 18:06:42', '2024-12-11 18:23:19', '0', 'COD', NULL, '250', NULL, 1),
-(2, 154, 1, 3073758, '08:00', '2024-12-16', '092845769', 'tsrtsdfgsf', 3, '2024-12-12 18:59:31', '2024-12-16 16:41:37', '0', 'COD', NULL, '250', NULL, 1),
-(3, 154, 1, 3073761, '08:00', '2024-12-18', '+8801324246456', 'Test Raj', 6, '2024-12-16 18:20:31', '2024-12-16 18:27:59', '0', 'COD', NULL, '250', NULL, 1),
-(4, 154, 1, 3073762, '08:00', '2024-12-19', '+8801234345345', 'w4wersr', 5, '2024-12-18 17:59:19', '2024-12-18 18:13:20', '0', 'COD', NULL, '250', NULL, 1),
-(5, 154, 1, 3073763, '08:00', '2024-12-20', '+8801465645454', 'rfrfsds', 1, '2024-12-18 17:59:50', '2024-12-18 18:08:54', '0', 'COD', NULL, '250', NULL, 1);
+INSERT INTO `book_appointment` (`id`, `doctor_id`, `user_id`, `slot_id`, `slot_name`, `date`, `phone`, `user_description`, `status`, `created_at`, `updated_at`, `notify`, `payment_mode`, `transaction_id`, `consultation_fees`, `prescription_file`, `is_completed`, `patient_name`, `age`, `gender`, `helth_condition`, `require_service`) VALUES
+(1, 154, 1, 3073692, '08:00 - 18:00', '2024-12-16', '13253465657', 'dfdgdfgdf', 3, '2024-12-11 18:06:42', '2024-12-11 18:23:19', '0', 'COD', NULL, '250', NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(2, 154, 1, 3073758, '08:00 - 18:00', '2024-12-16', '092845769', 'tsrtsdfgsf', 3, '2024-12-12 18:59:31', '2024-12-16 16:41:37', '0', 'COD', NULL, '250', NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(3, 154, 1, 3073761, '08:00 - 18:00', '2024-12-18', '+8801324246456', 'Test Raj', 6, '2024-12-16 18:20:31', '2024-12-16 18:27:59', '0', 'COD', NULL, '250', NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(4, 154, 1, 3073762, '08:00 - 18:00', '2024-12-19', '+8801234345345', 'w4wersr', 5, '2024-12-18 17:59:19', '2024-12-18 18:13:20', '0', 'COD', NULL, '250', NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(5, 154, 1, 3073763, '08:00 - 18:00', '2024-12-20', '+8801465645454', 'rfrfsds', 1, '2024-12-18 17:59:50', '2024-12-18 18:08:54', '0', 'COD', NULL, '250', NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(6, 156, 1, 3073766, '08:00 - 18:00', '2024-12-23', '+8801224325434', 'sgsfgs', 1, '2024-12-19 15:46:49', '2024-12-20 18:06:07', '0', 'COD', NULL, '250', NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(7, 154, 1, 3073770, '08:00 - 16:00', '2024-12-26', '0506527568', 'fg', 1, '2024-12-24 18:45:06', '2024-12-24 18:45:06', '1', 'COD', NULL, '250', NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(8, 154, 1, 3073771, '08:00 - 16:00', '2024-12-27', '0506527568', 'dfgd', 1, '2024-12-24 18:48:15', '2024-12-24 18:48:15', '1', 'COD', NULL, '250', NULL, 1, 'Johh Due1', 26, 'female', 'dg', 'dgdg');
 
 -- --------------------------------------------------------
 
@@ -285,10 +293,13 @@ CREATE TABLE `doctors` (
 INSERT INTO `doctors` (`id`, `name`, `email`, `aboutus`, `working_time`, `address`, `lat`, `lon`, `phoneno`, `services`, `healthcare`, `image`, `department_id`, `password`, `created_at`, `updated_at`, `is_approve`, `consultation_fees`, `login_id`, `connectycube_user_id`, `connectycube_password`, `unique_id`, `gender`, `age`, `title`, `institution_name`, `birth_name`, `spouse_name`, `state`, `city`, `bank_name`, `ifsc_code`, `account_no`, `account_holder_name`, `document`, `document1`, `document2`, `document3`) VALUES
 (1, 'Dr. Mahajan', 'nurse@gmail.com', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', NULL, '', '40.71397887526981', '-73.99348443482666', '+919878767899', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', 'A doctor diagnoses and treats diseases and conditions, as well as provides treatment in many forms including medication, procedures, surgery, or therapy.', '1732859520.jpg', 15, '123456', '2023-08-01 05:14:47', '2024-12-11 16:54:46', '1', '500', '+9198787678991244197430#2', '9547765', 'Mahajan@123', NULL, 1, 29, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (153, 'Test1', 'test1.@gmail.com', NULL, NULL, NULL, NULL, NULL, '092845769', NULL, NULL, NULL, NULL, '123456', '2024-12-11 17:44:58', '2024-12-11 17:44:58', '0', '250', '0928457691156425402#2', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(154, 'Samira Khan', 'samira@gmail.com', 'Test', NULL, '', '40.74125420000001', '-73.9853311', '12347987654', 'Test', 'terrt', '1733939299.png', 15, '123456', '2024-12-11 17:45:48', '2024-12-12 19:25:45', '1', '250', '12347987654548344660#2', NULL, '123456', NULL, 2, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1734031545document.webp', '1734031545document1.webp', NULL, NULL),
+(154, 'Samira Khan', 'samira@gmail.com', 'Test', NULL, '', '40.74125420000001', '-73.9853311', '12347987654', 'Test', NULL, '1733939299.png', 15, '123456', '2024-12-11 17:45:48', '2024-12-24 19:15:12', '1', '250', '12347987654548344660#2', NULL, '123456', NULL, 2, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1734031545document.webp', '1734031545document1.webp', '1735067712document2.webp', NULL),
 (155, 'Test One', 'test1@gmail.com', NULL, NULL, NULL, NULL, NULL, '01932837485', NULL, NULL, NULL, NULL, '123456', '2024-12-13 14:32:10', '2024-12-13 14:32:10', '0', '250', '01932837485190801271#2', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(156, 'Nurse 1', 'nurse1@gmail.com', NULL, NULL, NULL, NULL, NULL, '+8801938597896', NULL, NULL, NULL, NULL, '123456', '2024-12-16 16:19:26', '2024-12-16 16:40:03', '1', '250', '+8801938597896119110523#2', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(157, 'Nurse', 'nurse2@gmail.com', 'fhfh', NULL, 'dgd', '243523', '23421', '+8801342394438', 'fghf', 'fghf', '1734370772.png', 15, '123456', '2024-12-16 16:50:54', '2024-12-16 17:46:18', '1', '250', '+8801342394438286105768#2', NULL, '123456', NULL, 1, 28, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1734370440document.webp', '1734370440document1.webp', '1734370440document2.png', NULL);
+(156, 'Nurse 1', 'nurse1@gmail.com', NULL, NULL, '', '40.74125420000001', '-73.9853311', '+8801938597896', NULL, NULL, NULL, 15, '123456', '2024-12-16 16:19:26', '2024-12-19 15:45:29', '1', '250', '+8801938597896119110523#2', NULL, '123456', NULL, 2, 18, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(157, 'Nurse', 'nurse2@gmail.com', 'fhfh', NULL, 'dgd', '243523', '23421', '+8801342394438', 'fghf', 'fghf', '1734370772.png', 15, '123456', '2024-12-16 16:50:54', '2024-12-16 17:46:18', '1', '250', '+8801342394438286105768#2', NULL, '123456', NULL, 1, 28, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1734370440document.webp', '1734370440document1.webp', '1734370440document2.png', NULL),
+(158, 'NurseR', 'nurser@gmail.com', NULL, NULL, NULL, NULL, NULL, '+8801354546545', NULL, NULL, NULL, NULL, 'rajib@123', '2024-12-20 18:01:39', '2024-12-20 18:01:39', '0', '250', '+88013545465451473013038#2', NULL, 'rajib@123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(159, 'Rajib', 'rajib1@gmail.com', NULL, NULL, NULL, NULL, NULL, '+8801767740561', NULL, NULL, NULL, NULL, 'rajib@123', '2024-12-22 17:55:16', '2024-12-22 17:55:16', '0', '250', '+8801767740561426178536#2', NULL, 'rajib@123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(160, 'Samira kha', 'samirkhan@gmail.com', NULL, NULL, NULL, NULL, NULL, '+8801994687171', NULL, NULL, NULL, NULL, '123456', '2024-12-22 18:29:43', '2024-12-25 18:42:59', '0', '250', '+8801994687171480674600#2', NULL, 'rajib@123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -347,13 +358,14 @@ INSERT INTO `doctor_schedule` (`id`, `doctor_id`, `day_id`, `start_time`, `end_t
 (2348, 1, 5, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
 (2349, 1, 6, '10:00', '14:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
 (2350, 1, 6, '17:00', '22:00', '30', '2024-12-11 16:39:08', '2024-12-11 16:39:08'),
-(2357, 154, 0, '08:00', '16:00', '8', '2024-12-16 18:19:02', '2024-12-16 18:19:02'),
-(2358, 154, 1, '08:17', '17:00', '8', '2024-12-16 18:19:02', '2024-12-16 18:19:02'),
-(2359, 154, 2, '08:00', '17:00', '9', '2024-12-16 18:19:02', '2024-12-16 18:19:02'),
-(2360, 154, 3, '08:00', '16:00', '8', '2024-12-16 18:19:02', '2024-12-16 18:19:02'),
-(2361, 154, 4, '08:00', '16:00', '8', '2024-12-16 18:19:02', '2024-12-16 18:19:02'),
-(2362, 154, 5, '08:00', '16:00', '8', '2024-12-16 18:19:02', '2024-12-16 18:19:02'),
-(2363, 154, 6, '08:00', '16:00', '8', '2024-12-16 18:19:02', '2024-12-16 18:19:02');
+(2364, 156, 0, '08:00', '18:00', '10', '2024-12-19 15:24:21', '2024-12-19 15:24:21'),
+(2365, 154, 0, '08:00', '16:01', '8', '2024-12-24 17:58:09', '2024-12-24 17:58:09'),
+(2366, 154, 1, '08:17', '17:00', '8', '2024-12-24 17:58:09', '2024-12-24 17:58:09'),
+(2367, 154, 2, '08:00', '17:00', '9', '2024-12-24 17:58:09', '2024-12-24 17:58:09'),
+(2368, 154, 3, '08:00', '16:00', '8', '2024-12-24 17:58:09', '2024-12-24 17:58:09'),
+(2369, 154, 4, '08:00', '16:00', '8', '2024-12-24 17:58:09', '2024-12-24 17:58:09'),
+(2370, 154, 5, '08:00', '16:00', '8', '2024-12-24 17:58:09', '2024-12-24 17:58:09'),
+(2371, 154, 6, '08:00', '16:00', '8', '2024-12-24 17:58:09', '2024-12-24 17:58:09');
 
 -- --------------------------------------------------------
 
@@ -376,6 +388,20 @@ CREATE TABLE `favorite_doctors` (
 INSERT INTO `favorite_doctors` (`id`, `user_id`, `doctor_id`, `created_at`, `updated_at`) VALUES
 (53, 1, 1, '2024-12-11 16:11:47', '2024-12-11 16:11:47'),
 (54, 1, 154, '2024-12-11 18:06:12', '2024-12-11 18:06:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laravel_paystack_events`
+--
+
+CREATE TABLE `laravel_paystack_events` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `event` enum('invoice.update','invoice.create','charge.success','transfer.success','bulk_transfer.success','bulk_transfer.failed','transfer.failed','invoice.failed','subscription.enable','subscription.disable','subscription.create') NOT NULL,
+  `payload` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -431,7 +457,8 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_07_02_230147_migration_cartalyst_sentinel', 1);
+(1, '2014_07_02_230147_migration_cartalyst_sentinel', 1),
+(2, '2019_03_26_211414_create_laravel_paystack_events_table', 2);
 
 -- --------------------------------------------------------
 
@@ -581,7 +608,8 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`id`, `login_type`, `profile_pic`, `name`, `email`, `password`, `phone`, `gender`, `age`, `address`, `is_approve`, `created_at`, `updated_at`, `is_deleted`, `connectycube_user_id`, `login_id`, `connectycube_password`, `document1`, `document2`, `document3`, `document4`) VALUES
-(1, 1, '1732859082.jpg', 'Johh Due', 'patient@gmail.com', '123456', '0506527568', 'female', 26, 'Muhammodpur, dhaka', 1, '2023-04-07 03:12:28', '2024-12-18 12:53:53', '0', '11994074', '0506527568#1', '12345678', '1734547701document1.png', '1734548033document2.webp', '1734548033document3.png', '1734547937document4.jpeg');
+(1, 1, '1732859082.jpg', 'Johh Due', 'patient@gmail.com', '123456', '0506527568', 'female', 26, 'Muhammodpur, dhaka', 1, '2023-04-07 03:12:28', '2024-12-18 12:53:53', '0', '11994074', '0506527568#1', '12345678', '1734547701document1.png', '1734548033document2.webp', '1734548033document3.png', '1734547937document4.jpeg'),
+(171, 1, NULL, 'Rajib', 'rajib1@gmail.com', '123456', '+8801767740561', NULL, NULL, NULL, 1, '2024-12-22 12:02:01', '2024-12-25 12:29:05', '0', '', '', 'rajib@123', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4724,7 +4752,12 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (4139, 1, 'E4I0p6qaBFf0oAiYSwp2O9bFtlDm5h7r', '2024-12-11 09:57:33', '2024-12-11 09:57:33'),
 (4140, 1, 'I4TMEaoEk7idKL6ByxhnPHBtqlp0iPZ3', '2024-12-13 08:31:19', '2024-12-13 08:31:19'),
 (4141, 1, 'jTklrT3EInwy6TrYIN5ht2zSOlN7G6sm', '2024-12-16 10:20:43', '2024-12-16 10:20:43'),
-(4142, 1, '9RTmNUgNO7SKCjminebE8IrrA3fYpc5A', '2024-12-18 11:55:49', '2024-12-18 11:55:49');
+(4142, 1, '9RTmNUgNO7SKCjminebE8IrrA3fYpc5A', '2024-12-18 11:55:49', '2024-12-18 11:55:49'),
+(4143, 1, '2BCPtdhf4xGR0Kfsq7YW8EsaFvXBDYx4', '2024-12-19 09:20:42', '2024-12-19 09:20:42'),
+(4144, 1, 'Z1V7OkIWduPioj54znPkjRZeuu7grLkI', '2024-12-19 09:21:01', '2024-12-19 09:21:01'),
+(4145, 1, 'f3ptecEzlV5q8p8MFhD11EaHJ1tmVzdp', '2024-12-22 08:37:55', '2024-12-22 08:37:55'),
+(4146, 1, 'PlnT3Fea2y9GY2MvdWAWpWCw6gjMe8h5', '2024-12-24 10:58:49', '2024-12-24 10:58:49'),
+(4147, 1, '4hctUbn6V9X4GPneymJURyYf06GoGMh8', '2024-12-25 12:47:37', '2024-12-25 12:47:37');
 
 -- --------------------------------------------------------
 
@@ -4757,15 +4790,6 @@ CREATE TABLE `reportspam` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `reportspam`
---
-
-INSERT INTO `reportspam` (`id`, `user_id`, `title`, `description`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Doctors not treating well', 'test', '2022-09-30 09:43:04', '2022-09-30 09:43:04'),
-(29, 1, 'a', 'a', '2024-02-14 03:04:57', '2024-02-14 03:04:57'),
-(30, 1, 'a', '21', '2024-02-14 03:05:06', '2024-02-14 03:05:06');
-
 -- --------------------------------------------------------
 
 --
@@ -4786,7 +4810,9 @@ CREATE TABLE `resetpassword` (
 --
 
 INSERT INTO `resetpassword` (`id`, `user_id`, `code`, `created_at`, `updated_at`, `type`) VALUES
-(22, 1, '924257', '2023-05-18 14:12:12', '2023-05-18 14:12:12', 1);
+(22, 1, '924257', '2023-05-18 14:12:12', '2023-05-18 14:12:12', 1),
+(134, 1, '817750', '2024-12-25 11:40:58', '2024-12-25 11:40:58', 1),
+(135, 1, '389854', '2024-12-25 11:41:47', '2024-12-25 11:41:47', 1);
 
 -- --------------------------------------------------------
 
@@ -5982,7 +6008,10 @@ INSERT INTO `settlement` (`id`, `book_id`, `status`, `payment_date`, `created_at
 (267, 338, 0, '2025-01-15', '2024-12-01 07:06:26', '2024-12-01 07:06:26', 1, '100', NULL),
 (268, 1, 0, '2025-01-15', '2024-12-11 12:06:42', '2024-12-11 12:06:42', 154, '250', NULL),
 (269, 2, 0, '2025-01-15', '2024-12-12 12:59:31', '2024-12-12 12:59:31', 154, '250', NULL),
-(272, 5, 0, '2025-01-15', '2024-12-18 11:59:50', '2024-12-18 11:59:50', 154, '250', NULL);
+(272, 5, 0, '2025-01-15', '2024-12-18 11:59:50', '2024-12-18 11:59:50', 154, '250', NULL),
+(273, 6, 0, '2025-01-15', '2024-12-19 09:46:49', '2024-12-19 09:46:49', 156, '250', NULL),
+(274, 7, 0, '2025-01-15', '2024-12-24 12:45:06', '2024-12-24 12:45:06', 154, '250', NULL),
+(275, 8, 0, '2025-01-15', '2024-12-24 12:48:15', '2024-12-24 12:48:15', 154, '250', NULL);
 
 -- --------------------------------------------------------
 
@@ -11192,13 +11221,14 @@ INSERT INTO `slot_timing` (`id`, `schedule_id`, `slot`, `created_at`, `updated_a
 (3073682, 2350, '08:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
 (3073683, 2350, '09:00 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
 (3073684, 2350, '09:30 PM', '2024-12-11 10:39:08', '2024-12-11 10:39:08'),
-(3073759, 2357, '08:00', '2024-12-16 12:19:02', '2024-12-16 12:19:02'),
-(3073760, 2358, '08:17', '2024-12-16 12:19:02', '2024-12-16 12:19:02'),
-(3073761, 2359, '08:00', '2024-12-16 12:19:02', '2024-12-16 12:19:02'),
-(3073762, 2360, '08:00', '2024-12-16 12:19:02', '2024-12-16 12:19:02'),
-(3073763, 2361, '08:00', '2024-12-16 12:19:02', '2024-12-16 12:19:02'),
-(3073764, 2362, '08:00', '2024-12-16 12:19:02', '2024-12-16 12:19:02'),
-(3073765, 2363, '08:00', '2024-12-16 12:19:02', '2024-12-16 12:19:02');
+(3073766, 2364, '08:00 - 18:00', '2024-12-19 09:24:21', '2024-12-19 09:24:21'),
+(3073767, 2365, '08:00 - 16:01', '2024-12-24 11:58:09', '2024-12-24 11:58:09'),
+(3073768, 2366, '08:17 - 17:00', '2024-12-24 11:58:09', '2024-12-24 11:58:09'),
+(3073769, 2367, '08:00 - 17:00', '2024-12-24 11:58:09', '2024-12-24 11:58:09'),
+(3073770, 2368, '08:00 - 16:00', '2024-12-24 11:58:09', '2024-12-24 11:58:09'),
+(3073771, 2369, '08:00 - 16:00', '2024-12-24 11:58:09', '2024-12-24 11:58:09'),
+(3073772, 2370, '08:00 - 16:00', '2024-12-24 11:58:09', '2024-12-24 11:58:09'),
+(3073773, 2371, '08:00 - 16:00', '2024-12-24 11:58:09', '2024-12-24 11:58:09');
 
 -- --------------------------------------------------------
 
@@ -11865,7 +11895,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `created_at`, `updated_at`, `phone`, `profile_pic`, `android_key`, `ios_key`) VALUES
-(1, 'admin@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2024-12-18 11:55:49', 'Medico', 'App', '2020-09-29 23:00:13', '2024-12-18 11:55:49', '0123456789', '1694149059.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc'),
+(1, 'admin@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2024-12-25 12:47:37', 'Medico', 'App', '2020-09-29 23:00:13', '2024-12-25 12:47:37', '0123456789', '1694149059.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc'),
 (2, 'owner@gmail.com', '$2y$10$onhX9dGk9gTrC6YGFbirc.HVYDdmwODFyfsEENTJBy4is/f6evxci', NULL, '2022-09-28 09:07:18', 'Appoint', 'Booking System', '2020-09-29 23:00:13', '2022-09-28 09:07:18', '0123456789', '1603175222.jpg', 'AAAAPwd2Odk:APA91bHOAgCVVag8SlmMQLA_xX1mONxeNKcEK0TYOAxHfAp3CvbJ_tewOoIh7MSPK0bMy9H8A9cCJqQYZH71W_SC0nZlfR57i2lDuIGKPtS3HcUB17GpbS1QDrz-08XAXkzjqyClSgtM', 'abc');
 
 --
@@ -11948,6 +11978,12 @@ ALTER TABLE `doctor_schedule`
 -- Indexes for table `favorite_doctors`
 --
 ALTER TABLE `favorite_doctors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `laravel_paystack_events`
+--
+ALTER TABLE `laravel_paystack_events`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -12124,7 +12160,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `book_appointment`
 --
 ALTER TABLE `book_appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `code`
@@ -12148,7 +12184,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 
 --
 -- AUTO_INCREMENT for table `doctor_hoildays`
@@ -12160,13 +12196,19 @@ ALTER TABLE `doctor_hoildays`
 -- AUTO_INCREMENT for table `doctor_schedule`
 --
 ALTER TABLE `doctor_schedule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2364;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2372;
 
 --
 -- AUTO_INCREMENT for table `favorite_doctors`
 --
 ALTER TABLE `favorite_doctors`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `laravel_paystack_events`
+--
+ALTER TABLE `laravel_paystack_events`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `medicines`
@@ -12178,7 +12220,7 @@ ALTER TABLE `medicines`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `newsletter`
@@ -12196,7 +12238,7 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 
 --
 -- AUTO_INCREMENT for table `payment_gateway_details`
@@ -12208,7 +12250,7 @@ ALTER TABLE `payment_gateway_details`
 -- AUTO_INCREMENT for table `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4143;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4148;
 
 --
 -- AUTO_INCREMENT for table `reminders`
@@ -12226,7 +12268,7 @@ ALTER TABLE `reportspam`
 -- AUTO_INCREMENT for table `resetpassword`
 --
 ALTER TABLE `resetpassword`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -12262,13 +12304,13 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `settlement`
 --
 ALTER TABLE `settlement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=273;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=276;
 
 --
 -- AUTO_INCREMENT for table `slot_timing`
 --
 ALTER TABLE `slot_timing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3073766;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3073774;
 
 --
 -- AUTO_INCREMENT for table `subscriber`
