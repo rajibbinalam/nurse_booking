@@ -96,8 +96,8 @@ return [
     'fallback_locale' => 'en',
 
 
-    'base_url' => 'http://api.greenweb.com.bd/api.php',
-    'smkey' => '67901853011722516781ffe1dc3062682a0ae3bcbd1c63395b9f',
+    'base_url' => '',
+    'smkey' => '',
     'count' => 0,
 
     /*
